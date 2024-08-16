@@ -9,26 +9,21 @@ public class Collectable : MonoBehaviour
     //player clicks on collectable
     //add collectable to player
     //collectable disapears
-    public CollectableType type;
-    
 
+    private Inventory inventory;
+    public CollectableType type;
     void Start()
     {
-
-    }
-
-    void Update()
-    {
-    
+        inventory = GetComponent<Inventory>();
     }
 
     private void OnMouseDown()
     {
-        Player inventory = GetComponent<Player>();
+        
         if (gameObject.tag == "Collectable")
         {
             print("Collected!");
-            inventory.inventory.Add(type);
+            inventory.Add(type);
             Destroy(this.gameObject);
         }
     }
