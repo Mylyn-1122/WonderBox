@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Collections;
 
 
 public class Collectable : MonoBehaviour
@@ -9,24 +9,32 @@ public class Collectable : MonoBehaviour
     //player clicks on collectable
     //add collectable to player
     //collectable disapears
+    public CollectableType type;
+    
+
     void Start()
     {
-
 
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+    
+    }
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider.gameObject.tag == "Collectable")
-            {
-                print("Collected!");
-            }
+    private void OnMouseDown()
+    {
+        Player inventory = GetComponent<Player>();
+        if (gameObject.tag == "Collectable")
+        {
+            print("Collected!");
+            inventory.inventory.Add(type);
+            Destroy(this.gameObject);
         }
     }
+}
+
+public enum CollectableType
+{
+    NONE, STARKEY_YELLOW, STARKEY_BLUE, STARKEY_RED
 }

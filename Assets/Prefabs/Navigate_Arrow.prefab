@@ -144,7 +144,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 905865565539388034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5415b1af5874e46f88d0d24090ea15d9, type: 3}
+  m_Script: {fileID: 11500000, guid: d458c315e020f4275b76509ee75bc052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 20, y: 0, z: 0}
+  action: 
+  destination: {x: 0, y: 0, z: 0}
+  scene: 
