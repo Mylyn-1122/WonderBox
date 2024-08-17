@@ -2,8 +2,11 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
+
+[System.Serializable]
 public class Inventory
 {
+    [System.Serializable]
     public class Slot
     {
         public CollectableType type;
@@ -44,9 +47,19 @@ public class Inventory
 
     public void Add(CollectableType typeToAdd)
     {
+        //Adds if already has one item of a type in a slot - not used until after more items are introduced
         foreach(Slot slot in slots)
         {
             if(slot.type == typeToAdd && slot.CanAddItem())
+            {
+                slot.AddItem(typeToAdd);
+                return;
+            }
+        }
+        //Adds new item - used for starkeys
+        foreach(Slot slot in slots)
+        {
+            if(slot.type == CollectableType.NONE)
             {
                 slot.AddItem(typeToAdd);
                 return;
