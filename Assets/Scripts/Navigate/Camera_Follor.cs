@@ -9,6 +9,8 @@ public class Camera_Follor : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     [SerializeField] private Transform target;
+    [SerializeField] private Camera mainCamera;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,5 +24,14 @@ public class Camera_Follor : MonoBehaviour
     {
         Vector3 targetPosition = target.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+        Vector2 targetPos = target.position;
+        Vector2 cameraPos = new Vector2(mainCamera.GetComponent<Transform>().position.x, mainCamera.GetComponent<Transform>().position.y);
+        //Debug.Log(targetPos==cameraPos);
+        //Debug.Log((cameraPos.x - targetPos.x)<0.01);
+        if ((Mathf.Abs(cameraPos.x - targetPos.x) < 0.01) &&  (Mathf.Abs(cameraPos.x - targetPos.x) < 0.01))
+        {
+            Debug.Log("death");
+            mainCamera.GetComponent<Camera_Follor>().enabled = false;
+        }
     }
 }

@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 803904455}
+  mainCamera: {fileID: 235225880}
 --- !u!114 &235225883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 0.01
+  m_ScaleFactor: 0.1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
@@ -531,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 20, y: 0, z: 0}
+  mainCamera: {fileID: 235225880}
 --- !u!61 &381448604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1124,7 +1126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.43, y: 1.63}
+  m_AnchoredPosition: {x: 13.04, y: 1.63}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2086351244
@@ -1139,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64f408a60aa14b038987dfa2a881fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 283181947}
+  mainCamera: {fileID: 235225880}
 --- !u!61 &2086351245
 BoxCollider2D:
   m_ObjectHideFlags: 0
