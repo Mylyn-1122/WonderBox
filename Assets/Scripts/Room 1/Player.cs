@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     //public bool player;
-    public Inventory inventory;
+   // public Inventory inventory;
 
     private void Awake()
     {
-        inventory = new Inventory(5);
+       // inventory = new Inventory(5);
     }
     
 }

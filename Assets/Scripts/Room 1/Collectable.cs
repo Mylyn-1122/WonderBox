@@ -10,26 +10,19 @@ public class Collectable : MonoBehaviour
     //add collectable to player
     //collectable disapears
 
-    private Inventory inventory;
-    public CollectableType type;
+    //private Inventory inventory;
     void Start()
     {
-        inventory = GetComponent<Inventory>();
+        //inventory = GetComponent<Inventory>();
     }
 
     private void OnMouseDown()
     {
         
-        if (gameObject.tag == "Collectable")
-        {
-            print("Collected!");
-            inventory.Add(type);
-            Destroy(this.gameObject);
-        }
+        //if (gameObject.tag == "Collectable")
+       // {
+        //    print("Collected!");
+        //    Destroy(this.gameObject);
+        //}
     }
-}
-
-public enum CollectableType
-{
-    NONE, STARKEY_YELLOW, STARKEY_BLUE, STARKEY_RED
 }
