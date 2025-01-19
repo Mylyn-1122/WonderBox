@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] InventorySlots;
     public GameObject DraggableItemPrefab;
 
-    public void AddItem(Item item)
+    public bool AddItem(Item item)
     {
 
         //find a empty slot
@@ -19,10 +19,11 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot == null)
             {
                 SpawnNewItem(item, slot);
-                return;
+                return true;
 
             }
         }
+        return false;
 
     }
 

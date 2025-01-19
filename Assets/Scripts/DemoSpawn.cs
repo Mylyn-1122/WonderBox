@@ -10,8 +10,15 @@ public class DemoSpawn : MonoBehaviour
     public void PickUpItem(int id)
     {
         
-        inventoryManager.AddItem(itemsToPickUp[id]);
-        
+       bool result = inventoryManager.AddItem(itemsToPickUp[id]);
+        if (result == true)
+        {
+            Debug.Log("Item Added!");
+        }
+        else
+        {
+            Debug.Log("Inventory full!");
+        }
 
 
     }
