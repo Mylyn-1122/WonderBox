@@ -22,4 +22,32 @@ public class DemoSpawn : MonoBehaviour
 
 
     }
+
+    public void GetSelectedItem()
+    {
+        Item receivedItem = inventoryManager.getSelectedItem(false);
+
+        if(receivedItem != null)
+        {
+            Debug.Log("Received!");
+        }
+        else
+        {
+            Debug.Log("Nothing received :(");
+        }
+    }
+
+    public void UseSelectedItem()
+    {
+        Item receivedItem = inventoryManager.getSelectedItem(true);
+
+        if (receivedItem != null)
+        {
+            Debug.Log("Used!");
+        }
+        else
+        {
+            Debug.Log("Nothing used :(");
+        }
+    }
 }
