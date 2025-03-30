@@ -14,13 +14,13 @@ public class Collectable : MonoBehaviour
         if (result == true)
         {
             Debug.Log("Item Added!");
+            
         }
         else
         {
             Debug.Log("Inventory full!");
         }
-
-
+        
     }
 
     public void GetSelectedItem()
@@ -67,6 +67,7 @@ public class Collectable : MonoBehaviour
                     if (hit.collider.gameObject.name == "starKey_Red")
                     {
                         PickUpItem(2);
+
                     }
                     else if (hit.collider.gameObject.name == "starKey_Blue")
                     {

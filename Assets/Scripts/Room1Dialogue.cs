@@ -39,20 +39,20 @@ public class Room1Dialouge : MonoBehaviour
                     {
                         text1 = dMan.ShowBox(R1);
                     }
-                    Camera.main.transform.position = new Vector3(-40, 0, -10);
+                    
                 }
                 if (hit.collider.gameObject.tag == "FinalP")
                 {
                     if (!InventoryManager.getStars())
                     {
-                        Camera.main.transform.position = new Vector3(20, -20, -10);
+                       
                         text3 = dMan.ShowBox(R3);
                         
                     }
                     else
                     {
                         text2 = dMan.ShowBox(R2);
-                        Camera.main.transform.position = new Vector3(20, -20, -10);
+                      
                     }
                 }
 
