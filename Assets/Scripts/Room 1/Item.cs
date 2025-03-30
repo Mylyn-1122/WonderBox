@@ -29,5 +29,9 @@ public class Item : ScriptableObject
         Unlock,
         JustStore
     }
+    public string getType() {
+        return type.ToString();
+    }
+    
 
 }

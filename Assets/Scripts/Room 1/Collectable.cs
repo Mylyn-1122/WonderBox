@@ -1,28 +1,83 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
-
+using System.Collections.Generic;
 
 public class Collectable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    //player clicks on collectable
-    //add collectable to player
-    //collectable disapears
+    public InventoryManager inventoryManager;
+    public Item[] itemsToPickUp;
 
-    //private Inventory inventory;
-    void Start()
+    public void PickUpItem(int id)
     {
-        //inventory = GetComponent<Inventory>();
+
+        bool result = inventoryManager.AddItem(itemsToPickUp[id]);
+        if (result == true)
+        {
+            Debug.Log("Item Added!");
+        }
+        else
+        {
+            Debug.Log("Inventory full!");
+        }
+
+
     }
 
-    private void OnMouseDown()
+    public void GetSelectedItem()
     {
-        
-        //if (gameObject.tag == "Collectable")
-       // {
-        //    print("Collected!");
-        //    Destroy(this.gameObject);
-        //}
+        Item receivedItem = inventoryManager.getSelectedItem(false);
+
+        if (receivedItem != null)
+        {
+            Debug.Log("Received!");
+        }
+        else
+        {
+            Debug.Log("Nothing received :(");
+        }
+    }
+
+    public void UseSelectedItem()
+    {
+        Item receivedItem = inventoryManager.getSelectedItem(true);
+
+        if (receivedItem != null)
+        {
+            Debug.Log("Used!");
+        }
+        else
+        {
+            Debug.Log("Nothing used :(");
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.tag == "Collectable")
+                {
+                    if (hit.collider.gameObject.name == "starKey_Red")
+                    {
+                        PickUpItem(2);
+                    }
+                    else if (hit.collider.gameObject.name == "starKey_Blue")
+                    {
+                        PickUpItem(0);
+                    }
+                    else if (hit.collider.gameObject.name == "starKey_Yellow") {
+                        PickUpItem(1);
+                    }
+                }
+            }
+        }
     }
 }
+

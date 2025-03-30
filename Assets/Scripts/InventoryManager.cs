@@ -7,12 +7,17 @@ public class InventoryManager : MonoBehaviour
     public int maxItems = 12;
     public InventorySlot[] InventorySlots;
     public GameObject DraggableItemPrefab;
+    private static bool allStars;
+    private int countStar;
 
     int selectedSlot = -1;
 
     private void Start()
     {
-        ChangeSelectedSlot(0);
+        countStar = 0;
+        allStars = false;
+        //ChangeSelectedSlot(0);
+        
     }
 
     private void Update()
@@ -25,6 +30,8 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number - 1);
             }
         }
+
+        
     }
     void ChangeSelectedSlot(int slot)
     {
@@ -39,6 +46,7 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItem(Item item)
     {
+        
         //Check for slot with less than maximum items to stack
         for (int i = 0; i < InventorySlots.Length; i++)
         {
@@ -53,21 +61,36 @@ public class InventoryManager : MonoBehaviour
                 return true;
 
             }
+            
         }
 
 
         //find a empty slot
         for (int i = 0; i < InventorySlots.Length; i++)
         {
+            
             InventorySlot slot = InventorySlots[i];
             DraggableItem itemInSlot = slot.GetComponentInChildren<DraggableItem>();
+
 
             if (itemInSlot == null)
             {
                 SpawnNewItem(item, slot);
+                if (item.getType() == "Key")
+                {
+                    countStar++;
+                    Debug.Log("Star ++!");
+                }
+                if (countStar == 3)
+                {
+                    allStars = true;
+                    countStar = 0;
+                }
                 return true;
 
             }
+
+            
         }
         return false;
 
@@ -107,6 +130,11 @@ public class InventoryManager : MonoBehaviour
         return null;
 
     }
+
+    public static bool getStars() {
+        return allStars;
+    }
+    
 
 
 }

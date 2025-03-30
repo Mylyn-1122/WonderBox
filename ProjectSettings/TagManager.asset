@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Collectable
+  - Window
+  - FinalP
+  - Back
   layers:
   - Default
   - TransparentFX
