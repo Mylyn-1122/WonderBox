@@ -3883,13 +3883,19 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &962197996
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!1 &955925403
 =======
 --- !u!1 &962197996
 >>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,7 +3905,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   - component: {fileID: 955925406}
   - component: {fileID: 955925405}
@@ -3907,12 +3916,19 @@ GameObject:
   m_Layer: 0
   m_Name: posObj4
 =======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   - component: {fileID: 962197998}
   - component: {fileID: 962197997}
   m_Layer: 0
   m_Name: DataPersistenceManager
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
+>>>>>>> Stashed changes
 =======
 >>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
 >>>>>>> Stashed changes
@@ -3922,9 +3938,12 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!114 &962197997
 MonoBehaviour:
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 --- !u!61 &955925404
 BoxCollider2D:
@@ -3932,13 +3951,19 @@ BoxCollider2D:
 --- !u!114 &962197997
 MonoBehaviour:
 >>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   m_GameObject: {fileID: 955925403}
   m_Enabled: 1
@@ -4037,6 +4062,9 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!4 &955925406
 =======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_GameObject: {fileID: 962197996}
   m_Enabled: 1
@@ -4047,6 +4075,10 @@ SpriteRenderer:
   fileName: data.game
 --- !u!4 &962197998
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
+>>>>>>> Stashed changes
 =======
 >>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
 >>>>>>> Stashed changes
@@ -4056,12 +4088,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   m_GameObject: {fileID: 955925403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 40.07, y: -20.04, z: 0}
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
   m_GameObject: {fileID: 962197996}
@@ -4069,6 +4107,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.423597, y: -9.092207, z: -0.14387254}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
+>>>>>>> Stashed changes
 =======
 >>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
 >>>>>>> Stashed changes
@@ -8801,8 +8843,11 @@ SceneRoots:
   - {fileID: 2003624506}
   - {fileID: 1153055137}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - {fileID: 962197998}
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
   - {fileID: 1980399758}
   - {fileID: 1162398198}
@@ -8825,4 +8870,7 @@ SceneRoots:
 =======
   - {fileID: 962197998}
 >>>>>>> 5b11c29de1b0776866a6c76acbd5d8c456b5ff19
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
