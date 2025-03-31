@@ -132,7 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Room2_Sheep_0: -1048495330934161557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

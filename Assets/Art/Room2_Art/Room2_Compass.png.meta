@@ -132,7 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Room2_Compass_0: 3329925201974892488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

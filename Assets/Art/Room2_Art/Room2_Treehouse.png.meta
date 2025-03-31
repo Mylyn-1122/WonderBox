@@ -132,7 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Room2_Treehouse_0: -2186531430083695994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
