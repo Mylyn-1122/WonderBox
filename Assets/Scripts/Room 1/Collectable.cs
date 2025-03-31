@@ -79,10 +79,6 @@ public class Collectable : MonoBehaviour
                 }
             }
         }
-        if (StainedGlassWindowGame.complete) {
-            PickUpItem(0);
-            StainedGlassWindowGame.complete = false;
-        }
     }
 }
 
