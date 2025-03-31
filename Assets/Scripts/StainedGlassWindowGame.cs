@@ -53,14 +53,14 @@ public class StainedGlassWindowGame : MonoBehaviour
         Shard6 = GameObject.Find("obj6").transform;
         Shard7 = GameObject.Find("obj7").transform;
         Shard8 = GameObject.Find("obj8").transform;
-        posShard1 = GameObject.Find("posObj1").transform;
-        posShard2 = GameObject.Find("posObj2").transform;
-        posShard3 = GameObject.Find("posObj3").transform;
-        posShard4 = GameObject.Find("posObj4").transform;
-        posShard5 = GameObject.Find("posObj5").transform;
-        posShard6 = GameObject.Find("posObj6").transform;
-        posShard7 = GameObject.Find("posObj7").transform;
-        posShard8 = GameObject.Find("posObj8").transform;
+        posShard1 = GameObject.Find("obj1Pos").transform;
+        posShard2 = GameObject.Find("obj2Pos").transform;
+        posShard3 = GameObject.Find("obj3Pos").transform;
+        posShard4 = GameObject.Find("obj4Pos").transform;
+        posShard5 = GameObject.Find("obj5Pos").transform;
+        posShard6 = GameObject.Find("obj6Pos").transform;
+        posShard7 = GameObject.Find("obj7Pos").transform;
+        posShard8 = GameObject.Find("obj8Pos").transform;
 
 
         dMan = FindAnyObjectByType<DialogueManager>();
@@ -156,9 +156,10 @@ public class StainedGlassWindowGame : MonoBehaviour
             if (!compText)
             {
                 compText = dMan.ShowBox(compTextD);
+                complete = true;
             }
-
-            complete = true;
+            
+            
 
         }
     }

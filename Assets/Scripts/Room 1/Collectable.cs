@@ -6,6 +6,9 @@ public class Collectable : MonoBehaviour
 {
     public InventoryManager inventoryManager;
     public Item[] itemsToPickUp;
+    public static bool redC;
+    public static bool yellowC;
+    public static bool blueC;
 
     public void PickUpItem(int id)
     {
@@ -67,14 +70,17 @@ public class Collectable : MonoBehaviour
                     if (hit.collider.gameObject.name == "starKey_Red")
                     {
                         PickUpItem(2);
+                        redC = true;
 
                     }
                     else if (hit.collider.gameObject.name == "starKey_Blue")
                     {
-                        PickUpItem(0);
+                        PickUpItem(1);
+                        blueC = true;
                     }
                     else if (hit.collider.gameObject.name == "starKey_Yellow") {
-                        PickUpItem(1);
+                        PickUpItem(0);
+                        yellowC = true;
                     }
                 }
             }
