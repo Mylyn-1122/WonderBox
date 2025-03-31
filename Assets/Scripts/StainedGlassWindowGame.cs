@@ -38,7 +38,7 @@ public class StainedGlassWindowGame : MonoBehaviour
 
     public InventoryManager inventoryManager;
     public Item[] itemsToPickUp;
-    public static bool complete;
+    public static bool complete = false;
 
 
 
@@ -157,6 +157,7 @@ public class StainedGlassWindowGame : MonoBehaviour
             {
                 compText = dMan.ShowBox(compTextD);
                 complete = true;
+
             }
             
             

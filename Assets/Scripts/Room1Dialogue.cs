@@ -54,6 +54,7 @@ public class Room1Dialouge : MonoBehaviour
                         text2 = dMan.ShowBox(R2);
                         Camera.main.transform.position = new Vector3(20, -20, -10);
 
+
                     }
                 }
 

@@ -134,7 +134,6 @@ public class InventoryManager : MonoBehaviour
     public static bool getStars() {
         return allStars;
     }
+
     
-
-
 }
