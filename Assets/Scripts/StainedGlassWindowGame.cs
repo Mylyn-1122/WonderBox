@@ -155,12 +155,13 @@ public class StainedGlassWindowGame : MonoBehaviour
 
             if (!compText)
             {
-                compText = dMan.ShowBox(compTextD);
                 complete = true;
-
+                compText = dMan.ShowBox(compTextD);
+                
             }
+
             
-            
+
 
         }
     }

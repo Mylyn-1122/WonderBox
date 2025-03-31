@@ -132,7 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stained Glass Completed_0: -8783980836700705666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

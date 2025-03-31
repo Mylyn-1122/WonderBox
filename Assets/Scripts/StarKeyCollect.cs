@@ -8,7 +8,7 @@ public class StarKeyCollectB : MonoBehaviour
     
 
     SpriteRenderer starKeyB;
-    
+
 
 
     // Start is called before the first frame update
@@ -23,12 +23,19 @@ public class StarKeyCollectB : MonoBehaviour
     void Update()
     {
 
+        
+
         if (StainedGlassWindowGame.complete) {
-            starKeyB.enabled = true;
+
+            starKeyB.GetComponent<BoxCollider2D>().enabled = true;
+            starKeyB.GetComponent<SpriteRenderer>().enabled = true;
+
+
         }
         if (Collectable.blueC)
         {
-            starKeyB.enabled = false;
+            starKeyB.GetComponent<BoxCollider2D>().enabled = false;
+            starKeyB.GetComponent<SpriteRenderer>().enabled = false;
         }
         
 
