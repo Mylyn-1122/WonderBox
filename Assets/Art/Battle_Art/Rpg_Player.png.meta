@@ -132,7 +132,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rpg_Player_0: -5920091820793154418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

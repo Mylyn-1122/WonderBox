@@ -232,7 +232,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rpg_Enemy1_0: 1089532896093478148
+      Rpg_Enemy1_1: 7227352458441299833
+      Rpg_Enemy1_2: -2768453261793572319
+      Rpg_Enemy1_3: 6500077695973429244
+      Rpg_Enemy1_4: 276494485785265443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
