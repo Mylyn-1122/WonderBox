@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 2e350bbce26fc4180bbcd5c48fb555b6
+guid: 7ab922243ce444f488afe9fd1ad31374
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1089532896093478148
-    second: Rpg_Enemy1_0
+      213: -8513556991320957320
+    second: RPG_Enemy4_0
   - first:
-      213: 7227352458441299833
-    second: Rpg_Enemy1_1
+      213: -4105168465491835521
+    second: RPG_Enemy4_1
   - first:
-      213: -2768453261793572319
-    second: Rpg_Enemy1_2
-  - first:
-      213: 6500077695973429244
-    second: Rpg_Enemy1_3
-  - first:
-      213: 276494485785265443
-    second: Rpg_Enemy1_4
+      213: -2643225935196457041
+    second: RPG_Enemy4_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,111 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rpg_Enemy1_0
+      name: RPG_Enemy4_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 899
-        width: 77
-        height: 171
+        x: 229
+        y: 234
+        width: 1645
+        height: 1725
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40d11ca756cce1f00800000000000000
-      internalID: 1089532896093478148
+      spriteID: 87e554de505c9d980800000000000000
+      internalID: -8513556991320957320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rpg_Enemy1_1
+      name: RPG_Enemy4_1
       rect:
         serializedVersion: 2
-        x: 84
-        y: 923
-        width: 456
-        height: 622
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1420
+        y: 1075
+        width: 244
+        height: 464
+      alignment: 9
+      pivot: {x: 0.46378213, y: 0.5952272}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 97790ffc4c6bc4460800000000000000
-      internalID: 7227352458441299833
+      spriteID: f75493fd7038707c0800000000000000
+      internalID: -4105168465491835521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rpg_Enemy1_2
+      name: RPG_Enemy4_2
       rect:
         serializedVersion: 2
-        x: 239
-        y: 197
-        width: 1606
-        height: 1601
+        x: 1716
+        y: 1682
+        width: 104
+        height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12ac5812d6a7499d0800000000000000
-      internalID: -2768453261793572319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rpg_Enemy1_3
-      rect:
-        serializedVersion: 2
-        x: 1609
-        y: 942
-        width: 352
-        height: 308
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cff8fe0c93ae43a50800000000000000
-      internalID: 6500077695973429244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rpg_Enemy1_4
-      rect:
-        serializedVersion: 2
-        x: 1874
-        y: 905
-        width: 51
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 325c597154e46d300800000000000000
-      internalID: 276494485785265443
+      spriteID: fa7f38f2400615bd0800000000000000
+      internalID: -2643225935196457041
       vertices: []
       indices: 
       edges: []
@@ -225,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9a507a5b8a33243e99a799bb680cef78
     internalID: 0
     vertices: []
     indices: 
@@ -233,11 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rpg_Enemy1_0: 1089532896093478148
-      Rpg_Enemy1_1: 7227352458441299833
-      Rpg_Enemy1_2: -2768453261793572319
-      Rpg_Enemy1_3: 6500077695973429244
-      Rpg_Enemy1_4: 276494485785265443
+      RPG_Enemy4_0: -8513556991320957320
+      RPG_Enemy4_1: -4105168465491835521
+      RPG_Enemy4_2: -2643225935196457041
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
