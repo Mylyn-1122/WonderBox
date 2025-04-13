@@ -41,7 +41,7 @@ public class RPGManagerR1 : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (hit.collider.gameObject.tag == "Attack" && playerTurn == true)
+            if (Input.GetKeyDown(KeyCode.S)&& playerTurn == true)
             {
                 enemy.setHealth(player.getAttack());
                 playerTurn = false;
