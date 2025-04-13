@@ -20,8 +20,9 @@ public class StarKeyComplete: MonoBehaviour
     private bool key2_solved = false;
     private bool key3_solved = false;
 
+    
     private VideoPlayer player;
-
+    private bool animation2Finished = false;
 
     public InventoryManager inventoryManager;
     public Item[] itemsToPickUp;
@@ -40,9 +41,10 @@ public class StarKeyComplete: MonoBehaviour
         posKey2 = GameObject.Find("StarBPos").transform;
         posKey3 = GameObject.Find("StarYPos").transform;
 
-        
-  
-       
+        player = GameObject.Find("Room1_Cutsceen").GetComponent<VideoPlayer>();
+        player.isLooping = false;
+
+
 
 
     }
@@ -88,9 +90,22 @@ public class StarKeyComplete: MonoBehaviour
 
             completeRoom = true;
             player.Play();
-
+            
 
 
         }
+
+        if (animation2Finished)
+        {
+            SceneManager.LoadScene("Room2", LoadSceneMode.Single);
+        }
+        player.loopPointReached += EndReached;
     }
+
+    void EndReached(UnityEngine.Video.VideoPlayer vp)
+    {
+        vp.gameObject.SetActive(false);
+        animation2Finished = true;
+    }
+
 }

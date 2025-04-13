@@ -14,6 +14,7 @@ public class RPGManagerR1 : MonoBehaviour
     private RPGEnemy enemy;
     private int RoledMultiplier;
     public bool DefP = false;
+    private static bool victor;
 
     private DialogueManager dialogueManager;
     private bool dialogueFinished = true;
@@ -29,30 +30,44 @@ public class RPGManagerR1 : MonoBehaviour
         player = tempPlayer.GetComponent<RPGPlayer>();
         enemy = tempEnemy.GetComponent<RPGEnemy>();
 
-        dialogueManager = FindObjectOfType<DialogueManager>();
+        dialogueManager = FindFirstObjectByType<DialogueManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player.getHealth() <= 0)
+        {
+            SceneManager.LoadScene("Room1Final");
+            Debug.Log("Player Lost");
+            victor = false;
+        }
+        else if (enemy.getHealth() <= 0)
+        {
+            SceneManager.LoadScene("Room1Final");
+            Debug.Log("Player Won!");
+            victor = true;
+
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            if (Input.GetKeyDown(KeyCode.S)&& playerTurn == true)
+            
+        }
+        if (Input.GetKeyDown(KeyCode.A) && playerTurn == true)
+        {
+            enemy.setHealth(player.getAttack());
+            playerTurn = false;
+            if (enemy.getHealth() < 1)
             {
-                enemy.setHealth(player.getAttack());
-                playerTurn = false;
-                if (enemy.getHealth() < 1)
-                {
-                    SceneManager.LoadScene("Room3");
-                }
-                message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
-                dialogueFinished = false;
-                player.setAttackMultiplier(0);
+                SceneManager.LoadScene("Room1Final");
             }
+            message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
+            dialogueFinished = false;
+            player.setAttackMultiplier(0);
         }
         else if (Input.GetKeyDown(KeyCode.S) && playerTurn == true)
         {
@@ -92,7 +107,7 @@ public class RPGManagerR1 : MonoBehaviour
             playerTurn = true;
             DefP = false;
         }
-
+        
         if (!dialogueFinished)
         {
             dialogueManager.ShowBox(message);
@@ -101,19 +116,13 @@ public class RPGManagerR1 : MonoBehaviour
         {
             dialogueFinished = true;
         }
+        
+        
 
-        if (player.getHealth() <= 0)
-        {
-            SceneManager.LoadScene("Room1");
-            Debug.Log("Player Lost");
-        }
-        else if (enemy.getHealth() <= 0)
-        {
-            SceneManager.LoadScene("Room1");
-            Debug.Log("Player Won!");
+    }
 
-        }
-
+    public static bool getVictor() {
+        return victor;
     }
 
 }

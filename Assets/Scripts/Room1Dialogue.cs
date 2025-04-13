@@ -8,9 +8,14 @@ public class Room1Dialouge : MonoBehaviour
     private string[] R1 = { "I'm so high up..." , "Its beautiful."};
     private string[] R2 = { "Woah!", "It opened!"};
     private string[] R3 = { "I don't want to touch that yet." };
+    private string[] R4 = { "What just happened?? I ..won?" };
+    private string[] R5 = { "Ouch...I lost" };
     private bool text1 = false;
     private bool text2 = false;
     private bool text3 = false;
+    private bool text4 = false;
+    private bool text5 = false;
+
 
 
 

@@ -16,13 +16,16 @@ public class StarKeyCollectR: MonoBehaviour
     {
 
         starKeyR = gameObject.GetComponent<SpriteRenderer>();
+        starKeyR.enabled = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (RPGManagerR1.getVictor()) {
+            starKeyR.enabled = true;
+        }
 
         if (Collectable.redC)
         {

@@ -16,6 +16,7 @@ public class StarKeyCollectB : MonoBehaviour
     {
         
         starKeyB = gameObject.GetComponent<SpriteRenderer>();
+        starKeyB.enabled = false;
       
     }
 
@@ -27,15 +28,13 @@ public class StarKeyCollectB : MonoBehaviour
 
         if (StainedGlassWindowGame.complete) {
 
-            starKeyB.GetComponent<BoxCollider2D>().enabled = true;
-            starKeyB.GetComponent<SpriteRenderer>().enabled = true;
+            starKeyB.enabled = true;
 
 
         }
         if (Collectable.blueC)
         {
-            starKeyB.GetComponent<BoxCollider2D>().enabled = false;
-            starKeyB.GetComponent<SpriteRenderer>().enabled = false;
+            starKeyB.enabled = false;
         }
         
 
