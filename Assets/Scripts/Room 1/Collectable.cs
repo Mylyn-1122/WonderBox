@@ -69,13 +69,13 @@ public class Collectable : MonoBehaviour
                 {
                     if (hit.collider.gameObject.name == "starKey_Red")
                     {
-                        PickUpItem(2);
+                        PickUpItem(0);
                         redC = true;
 
                     }
                     else if (hit.collider.gameObject.name == "starKey_Blue")
                     {
-                        PickUpItem(1);
+                        PickUpItem(0);
                         blueC = true;
                     }
                     else if (hit.collider.gameObject.name == "starKey_Yellow") {
