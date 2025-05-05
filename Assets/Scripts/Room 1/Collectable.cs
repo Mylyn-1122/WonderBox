@@ -69,8 +69,9 @@ public class Collectable : MonoBehaviour
                 {
                     if (hit.collider.gameObject.name == "starKey_Red")
                     {
-                        PickUpItem(0);
+                        PickUpItem(1);
                         redC = true;
+                        
 
                     }
                     else if (hit.collider.gameObject.name == "starKey_Blue")
@@ -79,7 +80,7 @@ public class Collectable : MonoBehaviour
                         blueC = true;
                     }
                     else if (hit.collider.gameObject.name == "starKey_Yellow") {
-                        PickUpItem(0);
+                        PickUpItem(2);
                         yellowC = true;
                     }
                 }

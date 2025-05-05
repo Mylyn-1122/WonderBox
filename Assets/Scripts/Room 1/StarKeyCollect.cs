@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class StarKeyCollectB : MonoBehaviour
 {
-    
-
-    SpriteRenderer starKeyB;
 
 
+    //SpriteRenderer starKeyB;
+
+    GameObject starKeyB;
 
     // Start is called before the first frame update
     void Start()
     {
         
-        starKeyB = gameObject.GetComponent<SpriteRenderer>();
-        starKeyB.enabled = false;
+        //starKeyB = gameObject.GetComponent<SpriteRenderer>();
+        starKeyB = GameObject.Find("starKey_Blue");
+        starKeyB.SetActive(false);
       
     }
 
@@ -28,13 +29,13 @@ public class StarKeyCollectB : MonoBehaviour
 
         if (StainedGlassWindowGame.complete) {
 
-            starKeyB.enabled = true;
+            starKeyB.SetActive(true);
 
 
         }
         if (Collectable.blueC)
         {
-            starKeyB.enabled = false;
+            starKeyB.SetActive(false);
         }
         
 
