@@ -27,7 +27,7 @@ public class StarKeyCollectR: MonoBehaviour
             starKeyR.enabled = true;
         }
 
-        if (Collectable.redC)
+        if ()
         {
             starKeyR.enabled = false;
         }

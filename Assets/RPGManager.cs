@@ -55,7 +55,7 @@ public class RPGManagerR1 : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            
+
         }
         if (Input.GetKeyDown(KeyCode.A) && playerTurn == true)
         {
@@ -107,7 +107,7 @@ public class RPGManagerR1 : MonoBehaviour
             playerTurn = true;
             DefP = false;
         }
-        
+
         if (!dialogueFinished)
         {
             dialogueManager.ShowBox(message);
@@ -116,13 +116,15 @@ public class RPGManagerR1 : MonoBehaviour
         {
             dialogueFinished = true;
         }
-        
-        
+
+
 
     }
 
     public static bool getVictor() {
         return victor;
     }
+
+    
 
 }
