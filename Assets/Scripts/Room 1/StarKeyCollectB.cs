@@ -27,10 +27,10 @@ public class StarKeyCollectR: MonoBehaviour
             starKeyR.enabled = true;
         }
 
-        if ()
-        {
-            starKeyR.enabled = false;
-        }
+        //if ()
+        //{
+        //    starKeyR.enabled = false;
+        //}
 
 
     }
