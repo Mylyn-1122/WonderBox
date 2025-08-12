@@ -41,7 +41,7 @@ public class StarKeyComplete: MonoBehaviour
         posKey2 = GameObject.Find("StarBPos").transform;
         posKey3 = GameObject.Find("StarYPos").transform;
 
-        player = GameObject.Find("Room1_Cutsceen").GetComponent<VideoPlayer>();
+        player = GameObject.Find("R1Cutsceen").GetComponent<VideoPlayer>();
         player.isLooping = false;
 
 
@@ -57,7 +57,7 @@ public class StarKeyComplete: MonoBehaviour
         if (magnitude < 0.5)
         {
             key1.position = posKey1.position;
-            //print("Solved shard 1");
+            print("Solved shard 1");
             key1_solved = true;
 
 
@@ -69,7 +69,7 @@ public class StarKeyComplete: MonoBehaviour
         {
 
             key2.position = posKey2.position;
-            // print("Solved shard 2");
+            print("Solved shard 2");
             key2_solved = true;
         }
 
@@ -79,7 +79,7 @@ public class StarKeyComplete: MonoBehaviour
         {
 
             key3.position = posKey3.position;
-            //print("Solved shard 3");
+            print("Solved shard 3");
             key3_solved = true;
         }
 

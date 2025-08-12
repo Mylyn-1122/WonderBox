@@ -17,12 +17,15 @@ public class SceneChange : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-            if (hit.collider.gameObject.tag == "RPG")
+            if (hit.collider!= null)
             {
+                if (hit.collider.gameObject.tag == "RPG")
+                {
 
-                SceneManager.LoadScene("RPG1");
+                    SceneManager.LoadScene("RPG1");
+                }
             }
+           
         }
     }
 }
