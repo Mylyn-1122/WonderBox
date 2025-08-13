@@ -43,6 +43,7 @@ public class StarKeyComplete: MonoBehaviour
 
         player = GameObject.Find("R1Cutsceen").GetComponent<VideoPlayer>();
         player.isLooping = false;
+        //print("Initialized!");
 
 
 
@@ -54,32 +55,32 @@ public class StarKeyComplete: MonoBehaviour
     {
         Vector3 distance = key1.position - posKey1.position;
         float magnitude = distance.magnitude;
-        if (magnitude < 0.5)
+        if (magnitude <= 0.5)
         {
             key1.position = posKey1.position;
-            print("Solved shard 1");
+            //print("Solved shard 1");
             key1_solved = true;
 
 
         }
 
         Vector3 distance2 = key2.position - posKey2.position;
-        magnitude = distance2.magnitude;
-        if (magnitude < 0.5)
+        float magnitude2 = distance2.magnitude;
+        if (magnitude2 <= 0.5)
         {
 
             key2.position = posKey2.position;
-            print("Solved shard 2");
+            //print("Solved shard 2");
             key2_solved = true;
         }
 
         Vector3 distance3 = key3.position - posKey3.position;
-        magnitude = distance3.magnitude;
-        if (magnitude < 0.5)
+        float magnitude3 = distance3.magnitude;
+        if (magnitude3 <= 0.5)
         {
 
             key3.position = posKey3.position;
-            print("Solved shard 3");
+            //print("Solved shard 3");
             key3_solved = true;
         }
 
@@ -89,6 +90,7 @@ public class StarKeyComplete: MonoBehaviour
 
 
             completeRoom = true;
+            player.gameObject.SetActive(true);
             player.Play();
             
 
