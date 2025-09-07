@@ -103,13 +103,13 @@ TextureImporter:
       name: Untitled_Artwork 65_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 1127
+        y: 265
+        width: 346
+        height: 270
+      alignment: 9
+      pivot: {x: 0.49999964, y: 0.50000006}
+      border: {x: 0, y: 6, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -125,14 +125,15 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 416ade84c0e6c46bca471f6ef1b56f2d
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Untitled_Artwork 65_0: 1808992623968315973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

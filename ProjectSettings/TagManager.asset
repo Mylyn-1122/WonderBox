@@ -9,6 +9,10 @@ TagManager:
   - FinalP
   - Back
   - RPG
+  - BottomR
+  - BottomL
+  - TopL
+  - TopR
   layers:
   - Default
   - TransparentFX
