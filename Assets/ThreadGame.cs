@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ThreadGame : MonoBehaviour
 {
+//change thread movement tomm, do it in here instead of in other file.
     bool dragging = false;
     private LineRenderer Line;
     private Transform thread1;
