@@ -16,4 +16,17 @@ public class PlayerWaterGame : MonoBehaviour
         transform.position += direction * Time.deltaTime;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Obs"))
+        {
+            FindFirstObjectByType<GameManager>().gameOver();
+        }else if (other.gameObject.tag.Equals("Scoring"))
+        {
+            FindFirstObjectByType<GameManager>().incScore();
+        }else if (other.gameObject.tag.Equals("Fish"))
+        {
+            FindFirstObjectByType<GameManager>().win();
+        }
+    }
 }

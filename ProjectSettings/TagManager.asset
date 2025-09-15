@@ -13,6 +13,9 @@ TagManager:
   - BottomL
   - TopL
   - TopR
+  - Obs
+  - Scoring
+  - Fish
   layers:
   - Default
   - TransparentFX

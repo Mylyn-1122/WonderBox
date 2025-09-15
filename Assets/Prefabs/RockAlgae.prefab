@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8138504133898243518}
   m_Layer: 0
   m_Name: Algae
-  m_TagString: Untagged
+  m_TagString: Obs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 8897372196744050825}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Obs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 647405992782326426}
   m_Layer: 0
   m_Name: ScoreTrack
-  m_TagString: Untagged
+  m_TagString: Scoring
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
