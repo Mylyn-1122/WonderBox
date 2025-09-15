@@ -5,12 +5,12 @@ public class ThreadGame : MonoBehaviour
     bool Dragging = false;
     public LineRenderer Line;
     public Transform endThread;
-    private int finished;
+ 
+    public bool Connected = false;
 
     void Start()
     {
-        finished = 0;
-
+       
     }
 
     void Update()
@@ -27,19 +27,17 @@ public class ThreadGame : MonoBehaviour
 
             Vector3 endWireDiff = convMousePos - endThread.position;
             float magnitude = endWireDiff.magnitude;
-            if(magnitude < 0.25)
+            if(magnitude < 0.5f)
             {
                 transform.position = endThread.position;
                 Line.SetPosition(2, endThread.position);
                 Dragging = false;
-                finished++;
+                Connected = true;
+                
             }
         }
 
-        if(finished == 5)
-        {
-            //
-        }
+        
     }
 
     private void OnMouseDown()
@@ -50,6 +48,21 @@ public class ThreadGame : MonoBehaviour
     private void OnMouseUp()
     {
         Dragging = false;
+        
+    }
+
+    public bool isConnected()
+    {
+        return (Connected);
+    }
+
+    public void SetConnected(bool pConnected)
+    {
+        Connected = pConnected;
+        if (!Connected)
+        {
+
+        }
     }
 }
 
