@@ -6,7 +6,7 @@ using UnityEngine;
 public class LockGameR3 : MonoBehaviour
 {
     private string answer;
-    private bool complete;
+    private static bool complete;
     SpriteRenderer closedSafe;
     public Sprite openSafe;
     private GameObject key;
@@ -43,7 +43,7 @@ public class LockGameR3 : MonoBehaviour
         Ten = GameObject.Find("10").transform;
         Eleven = GameObject.Find("11").transform;
         Twelve = GameObject.Find("12").transform;
-        answer = "0730";
+        answer = "";
         
     }
 
@@ -62,10 +62,11 @@ public class LockGameR3 : MonoBehaviour
             {
                 if (hit.collider.gameObject == Twelve)
                 {
-                    if (answer.Equals(""))
+                    if (answer.Equals("0730"))
                     {
                         closedSafe.sprite = openSafe;
                         key.SetActive(true);
+                        complete = true;
 
                         Debug.Log("Solved!");
                     }
@@ -125,6 +126,10 @@ public class LockGameR3 : MonoBehaviour
         
     }
 
+    public static bool returnClear()
+    {
+        return complete;
+    }
 
 
 }

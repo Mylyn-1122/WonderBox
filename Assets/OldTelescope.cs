@@ -9,12 +9,17 @@ public class OldTelescope : MonoBehaviour
     private Transform target;
     private bool mouse_press = false;
     private static bool cleared;
+   
+
+
+    public float angle;
 
     // Start is called before the first frame update
     void Start()
     {
         target = transform;
         cleared = false;
+
     }
 
     // Update is called once per frame
@@ -27,6 +32,12 @@ public class OldTelescope : MonoBehaviour
             float angleRad = Mathf.Atan2(mouse_pos.y - object_pos.y, mouse_pos.x - object_pos.x);
             float angleDeg = (180 / Mathf.PI) * angleRad - 90;
             this.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
+        }
+
+        if(this.transform.rotation.z == angle)
+        {
+            cleared = true;
+            
         }
     }
 
