@@ -11,12 +11,40 @@ public class LockGameR3 : MonoBehaviour
     public Sprite openSafe;
     private GameObject key;
 
+    private Transform One;
+    private Transform Two;
+    private Transform Three;
+    private Transform Four;
+    private Transform Five;
+    private Transform Six;
+    private Transform Seven;
+    private Transform Eight;
+    private Transform Nine;
+    private Transform Ten;
+    private Transform Eleven;
+    private Transform Twelve;
+
     // Start is called before the first frame update
     void Start()
     {
         closedSafe = gameObject.GetComponent<SpriteRenderer>();
-        key = GameObject.Find("key");
+        key = GameObject.Find("console");
         key.SetActive(false);
+
+        One = GameObject.Find("1").transform;
+        Two = GameObject.Find("2").transform;
+        Three = GameObject.Find("3").transform;
+        Four = GameObject.Find("4").transform;
+        Five = GameObject.Find("5").transform;
+        Six = GameObject.Find("6").transform;
+        Seven = GameObject.Find("7").transform;
+        Eight = GameObject.Find("8").transform;
+        Nine = GameObject.Find("9").transform;
+        Ten = GameObject.Find("10").transform;
+        Eleven = GameObject.Find("11").transform;
+        Twelve = GameObject.Find("12").transform;
+        answer = "0730";
+        
     }
 
     // Update is called once per frame
@@ -32,9 +60,9 @@ public class LockGameR3 : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Enter")
+                if (hit.collider.gameObject == Twelve)
                 {
-                    if (answer.Equals("3369"))
+                    if (answer.Equals(""))
                     {
                         closedSafe.sprite = openSafe;
                         key.SetActive(true);
@@ -42,61 +70,59 @@ public class LockGameR3 : MonoBehaviour
                         Debug.Log("Solved!");
                     }
                 }
-                if (hit.collider.gameObject.tag == "Delete")
+                if (hit.collider.gameObject == Eleven)
                 {
                     if (answer.Length > 0)
                     {
-                        answer = answer.Substring(0, answer.Length - 1);
+                        answer = "";
                     }
 
                 }
-                if (hit.collider.gameObject.tag == "One")
+                if (hit.collider.gameObject == One)
                 {
                     answer += "1";
                 }
-                if (hit.collider.gameObject.tag == "Two")
+                if (hit.collider.gameObject == Two)
                 {
                     answer += "2";
                 }
-                if (hit.collider.gameObject.tag == "Three")
+                if (hit.collider.gameObject == Three)
                 {
                     answer += "3";
                 }
-                if (hit.collider.gameObject.tag == "Four")
+                if (hit.collider.gameObject == Four)
                 {
                     answer += "4";
                 }
-                if (hit.collider.gameObject.tag == "Five")
+                if (hit.collider.gameObject == Five)
                 {
                     answer += "5";
                 }
-                if (hit.collider.gameObject.tag == "Six")
+                if (hit.collider.gameObject == Six)
                 {
                     answer += "6";
                 }
-                if (hit.collider.gameObject.tag == "Seven")
+                if (hit.collider.gameObject == Seven)
                 {
                     answer += "7";
                 }
-                if (hit.collider.gameObject.tag == "Eight")
+                if (hit.collider.gameObject == Eight)
                 {
                     answer += "8";
                 }
-                if (hit.collider.gameObject.tag == "Nine")
+                if (hit.collider.gameObject == Nine)
                 {
                     answer += "9";
                 }
-                if (hit.collider.gameObject.tag == "Zero")
+                if (hit.collider.gameObject == Ten)
                 {
                     answer += "0";
                 }
+               
             }
         }
         //sets key inactive when clicked
-        if (CaveNavigate.returnKey())
-        {
-            key.SetActive(false);
-        }
+        
     }
 
 
