@@ -337,8 +337,8 @@ GameObject:
   m_Component:
   - component: {fileID: 464256990}
   - component: {fileID: 464256989}
-  - component: {fileID: 464256988}
   - component: {fileID: 464256991}
+  - component: {fileID: 464256988}
   m_Layer: 0
   m_Name: WireRB
   m_TagString: BottomR
@@ -380,7 +380,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.188618}
+  m_Offset: {x: 0, y: 1.1615152}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -390,7 +390,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.8540449}
+  m_Size: {x: 1, y: 2.1538486}
   m_EdgeRadius: 0
 --- !u!212 &464256989
 SpriteRenderer:
@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1892eb6ff82714d87acfffd5c55cad50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
 --- !u!61 &645381233
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -986,8 +987,8 @@ GameObject:
   m_Component:
   - component: {fileID: 980946215}
   - component: {fileID: 980946214}
-  - component: {fileID: 980946213}
   - component: {fileID: 980946216}
+  - component: {fileID: 980946213}
   m_Layer: 0
   m_Name: WireLT
   m_TagString: TopL
@@ -1029,7 +1030,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.0682526}
+  m_Offset: {x: 0, y: 1.137687}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1039,7 +1040,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.6060742}
+  m_Size: {x: 1, y: 2.181758}
   m_EdgeRadius: 0
 --- !u!212 &980946214
 SpriteRenderer:
@@ -1105,7 +1106,7 @@ Transform:
   m_GameObject: {fileID: 980946212}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.119961575, w: 0.99277854}
-  m_LocalPosition: {x: -38.6882, y: -0.8728, z: 0}
+  m_LocalPosition: {x: -38.38, y: -0.73, z: 0}
   m_LocalScale: {x: 0.25399733, y: 1.392567, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1133,8 +1134,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1177518104}
   - component: {fileID: 1177518103}
+  - component: {fileID: 1177518105}
   - component: {fileID: 1177518102}
-  - component: {fileID: 1177518101}
   m_Layer: 0
   m_Name: WireLB
   m_TagString: BottomL
@@ -1142,18 +1143,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1177518101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177518100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 085bfbd52f71842bf90fc677dde4dfe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1177518102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1188,7 +1177,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.1743733}
+  m_Offset: {x: 0, y: 1.1671926}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1198,7 +1187,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.786629}
+  m_Size: {x: 1, y: 2.193083}
   m_EdgeRadius: 0
 --- !u!212 &1177518103
 SpriteRenderer:
@@ -1270,6 +1259,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.675}
+--- !u!114 &1177518105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177518100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bfbd52f71842bf90fc677dde4dfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1180541853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,8 +1746,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1476063512}
   - component: {fileID: 1476063511}
-  - component: {fileID: 1476063510}
   - component: {fileID: 1476063513}
+  - component: {fileID: 1476063510}
   m_Layer: 0
   m_Name: WireRT
   m_TagString: TopR
@@ -1788,7 +1789,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.1591797}
+  m_Offset: {x: 0, y: 1.1094078}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1798,7 +1799,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.7176251}
+  m_Size: {x: 1, y: 2.2351048}
   m_EdgeRadius: 0
 --- !u!212 &1476063511
 SpriteRenderer:
@@ -1864,7 +1865,7 @@ Transform:
   m_GameObject: {fileID: 1476063509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.3028254, w: 0.95304614}
-  m_LocalPosition: {x: -41.86, y: -1.7, z: 0}
+  m_LocalPosition: {x: -41.95, y: -1.7, z: 0}
   m_LocalScale: {x: 0.15001228, y: 0.92152387, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
