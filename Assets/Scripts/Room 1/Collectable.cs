@@ -10,8 +10,15 @@ public class Collectable : MonoBehaviour
     public static bool yellowC;
     public static bool blueC;
 
+    private void Awake()
+    {
+        SaveGameManager.Instance.Collectable = this;
+    }
+
     public void PickUpItem(int id)
     {
+
+        
 
         bool result = inventoryManager.AddItem(itemsToPickUp[id]);
         if (result == true)
@@ -87,5 +94,28 @@ public class Collectable : MonoBehaviour
             }
         }
     }
+
+    #region Save and Load
+
+    public void Save(ref PlayerSaveData data)
+    {
+        data.YStar = yellowC;
+
+    }
+
+    public void Load(PlayerSaveData data)
+    {
+        if (data.YStar)
+        {
+            PickUpItem(2);
+            yellowC = data.YStar;
+        }
+    }
+    #endregion
 }
 
+[System.Serializable]
+public struct PlayerSaveData
+{
+    public bool YStar;
+}
