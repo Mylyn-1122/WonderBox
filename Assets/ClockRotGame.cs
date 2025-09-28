@@ -45,7 +45,7 @@ public class ClockRotGame : MonoBehaviour
         {
             if (HHand.rotation.z <= angle + 0.1 && HHand.rotation.z >= angle - 0.1)
             {
-                Debug.Log("Yes!");
+               
                 cleared = true;
             }
 
