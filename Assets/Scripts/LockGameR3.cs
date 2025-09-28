@@ -9,20 +9,20 @@ public class LockGameR3 : MonoBehaviour
     private static bool complete;
     SpriteRenderer closedSafe;
     public Sprite openSafe;
-    private GameObject key;
+    
 
-    private Transform One;
-    private Transform Two;
-    private Transform Three;
-    private Transform Four;
-    private Transform Five;
-    private Transform Six;
-    private Transform Seven;
-    private Transform Eight;
-    private Transform Nine;
-    private Transform Ten;
-    private Transform Eleven;
-    private Transform Twelve;
+    private GameObject One;
+    private GameObject Two;
+    private GameObject Three;
+    private GameObject Four;
+    private GameObject Five;
+    private GameObject Six;
+    private GameObject Seven;
+    private GameObject Eight;
+    private GameObject Nine;
+    private GameObject Ten;
+    private GameObject Eleven;
+    private GameObject Twelve;
 
     private GameObject Console;
 
@@ -30,26 +30,28 @@ public class LockGameR3 : MonoBehaviour
     void Start()
     {
         closedSafe = gameObject.GetComponent<SpriteRenderer>();
-        key = GameObject.Find("console");
-        key.SetActive(false);
+      
+        
 
-        One = GameObject.Find("1").transform;
-        Two = GameObject.Find("2").transform;
-        Three = GameObject.Find("3").transform;
-        Four = GameObject.Find("4").transform;
-        Five = GameObject.Find("5").transform;
-        Six = GameObject.Find("6").transform;
-        Seven = GameObject.Find("7").transform;
-        Eight = GameObject.Find("8").transform;
-        Nine = GameObject.Find("9").transform;
-        Ten = GameObject.Find("10").transform;
-        Eleven = GameObject.Find("11").transform;
-        Twelve = GameObject.Find("12").transform;
+        One = GameObject.Find("1");
+        Two = GameObject.Find("2");
+        Three = GameObject.Find("3");
+        Four = GameObject.Find("4");
+        Five = GameObject.Find("5");
+        Six = GameObject.Find("6");
+        Seven = GameObject.Find("7");
+        Eight = GameObject.Find("8");
+        Nine = GameObject.Find("9");
+        Ten = GameObject.Find("10");
+        Eleven = GameObject.Find("11");
+        Twelve = GameObject.Find("12");
+
         Console = GameObject.Find("console");
         answer = "";
+        Console.GetComponent<SpriteRenderer>().enabled = false;
+        Console.GetComponent<BoxCollider2D>().enabled = false;
 
-        
-        
+
     }
 
     // Update is called once per frame
@@ -67,18 +69,17 @@ public class LockGameR3 : MonoBehaviour
             {
                 if (hit.collider.gameObject == Twelve)
                 {
-                    if (answer.ToString().Equals("0730"))
+                    if (answer.Equals("0730"))
                     {
                         closedSafe.sprite = openSafe;
-                        key.SetActive(true);
+                     
                         complete = true;
-                        Console.SetActive(true);
+                        Console.GetComponent<SpriteRenderer>().enabled = true;
+                        Console.GetComponent<BoxCollider2D>().enabled = true;
+
                         Debug.Log("Solved!");
                     }
-                    else
-                    {
-                        Console.SetActive(false);
-                    }
+                   
                 }
                 if (hit.collider.gameObject == Eleven)
                 {
@@ -128,7 +129,7 @@ public class LockGameR3 : MonoBehaviour
                 {
                     answer += "0";
                 }
-                Debug.Log(answer.ToString());
+                Debug.Log("answer is " + answer);
             }
             
         }

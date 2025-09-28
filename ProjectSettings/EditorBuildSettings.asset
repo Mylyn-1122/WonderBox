@@ -17,5 +17,38 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room1/RPG1.unity
     guid: e7e3ee7995565420bb4f3339ef87e5c2
+  - enabled: 1
+    path: Assets/Scenes/Room3.unity
+    guid: cd3bc7d62a89646a0bc80d2a1e5ac1a8
+  - enabled: 1
+    path: Assets/Scenes/RPG_R3.unity
+    guid: 7c16d30401b7b46fe94daae184a714ca
+  - enabled: 1
+    path: Assets/Scenes/Room4.unity
+    guid: 54513e7e8994c4887b73cc46fc455586
+  - enabled: 1
+    path: Assets/Scenes/Room5.unity
+    guid: 53e73c80b83e04a0e8002ea22c6cb492
+  - enabled: 1
+    path: Assets/Scenes/Room6.unity
+    guid: 62366b54e3844404d9b02324e3d21c08
+  - enabled: 1
+    path: Assets/Scenes/Room7.unity
+    guid: 1644921ac594741de87e8f3c51ec4712
+  - enabled: 1
+    path: Assets/Scenes/Room8.unity
+    guid: cb23edc3541a046c7b8c7bb0079e0db8
+  - enabled: 1
+    path: Assets/Scenes/Room9.unity
+    guid: 5e59191bc298a4c648a134c4178d8f2c
+  - enabled: 1
+    path: Assets/Scenes/Room10.unity
+    guid: f386fea82d0254183b6f8f5316709048
+  - enabled: 1
+    path: Assets/Scenes/UnderWaterGame.unity
+    guid: 6cf1f8bcaca824308afd5ed09991eb20
+  - enabled: 1
+    path: Assets/Scenes/Finale.unity
+    guid: 0b3fb67529af2446eae988960c30765d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
