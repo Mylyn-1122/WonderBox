@@ -36,7 +36,9 @@ public class WireGameTV : MonoBehaviour
     private float RTTopY;
     private float RTBotX;
     private float RTBotY;
-
+    public int goal;
+    private static bool complete;
+   
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,6 +72,7 @@ public class WireGameTV : MonoBehaviour
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.max.y;
         RTBotX = RT.GetComponent<SpriteRenderer>().bounds.min.x;
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.min.y;
+        complete = false;
 
     }
 
@@ -89,7 +92,7 @@ public class WireGameTV : MonoBehaviour
 
         if (!LBC.IsTouching(LTC))
         {
-            LTC.transform.position = new Vector3(LBTopX, LBTopY, 0);
+            LTC.transform.position = new Vector3(LBTopX, LBTopY-1, 0);
         }
         if (!RBC.IsTouching(RTC))
         {
@@ -115,6 +118,21 @@ public class WireGameTV : MonoBehaviour
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.max.y;
         RTBotX = RT.GetComponent<SpriteRenderer>().bounds.min.x;
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.min.y;
+
+        if(LB.rotation.z <= goal + 1 && LB.rotation.z >= goal - 1)
+        {
+            if (LT.rotation.z <= goal + 1 && LT.rotation.z >= goal -1)
+            {
+                if (RB.rotation.z <= goal + 1 && RB.rotation.z >= goal - 1)
+                {
+                    if (RT.rotation.z <= goal + 1 && RT.rotation.z >= goal - 1)
+                    {
+                        complete = true;
+                       
+                    }
+                }
+            }
+        }
         
     }
 
@@ -131,5 +149,10 @@ public class WireGameTV : MonoBehaviour
     private void OnMouseUp()
     {
         mouse_press = false;
+    }
+
+    public static bool getComplete()
+    {
+        return complete;
     }
 }
