@@ -1,29 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class OldTelescope : MonoBehaviour
+public class ClockRotGame : MonoBehaviour
 {
+
     private Vector3 mouse_pos;
     private Vector3 object_pos;
     private Transform target;
     private bool mouse_press = false;
     private static bool cleared;
-    
+
 
 
     public float angle;
 
-    
+    private Transform MHand;
+    private Transform HHand;
 
-    // Start is called before the first frame update
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         target = transform;
         cleared = false;
 
-       
-
+        MHand = GameObject.Find("MHand").transform;
+        HHand = GameObject.Find("HHand").transform;
     }
 
     // Update is called once per frame
@@ -36,17 +36,21 @@ public class OldTelescope : MonoBehaviour
             float angleRad = Mathf.Atan2(mouse_pos.y - object_pos.y, mouse_pos.x - object_pos.x);
             float angleDeg = (180 / Mathf.PI) * angleRad - 90;
             this.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
-            
+
         }
 
-        if (this.transform.rotation.z <= angle + 0.1 && this.transform.rotation.z >= angle - 0.1)
+        
+
+        if (MHand.rotation.z <= angle + 0.1 && MHand.rotation.z >= angle - 0.1)
         {
-            cleared = true;
-           
+            if (HHand.rotation.z <= angle + 0.1 && HHand.rotation.z >= angle - 0.1)
+            {
+                Debug.Log("Yes!");
+                cleared = true;
+            }
+
         }
     }
-
-
 
     private void OnMouseDown()
     {
@@ -57,7 +61,8 @@ public class OldTelescope : MonoBehaviour
     {
         mouse_press = false;
     }
-    public static bool getClear() {
+    public static bool getClear()
+    {
         return cleared;
     }
 }

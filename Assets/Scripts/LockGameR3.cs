@@ -24,6 +24,8 @@ public class LockGameR3 : MonoBehaviour
     private Transform Eleven;
     private Transform Twelve;
 
+    private GameObject Console;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +45,10 @@ public class LockGameR3 : MonoBehaviour
         Ten = GameObject.Find("10").transform;
         Eleven = GameObject.Find("11").transform;
         Twelve = GameObject.Find("12").transform;
+        Console = GameObject.Find("console");
         answer = "";
+
+        
         
     }
 
@@ -62,13 +67,17 @@ public class LockGameR3 : MonoBehaviour
             {
                 if (hit.collider.gameObject == Twelve)
                 {
-                    if (answer.Equals("0730"))
+                    if (answer.ToString().Equals("0730"))
                     {
                         closedSafe.sprite = openSafe;
                         key.SetActive(true);
                         complete = true;
-
+                        Console.SetActive(true);
                         Debug.Log("Solved!");
+                    }
+                    else
+                    {
+                        Console.SetActive(false);
                     }
                 }
                 if (hit.collider.gameObject == Eleven)
@@ -119,8 +128,9 @@ public class LockGameR3 : MonoBehaviour
                 {
                     answer += "0";
                 }
-               
+                Debug.Log(answer.ToString());
             }
+            
         }
         //sets key inactive when clicked
         
