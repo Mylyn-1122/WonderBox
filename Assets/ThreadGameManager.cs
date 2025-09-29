@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class ThreadGameManager : MonoBehaviour
 {
     public List<ThreadGame> Threads;
+    public static bool win;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +30,12 @@ public class ThreadGameManager : MonoBehaviour
 
         if(connectedThreads == Threads.Count)
         {
-            Debug.Log("Win");
+            win = true;
         }
+    }
+
+    public static bool winGet()
+    {
+        return win;
     }
 }

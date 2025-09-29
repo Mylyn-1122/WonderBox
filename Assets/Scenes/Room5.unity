@@ -2181,6 +2181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 920257445}
   - component: {fileID: 920257444}
+  - component: {fileID: 920257446}
   m_Layer: 0
   m_Name: Untitled_Artwork 66_0
   m_TagString: Untagged
@@ -2258,6 +2259,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920257446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920257443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3049dc0c078f4fa9b4726f2d205a3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bearFixed: {fileID: 7157373493856071900, guid: fb22d6b939ef54a899449d565310be43, type: 3}
 --- !u!114 &1013099901 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6003445875131498154, guid: 2e49be1fd2d4b45eaa5969b68af183cf, type: 3}
