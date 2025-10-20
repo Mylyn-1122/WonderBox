@@ -184,7 +184,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chess hint_0: 3089669020023981264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
