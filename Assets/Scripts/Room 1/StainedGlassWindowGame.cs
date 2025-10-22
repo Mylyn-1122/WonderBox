@@ -40,7 +40,10 @@ public class StainedGlassWindowGame : MonoBehaviour
     public Item[] itemsToPickUp;
     public static bool complete = false;
 
-
+    private void Awake()
+    {
+        SaveGameManager.Instance.StainedGlassWindowGame = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +80,7 @@ public class StainedGlassWindowGame : MonoBehaviour
             Shard1.position = posShard1.position;
             //print("Solved shard 1");
             shard1_solved = true;
+            
 
 
         }
@@ -160,9 +164,53 @@ public class StainedGlassWindowGame : MonoBehaviour
                 
             }
 
-            
-
 
         }
+
+
     }
+
+    #region Load finihsed pieces funciton
+
+    public void loadFin()
+    {
+        Shard1.position = posShard1.position;
+        Shard2.position = posShard2.position;
+        Shard3.position = posShard3.position;
+        Shard4.position = posShard4.position;
+        Shard5.position = posShard5.position;
+        Shard6.position = posShard6.position;
+        Shard7.position = posShard7.position;
+        Shard8.position = posShard8.position;
+    }
+
+    #endregion
+
+    #region Save and Load
+
+    public void Save(ref StainedWindowData data)
+    {
+        data.StainedGlassWindow = complete;
+        data.StainedGlassWindowText = compText;
+
+    }
+
+    public void Load(StainedWindowData data)
+    {
+        if (data.StainedGlassWindow)
+        {
+            complete = data.StainedGlassWindow;
+            compText = data.StainedGlassWindowText;
+            loadFin();
+        }
+    }
+    #endregion
+
+}
+
+[System.Serializable]
+public struct StainedWindowData
+{
+    public bool StainedGlassWindow;
+    public bool StainedGlassWindowText;
 }

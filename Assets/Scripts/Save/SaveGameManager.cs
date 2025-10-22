@@ -25,6 +25,9 @@ public class SaveGameManager : MonoBehaviour
     }
 
     public Collectable Collectable { get; set; }
+    public StainedGlassWindowGame StainedGlassWindowGame { get; set; }
+    public SceneData SceneData { get; set; }
+    public SceneLoad SceneLoad { get; set; }
 
     private void Awake()
     {

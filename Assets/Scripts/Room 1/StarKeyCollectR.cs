@@ -16,7 +16,10 @@ public class StarKeyCollectY : MonoBehaviour
     {
 
         starKeyY = gameObject.GetComponent<SpriteRenderer>();
-
+        if (Collectable.yellowC)
+        {
+            starKeyY.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -32,3 +35,7 @@ public class StarKeyCollectY : MonoBehaviour
 
     }
 }
+
+
+
+

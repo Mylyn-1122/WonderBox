@@ -100,7 +100,8 @@ public class Collectable : MonoBehaviour
     public void Save(ref PlayerSaveData data)
     {
         data.YStar = yellowC;
-
+        data.BStar = blueC;
+        data.RStar = redC;
     }
 
     public void Load(PlayerSaveData data)
@@ -110,6 +111,16 @@ public class Collectable : MonoBehaviour
             PickUpItem(2);
             yellowC = data.YStar;
         }
+        if (data.BStar)
+        {
+            PickUpItem(0);
+            blueC = data.BStar;
+        }
+        if (data.RStar)
+        {
+            PickUpItem(0);
+            redC = data.RStar;
+        }
     }
     #endregion
 }
@@ -118,4 +129,6 @@ public class Collectable : MonoBehaviour
 public struct PlayerSaveData
 {
     public bool YStar;
+    public bool BStar;
+    public bool RStar;
 }
