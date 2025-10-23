@@ -9,6 +9,7 @@ public class Collectable : MonoBehaviour
     public static bool redC;
     public static bool yellowC;
     public static bool blueC;
+    public static bool RPG1Comp = false;
 
     private void Awake()
     {
@@ -102,6 +103,7 @@ public class Collectable : MonoBehaviour
         data.YStar = yellowC;
         data.BStar = blueC;
         data.RStar = redC;
+        data.RPG1Complete = SaveGameManager.RPG1;
     }
 
     public void Load(PlayerSaveData data)
@@ -121,6 +123,12 @@ public class Collectable : MonoBehaviour
             PickUpItem(0);
             redC = data.RStar;
         }
+
+        
+        RPG1Comp = data.RPG1Complete;
+        SaveGameManager.RPG1 = RPG1Comp;
+
+
     }
     #endregion
 }
@@ -131,4 +139,5 @@ public struct PlayerSaveData
     public bool YStar;
     public bool BStar;
     public bool RStar;
+    public bool RPG1Complete;
 }

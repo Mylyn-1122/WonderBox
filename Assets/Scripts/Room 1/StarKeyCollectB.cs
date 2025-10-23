@@ -9,7 +9,9 @@ public class StarKeyCollectR: MonoBehaviour
 
     SpriteRenderer starKeyR;
 
+    
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +20,14 @@ public class StarKeyCollectR: MonoBehaviour
         starKeyR = gameObject.GetComponent<SpriteRenderer>();
         starKeyR.enabled = false;
 
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (RPGManagerR1.getVictor()) {
+        if (SaveGameManager.RPG1) {
             starKeyR.enabled = true;
         }
 
@@ -34,4 +38,9 @@ public class StarKeyCollectR: MonoBehaviour
 
 
     }
+
+    
+
+    
 }
+

@@ -80,7 +80,6 @@ public class StainedGlassWindowGame : MonoBehaviour
             Shard1.position = posShard1.position;
             //print("Solved shard 1");
             shard1_solved = true;
-            
 
 
         }
@@ -170,10 +169,28 @@ public class StainedGlassWindowGame : MonoBehaviour
 
     }
 
-    #region Load finihsed pieces funciton
+    #region Load finished pieces funciton
 
     public void loadFin()
     {
+
+        Shard1 = GameObject.Find("obj1").transform;
+        Shard2 = GameObject.Find("obj2").transform;
+        Shard3 = GameObject.Find("obj3").transform;
+        Shard4 = GameObject.Find("obj4").transform;
+        Shard5 = GameObject.Find("obj5").transform;
+        Shard6 = GameObject.Find("obj6").transform;
+        Shard7 = GameObject.Find("obj7").transform;
+        Shard8 = GameObject.Find("obj8").transform;
+        posShard1 = GameObject.Find("obj1Pos").transform;
+        posShard2 = GameObject.Find("obj2Pos").transform;
+        posShard3 = GameObject.Find("obj3Pos").transform;
+        posShard4 = GameObject.Find("obj4Pos").transform;
+        posShard5 = GameObject.Find("obj5Pos").transform;
+        posShard6 = GameObject.Find("obj6Pos").transform;
+        posShard7 = GameObject.Find("obj7Pos").transform;
+        posShard8 = GameObject.Find("obj8Pos").transform;
+
         Shard1.position = posShard1.position;
         Shard2.position = posShard2.position;
         Shard3.position = posShard3.position;

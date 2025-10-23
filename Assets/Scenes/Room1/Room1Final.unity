@@ -4499,6 +4499,7 @@ MonoBehaviour:
   _sceneDataSOArray:
   - {fileID: 11400000, guid: 7bfa3cff4aa6944379dcb088843ed4d5, type: 2}
   - {fileID: 11400000, guid: 935de314fd7364cada853cf27b6bb21c, type: 2}
+  - {fileID: 11400000, guid: 8f050838ae5a44e7fbe5687ae55dd719, type: 2}
 --- !u!1 &1334856799
 GameObject:
   m_ObjectHideFlags: 0
