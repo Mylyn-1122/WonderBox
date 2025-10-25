@@ -6,7 +6,7 @@ public class ThreadGame : MonoBehaviour
     public LineRenderer Line;
     public Transform endThread;
  
-    public bool Connected = false;
+    public static bool Connected = false;
 
     void Start()
     {
@@ -51,7 +51,7 @@ public class ThreadGame : MonoBehaviour
         
     }
 
-    public bool isConnected()
+    public static bool isConnected()
     {
         return (Connected);
     }
