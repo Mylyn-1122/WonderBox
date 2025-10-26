@@ -18,7 +18,7 @@ public class Rope_Code : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ThreadGame.isConnected())
+        if (ThreadGame.Connected1())
         {
             Rope_Render.sprite = Rope;
         }

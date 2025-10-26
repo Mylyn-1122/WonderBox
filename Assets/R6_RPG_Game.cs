@@ -18,6 +18,7 @@ public class R6_RPG_Game : MonoBehaviour
 
     
     private SpriteRenderer Enemy;
+    private Sprite Enemy1;
     private Sprite Enemy2;
     private Sprite Enemy3;
     private Sprite Enemy4;
@@ -59,6 +60,9 @@ public class R6_RPG_Game : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
         if (player.getHealth() <= 0)
         {
             victor = false;
@@ -68,7 +72,7 @@ public class R6_RPG_Game : MonoBehaviour
             three = false; 
             four = false;
 
-            Enemy.sprite = Enemy;
+            Enemy.sprite = Enemy1;
             enemy.setHealth(-50);
 
         }
@@ -101,70 +105,69 @@ public class R6_RPG_Game : MonoBehaviour
             nav.GetComponent<SpriteRenderer>().enabled = true;
             nav.GetComponent<BoxCollider2D>().enabled = true;
             player.setHealth(-(100-player.getHealth()));
-
-        }
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
             if (hit.collider.gameObject.Equals(nav))
+            {
+                if (one == true && two == false)
                 {
-                    if (one == true && two == false)
-                    {
-                        Enemy.sprite = Enemy2;
-                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
-                        
-
-                    }
-                    else if (two == true && three == false)
-                    {
-                        Enemy.sprite = Enemy3;
-                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
-                        
-
-                    }
-                    else if (three == true && four == false)
-                    {
-                        Camera.main.transform.position = new Vector3(0, 40, -10);
-                    }
-                    else if (four == true){
-                        victor = true;
-                        Enemy.sprite = Enemy4;
-                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
-
-                    }
+                    Enemy.sprite = Enemy2;
+                    Enemy.GetComponent<SpriteRenderer>().enabled = true;
 
 
-                    nav.GetComponent<SpriteRenderer>().enabled = false;
-                    nav.GetComponent<BoxCollider2D>().enabled = false;
                 }
-        }
-        if (Input.GetKeyDown(KeyCode.A) && playerTurn == true)
-        {
-            enemy.setHealth(player.getAttack());
-            playerTurn = false;
+                else if (two == true && three == false)
+                {
+                    Enemy.sprite = Enemy3;
+                    Enemy.GetComponent<SpriteRenderer>().enabled = true;
 
-            message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
-            dialogueFinished = false;
-            player.setAttackMultiplier(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.S) && playerTurn == true)
-        {
-            RoledMultiplier = Random.Range(2, 5);
-            player.setAttackMultiplier(RoledMultiplier);
-            playerTurn = false;
-            message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
-            dialogueFinished = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.D) && playerTurn == true)
-        {
-            DefP = true;
-            playerTurn = false;
-            message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
-            dialogueFinished = false;
+
+                }
+                else if (three == true && four == false)
+                {
+                    Camera.main.transform.position = new Vector3(0, 40, -10);
+                }
+                else if (four == true)
+                {
+                    victor = true;
+                    Enemy.sprite = Enemy4;
+                    Enemy.GetComponent<SpriteRenderer>().enabled = true;
+
+                }
+
+
+                nav.GetComponent<SpriteRenderer>().enabled = false;
+                nav.GetComponent<BoxCollider2D>().enabled = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.A) && playerTurn == true)
+            {
+                enemy.setHealth(player.getAttack());
+                playerTurn = false;
+
+                message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
+                dialogueFinished = false;
+                player.setAttackMultiplier(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.S) && playerTurn == true)
+            {
+                RoledMultiplier = Random.Range(2, 5);
+                player.setAttackMultiplier(RoledMultiplier);
+                playerTurn = false;
+                message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
+                dialogueFinished = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.D) && playerTurn == true)
+            {
+                DefP = true;
+                playerTurn = false;
+                message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
+                dialogueFinished = false;
+            }
         }
 
         if (!playerTurn && dialogueFinished)
@@ -204,13 +207,13 @@ public class R6_RPG_Game : MonoBehaviour
 
     }
 
+
+        
+
     public static bool getVictor() {
         return victor;
     }
-    public static void setVictor(bool value)
-    {
-        victor = value;
-    }
+   
     
     /*
     // Edit for room 6

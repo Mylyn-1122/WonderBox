@@ -184,7 +184,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      suitcase_closed_0: -4129446226818318971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

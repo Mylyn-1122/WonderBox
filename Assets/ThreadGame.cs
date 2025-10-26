@@ -7,6 +7,7 @@ public class ThreadGame : MonoBehaviour
     public Transform endThread;
  
     public static bool Connected = false;
+    public bool conn = false;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class ThreadGame : MonoBehaviour
                 Line.SetPosition(2, endThread.position);
                 Dragging = false;
                 Connected = true;
+                conn = true;
                 
             }
         }
@@ -51,12 +53,17 @@ public class ThreadGame : MonoBehaviour
         
     }
 
-    public static bool isConnected()
+    public bool isConnected()
     {
-        return (Connected);
+        return (conn);
     }
 
-    public void SetConnected(bool pConnected)
+    public static bool Connected1()
+    {
+        return Connected;
+    }
+
+    /*public void SetConnected(bool pConnected)
     {
         Connected = pConnected;
         if (!Connected)
@@ -64,5 +71,6 @@ public class ThreadGame : MonoBehaviour
 
         }
     }
+    */
 }
 
