@@ -71,7 +71,7 @@ public class SaveSystem
 
         SaveGameManager.Instance.SceneData.Save(ref _saveData.SceneSaveData);
 
-
+        
     }
 
     public static void Load()

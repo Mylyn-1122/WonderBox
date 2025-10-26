@@ -24,12 +24,12 @@ public class SceneData : MonoBehaviour
         //Debug.Log(Data.UniqueName);
         Debug.Log(data.SceneID);
     }
-
+    
     public void Load(SceneSaveData data)
     {
         SaveGameManager.Instance.SceneLoad.LoadSceneByIndex(data.SceneID);
         Debug.Log(data.SceneID);
-    }
+    } 
 
     public async Task LoadAsync(SceneSaveData data)
     {
