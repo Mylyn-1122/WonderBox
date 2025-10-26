@@ -33,9 +33,10 @@ public class StarKeyCollected : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
-        if (RPGManagerR1.getVictor()&&!Collectable.redC) {
+        Debug.Log(SaveGameManager.RPG1);
+
+        if (SaveGameManager.RPG1&&!Collectable.redC) {
             starKeyR.enabled = true;
             starKeyR.GetComponent<BoxCollider2D>().enabled = true;
             starR.SetActive(true);

@@ -68,7 +68,7 @@ public class SaveGameManager : MonoBehaviour
             LoadSignal = true;
         }
 
-        Debug.Log(RPG1);
+        //Debug.Log(RPG1);
 
         if (SaveSignal && !_isSaving)
         {
