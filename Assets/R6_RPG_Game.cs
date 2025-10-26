@@ -144,7 +144,7 @@ public class R6_RPG_Game : MonoBehaviour
                 nav.GetComponent<BoxCollider2D>().enabled = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.A) && playerTurn == true)
+            if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
             {
                 enemy.setHealth(player.getAttack());
                 playerTurn = false;
@@ -153,7 +153,7 @@ public class R6_RPG_Game : MonoBehaviour
                 dialogueFinished = false;
                 player.setAttackMultiplier(0);
             }
-            else if (Input.GetKeyDown(KeyCode.S) && playerTurn == true)
+            else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
             {
                 RoledMultiplier = Random.Range(2, 5);
                 player.setAttackMultiplier(RoledMultiplier);
@@ -161,7 +161,7 @@ public class R6_RPG_Game : MonoBehaviour
                 message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
                 dialogueFinished = false;
             }
-            else if (Input.GetKeyDown(KeyCode.D) && playerTurn == true)
+            else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
             {
                 DefP = true;
                 playerTurn = false;

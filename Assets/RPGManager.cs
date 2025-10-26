@@ -23,6 +23,10 @@ public class RPGManagerR1 : MonoBehaviour
 
     private bool playerTurn = true;
 
+    private GameObject Attack;
+    private GameObject Defend;
+    private GameObject Hold;
+
     
 
     // Start is called before the first frame update
@@ -30,6 +34,9 @@ public class RPGManagerR1 : MonoBehaviour
     {
         tempPlayer = GameObject.Find("Player").transform;
         tempEnemy = GameObject.Find("Enemy").transform;
+        Attack = GameObject.Find("Attack");
+        Defend = GameObject.Find("Defend");
+        Hold = GameObject.Find("Hold");
         player = tempPlayer.GetComponent<RPGPlayer>();
         enemy = tempEnemy.GetComponent<RPGEnemy>();
 
@@ -66,7 +73,10 @@ public class RPGManagerR1 : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
         }
-        if (Input.GetKeyDown(KeyCode.A) && playerTurn == true)
+        
+        if (hit.collider != null)
+        {
+        if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
         {
             enemy.setHealth(player.getAttack());
             playerTurn = false;
@@ -80,7 +90,7 @@ public class RPGManagerR1 : MonoBehaviour
             dialogueFinished = false;
             player.setAttackMultiplier(0);
         }
-        else if (Input.GetKeyDown(KeyCode.S) && playerTurn == true)
+        else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
         {
             RoledMultiplier = Random.Range(2, 5);
             player.setAttackMultiplier(RoledMultiplier);
@@ -88,12 +98,13 @@ public class RPGManagerR1 : MonoBehaviour
             message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
             dialogueFinished = false;
         }
-        else if (Input.GetKeyDown(KeyCode.D) && playerTurn == true)
+        else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
         {
             DefP = true;
             playerTurn = false;
             message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
             dialogueFinished = false;
+        }
         }
 
         if (!playerTurn && dialogueFinished)
