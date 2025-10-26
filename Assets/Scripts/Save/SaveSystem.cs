@@ -12,6 +12,7 @@ public class SaveSystem
         public PlayerSaveData PlayerData;
         public StainedWindowData StainedWindowData;
         public SceneSaveData SceneSaveData;
+        public OldTelescopeData OldTelescopeData;
 
     }
 
@@ -66,7 +67,15 @@ public class SaveSystem
             SaveGameManager.Instance.StainedGlassWindowGame.Save(ref _saveData.StainedWindowData);
 
             Debug.Log(RPGManagerR1.getVictor());
-            Debug.Log("RPG Sve");
+            Debug.Log("RPG Save");
+        }
+
+        if (_saveData.SceneSaveData.SceneID == "TreeHouse")
+        {
+
+            SaveGameManager.Instance.OldTelescope.Save(ref _saveData.OldTelescopeData);
+            
+
         }
 
         SaveGameManager.Instance.SceneData.Save(ref _saveData.SceneSaveData);
@@ -107,6 +116,15 @@ public class SaveSystem
             SaveGameManager.Instance.Collectable.Load(_saveData.PlayerData);
 
             Debug.Log(RPGManagerR1.getVictor());
+        }
+
+        if (_saveData.SceneSaveData.SceneID == "TreeHouse")
+        {
+
+            SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
+            Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
+
+
         }
     }
 

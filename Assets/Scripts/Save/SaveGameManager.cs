@@ -29,6 +29,7 @@ public class SaveGameManager : MonoBehaviour
     public StainedGlassWindowGame StainedGlassWindowGame { get; set; }
     public SceneData SceneData { get; set; }
     public SceneLoad SceneLoad { get; set; }
+    public OldTelescope OldTelescope { get; set; }
 
 
     public static bool SaveSignal = false;

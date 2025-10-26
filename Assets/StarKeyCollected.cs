@@ -34,7 +34,7 @@ public class StarKeyCollected : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(SaveGameManager.RPG1);
+        
 
         if (SaveGameManager.RPG1&&!Collectable.redC) {
             starKeyR.enabled = true;

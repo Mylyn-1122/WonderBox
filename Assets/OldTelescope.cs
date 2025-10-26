@@ -14,7 +14,12 @@ public class OldTelescope : MonoBehaviour
 
     public float angle;
 
-    
+    private void Awake()
+    {
+        SaveGameManager.Instance.OldTelescope = this;
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,5 +65,29 @@ public class OldTelescope : MonoBehaviour
     public static bool getClear() {
         return cleared;
     }
+
+    #region save and load
+
+    public void Save(ref OldTelescopeData data)
+    {
+        data.TelescopeComp = cleared;
+
+    }
+
+    public void Load(OldTelescopeData data)
+    {
+        cleared = data.TelescopeComp;
+    }
+
+
+
+    #endregion
+
+
+}
+[System.Serializable]
+public struct OldTelescopeData
+{
+    public bool TelescopeComp;
 }
  
