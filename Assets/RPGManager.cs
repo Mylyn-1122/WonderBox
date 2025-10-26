@@ -46,6 +46,8 @@ public class RPGManagerR1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
         if (player.getHealth() <= 0)
         {
             victor = false;
@@ -67,78 +69,79 @@ public class RPGManagerR1 : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-        }
-        
-        if (hit.collider != null)
-        {
-        if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
-        {
-            enemy.setHealth(player.getAttack());
-            playerTurn = false;
-            if (enemy.getHealth() < 1)
-            {
-                SaveGameManager.RPG1 = true;
 
-                SceneManager.LoadScene("Room1Final");
-            }
-            message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
-            dialogueFinished = false;
-            player.setAttackMultiplier(0);
-        }
-        else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
-        {
-            RoledMultiplier = Random.Range(2, 5);
-            player.setAttackMultiplier(RoledMultiplier);
-            playerTurn = false;
-            message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
-            dialogueFinished = false;
-        }
-        else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
-        {
-            DefP = true;
-            playerTurn = false;
-            message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
-            dialogueFinished = false;
-        }
-        }
 
-        if (!playerTurn && dialogueFinished)
-        {
-            if (DefP == true)
+            if (hit.collider != null)
             {
-                if (enemy.getAttack() - player.getDefense() < 0)
+                if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
                 {
-                    player.setHealth(0);
+                    enemy.setHealth(player.getAttack());
+                    playerTurn = false;
+                    if (enemy.getHealth() < 1)
+                    {
+                        SaveGameManager.RPG1 = true;
+
+                        SceneManager.LoadScene("Room1Final");
+                    }
+                    message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
+                    dialogueFinished = false;
+                    player.setAttackMultiplier(0);
+                }
+                else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
+                {
+                    RoledMultiplier = Random.Range(2, 5);
+                    player.setAttackMultiplier(RoledMultiplier);
+                    playerTurn = false;
+                    message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
+                    dialogueFinished = false;
+                }
+                else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
+                {
+                    DefP = true;
+                    playerTurn = false;
+                    message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
+                    dialogueFinished = false;
+                }
+            }
+
+            if (!playerTurn && dialogueFinished)
+            {
+                if (DefP == true)
+                {
+                    if (enemy.getAttack() - player.getDefense() < 0)
+                    {
+                        player.setHealth(0);
+                    }
+                    else
+                    {
+                        player.setHealth(enemy.getAttack() - player.getDefense());
+
+                    }
                 }
                 else
                 {
-                    player.setHealth(enemy.getAttack() - player.getDefense());
-
+                    player.setHealth(enemy.getAttack());
                 }
+                message[0] = "The enemy attacked the player, player has " + player.getHealth();
+                dialogueFinished = false;
+                playerTurn = true;
+                DefP = false;
             }
-            else
-            {
-                player.setHealth(enemy.getAttack());
-            }
-            message[0] = "The enemy attacked the player, player has " + player.getHealth();
-            dialogueFinished = false;
-            playerTurn = true;
-            DefP = false;
-        }
 
-        if (!dialogueFinished)
-        {
-            dialogueManager.ShowBox(message);
+            if (!dialogueFinished)
+            {
+                dialogueManager.ShowBox(message);
+            }
+            if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
+            {
+                dialogueFinished = true;
+            }
         }
-        if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
-        {
-            dialogueFinished = true;
-        }
+    
 
 
 
