@@ -1,0 +1,171 @@
+using UnityEngine;
+
+public class Finale_RPG_Game : MonoBehaviour
+{
+    private Transform tempPlayer;
+    private Transform tempEnemy;
+    private RPGPlayer player;
+    private RPGEnemy enemy;
+    private int RoledMultiplier;
+    public bool DefP = false;
+    private static bool victor;
+
+    private DialogueManager dialogueManager;
+    private bool dialogueFinished = true;
+    private string[] message = new string[1];
+
+    private bool playerTurn = true;
+
+    private GameObject Attack;
+    private GameObject Defend;
+    private GameObject Hold;
+
+    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        tempPlayer = GameObject.Find("Player").transform;
+        tempEnemy = GameObject.Find("Enemy").transform;
+        Attack = GameObject.Find("Attack");
+        Defend = GameObject.Find("Defend");
+        Hold = GameObject.Find("Hold");
+        player = tempPlayer.GetComponent<RPGPlayer>();
+        enemy = tempEnemy.GetComponent<RPGEnemy>();
+
+        dialogueManager = FindFirstObjectByType<DialogueManager>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+        if (player.getHealth() <= 0)
+        {
+            victor = false;
+            Debug.Log("Player Lost!");
+
+        }
+        else if (enemy.getHealth() <= 0)
+        {
+            victor = true;
+            Debug.Log("Player Won!");
+
+
+
+
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            
+
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+
+
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
+                {
+                    enemy.setHealth(player.getAttack());
+                    playerTurn = false;
+                    if (enemy.getHealth() < 1)
+                    {
+                        // fix this
+                    }
+                    message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
+                    dialogueFinished = false;
+                    player.setAttackMultiplier(0);
+                }
+                else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
+                {
+                    RoledMultiplier = Random.Range(2, 5);
+                    player.setAttackMultiplier(RoledMultiplier);
+                    playerTurn = false;
+                    message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
+                    dialogueFinished = false;
+                }
+                else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
+                {
+                    DefP = true;
+                    playerTurn = false;
+                    message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
+                    dialogueFinished = false;
+                }
+            }
+
+            if (!playerTurn && dialogueFinished)
+            {
+                if (DefP == true)
+                {
+                    if (enemy.getAttack() - player.getDefense() < 0)
+                    {
+                        player.setHealth(0);
+                    }
+                    else
+                    {
+                        player.setHealth(enemy.getAttack() - player.getDefense());
+
+                    }
+                }
+                else
+                {
+                    player.setHealth(enemy.getAttack());
+                }
+                message[0] = "The enemy attacked the player, player has " + player.getHealth();
+                dialogueFinished = false;
+                playerTurn = true;
+                DefP = false;
+            }
+
+            if (!dialogueFinished)
+            {
+                dialogueManager.ShowBox(message);
+            }
+            if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
+            {
+                dialogueFinished = true;
+            }
+        }
+    
+
+
+
+    }
+
+    public static bool getVictor() {
+        return victor;
+    }
+    public static void setVictor(bool value)
+    {
+        victor = value;
+    }
+
+}
+/*
+    #region Save and Load
+    private void ls()
+    {
+        SceneManager.LoadScene("Room1Final");
+    }
+
+    public void Save(ref RPGMusicBox data)
+    {
+        data.RPG1Complete = getVictor();
+    }
+
+    public void Load(RPGMusicBox data)
+    {
+        victor = data.RPG1Complete;
+    }
+    #endregion
+
+} (remove its for the public class)
+
+[System.Serializable]
+public struct RPGMusicBox
+{
+    public bool RPG1Complete;
+}
+*/
