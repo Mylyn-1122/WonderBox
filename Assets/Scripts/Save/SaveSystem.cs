@@ -15,6 +15,8 @@ public class SaveSystem
         public OldTelescopeData OldTelescopeData;
         public WireTVData WireTVData;
         public ClockRotGameData ClockRotGameData;
+        public LockGameR3Data LockGameR3Data;
+        public ThreadGameManData ThreadGameManData;
 
     }
 
@@ -84,6 +86,16 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.ClockRotGame.Save(ref _saveData.ClockRotGameData);
+            SaveGameManager.Instance.LockGameR3.Save(ref _saveData.LockGameR3Data);
+
+            Debug.Log(RPGManagerR3.getVictor());
+            Debug.Log("RPG Save");
+        }
+
+        if (_saveData.SceneSaveData.SceneID == "Room5")
+        {
+
+            SaveGameManager.Instance.ThreadGameMan.Save(ref _saveData.ThreadGameManData);
             
 
 
@@ -145,9 +157,21 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.ClockRotGame.Load(_saveData.ClockRotGameData);
-          
+            SaveGameManager.Instance.LockGameR3.Load(_saveData.LockGameR3Data);
+            //Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
+
 
         }
+        if (_saveData.SceneSaveData.SceneID == "Room5")
+        {
+
+            SaveGameManager.Instance.ThreadGameMan.Load(_saveData.ThreadGameManData);
+            //add for other minigames
+
+
+        }
+
+
     }
 
     #endregion
@@ -174,6 +198,20 @@ public class SaveSystem
         if (_saveData.SceneSaveData.SceneID == "School")
         {
             SaveGameManager.Instance.ClockRotGame.Load(_saveData.ClockRotGameData);
+            SaveGameManager.Instance.LockGameR3.Load(_saveData.LockGameR3Data);
+
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room4")
+        {
+        //Need to rebuild stuff for lock game R4
+
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room5")
+        {
+            SaveGameManager.Instance.ThreadGameMan.Load(_saveData.ThreadGameManData);
+            //add more later
 
 
         }

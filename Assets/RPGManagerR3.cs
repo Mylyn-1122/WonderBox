@@ -167,6 +167,7 @@ public class RPGManagerR3 : MonoBehaviour
                     {
                         Camera.main.transform.position = new Vector3(0, 40, -10);
                         victor = true;
+                        SaveGameManager.RPG3 = true;
                     }
 
                     nav.GetComponent<SpriteRenderer>().enabled = false;
@@ -216,6 +217,26 @@ public class RPGManagerR3 : MonoBehaviour
         return victor;
     }
 
+    #region Save and Load
+    private void ls()
+    {
+        SceneManager.LoadScene("Room3");
+    }
 
+    public void Save(ref RPG3 data)
+    {
+        data.RPG3Complete = getVictor();
+    }
 
+    public void Load(RPG3 data)
+    {
+        victor = data.RPG3Complete;
+    }
+    #endregion
+
+}
+[System.Serializable]
+public struct RPG3
+{
+    public bool RPG3Complete;
 }

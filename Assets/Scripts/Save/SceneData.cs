@@ -6,12 +6,11 @@ public class SceneData : MonoBehaviour
 {
     public SceneDataSO Data;
 
-    
-
     private void Awake()
     {
         SaveGameManager.Instance.SceneData = this;
     }
+
 
     public void Save(ref SceneSaveData data)
     {

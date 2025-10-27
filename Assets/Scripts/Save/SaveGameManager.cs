@@ -32,6 +32,9 @@ public class SaveGameManager : MonoBehaviour
     public OldTelescope OldTelescope { get; set; }
     public WireGameTV WireGameTV { get; set; }
     public WaterGame WaterGame { get; set; }
+    public ClockRotGame ClockRotGame { get; set; }
+    public LockGameR3 LockGameR3 { get; set; }
+    public ThreadGameMan ThreadGameMan { get; set; }
 
 
     public static bool SaveSignal = false;

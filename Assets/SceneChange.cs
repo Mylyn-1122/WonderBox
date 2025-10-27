@@ -25,7 +25,7 @@ public class SceneChange : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider!= null)
             {
-                if (hit.collider.gameObject.tag == "RPG")
+                if (hit.collider.gameObject.tag == "RPG" &&!SaveGameManager.RPG1)
                 {
 
                     SaveGameManager.SaveSignal = true;

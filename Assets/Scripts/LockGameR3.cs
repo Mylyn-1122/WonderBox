@@ -26,6 +26,12 @@ public class LockGameR3 : MonoBehaviour
 
     private GameObject Console;
 
+    private void Awake()
+    {
+        SaveGameManager.Instance.LockGameR3 = this;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +68,15 @@ public class LockGameR3 : MonoBehaviour
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
         RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+        if (complete)
+        {
+            closedSafe.sprite = openSafe;
 
+            Console.GetComponent<SpriteRenderer>().enabled = true;
+            Console.GetComponent<BoxCollider2D>().enabled = true;
+
+            Debug.Log("Solved!");
+        }
         //Code for safe game, all click-check for user input
         if (Input.GetMouseButtonDown(0))
         {
@@ -72,13 +86,10 @@ public class LockGameR3 : MonoBehaviour
                 {
                     if (answer.Equals("0730"))
                     {
-                        closedSafe.sprite = openSafe;
+                       
                      
                         complete = true;
-                        Console.GetComponent<SpriteRenderer>().enabled = true;
-                        Console.GetComponent<BoxCollider2D>().enabled = true;
-
-                        Debug.Log("Solved!");
+                        
                     }
                    
                 }
@@ -138,10 +149,28 @@ public class LockGameR3 : MonoBehaviour
         
     }
 
+    #region save and load
     public static bool returnClear()
     {
         return complete;
     }
+    public void Save(ref LockGameR3Data data)
+    {
+        data.LockGameR3Comp = complete;
+
+    }
+
+    public void Load(LockGameR3Data data)
+    {
+        complete = data.LockGameR3Comp;
+    }
+    #endregion
 
 
 }
+[System.Serializable]
+public struct LockGameR3Data
+{
+    public bool LockGameR3Comp;
+}
+ 

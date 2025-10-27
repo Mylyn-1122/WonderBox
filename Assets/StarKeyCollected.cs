@@ -38,8 +38,10 @@ public class StarKeyCollected : MonoBehaviour
 
         if (SaveGameManager.RPG1&&!Collectable.redC) {
             starKeyR.enabled = true;
+            starKeyR.GetComponent<SpriteRenderer>().enabled = true;
             starKeyR.GetComponent<BoxCollider2D>().enabled = true;
             starR.SetActive(true);
+            
 
         }
         if (StainedGlassWindowGame.complete&&!Collectable.blueC) {

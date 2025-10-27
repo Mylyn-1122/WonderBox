@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 1049214138}
   endThread: {fileID: 1737524582}
-  Connected: 0
+  conn: 0
 --- !u!212 &448641882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2016,7 +2016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 1086823747}
   endThread: {fileID: 1145630524}
-  Connected: 0
+  conn: 0
 --- !u!212 &869831673
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2966,7 +2966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 1543552299}
   endThread: {fileID: 1036626248}
-  Connected: 0
+  conn: 0
 --- !u!212 &1143034099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3313,6 +3313,50 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.0002, y: -17.09, z: 0}
   m_LocalScale: {x: 4.5617, y: 1.4913, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1161345926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161345928}
+  - component: {fileID: 1161345927}
+  m_Layer: 0
+  m_Name: ThreadGameMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1161345927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161345926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424511a4a2d8b4b5fa801d8cf4327644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1161345928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161345926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.968737, y: 14.181924, z: -0.09296682}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3672,7 +3716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 259353776}
   endThread: {fileID: 414050172}
-  Connected: 0
+  conn: 0
 --- !u!212 &1447387813
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3901,7 +3945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 308117381}
   endThread: {fileID: 1959389808}
-  Connected: 0
+  conn: 0
 --- !u!212 &1495431886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5382,3 +5426,4 @@ SceneRoots:
   - {fileID: 2071271026}
   - {fileID: 1483178074}
   - {fileID: 1596636201}
+  - {fileID: 1161345928}
