@@ -21,6 +21,17 @@ public class SceneData : MonoBehaviour
             SaveGameManager.RPG1 = RPGManagerR1.getVictor();
             data.SceneID = "MusicBox";
         }
+
+        if(Data.UniqueName == "RPG3")
+        {
+            SaveGameManager.RPG3 = RPGManagerR3.getVictor();
+            data.SceneID = "Room3";
+        }
+        if (Data.UniqueName == "WaterGame")
+        {
+            SaveGameManager.wg = GameManager.victor();
+            data.SceneID = "Room4";
+        }
         //Debug.Log(Data.UniqueName);
         Debug.Log(data.SceneID);
     }

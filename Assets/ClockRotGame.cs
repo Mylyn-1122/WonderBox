@@ -16,6 +16,11 @@ public class ClockRotGame : MonoBehaviour
     private Transform MHand;
     private Transform HHand;
 
+    private void Awake()
+    {
+        SaveGameManager.Instance.ClockRotGame = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -65,4 +70,28 @@ public class ClockRotGame : MonoBehaviour
     {
         return cleared;
     }
+
+    #region save and load
+
+    public void Save(ref ClockRotGameData data)
+    {
+        data.ClockRotComplete = cleared;
+
+    }
+
+    public void Load(ClockRotGameData data)
+    {
+        cleared = data.ClockRotComplete;
+    }
+
+
+
+    #endregion
+
+}
+
+[System.Serializable]
+public struct ClockRotGameData
+{
+    public bool ClockRotComplete;
 }

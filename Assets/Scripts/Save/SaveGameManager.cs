@@ -30,11 +30,15 @@ public class SaveGameManager : MonoBehaviour
     public SceneData SceneData { get; set; }
     public SceneLoad SceneLoad { get; set; }
     public OldTelescope OldTelescope { get; set; }
+    public WireGameTV WireGameTV { get; set; }
+    public WaterGame WaterGame { get; set; }
 
 
     public static bool SaveSignal = false;
     public static bool RPG1 = false;
     public static bool LoadSignal = false;
+    public static bool RPG3 = false;
+    public static bool wg = false;
 
     private bool _isSaving;
     private bool _isLoading;

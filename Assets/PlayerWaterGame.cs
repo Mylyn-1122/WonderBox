@@ -26,7 +26,7 @@ public class PlayerWaterGame : MonoBehaviour
             FindFirstObjectByType<GameManager>().incScore();
         }else if (other.gameObject.tag.Equals("Fish"))
         {
-            FindFirstObjectByType<GameManager>().win();
+            FindFirstObjectByType<GameManager>().setWin();
         }
     }
 }

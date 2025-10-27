@@ -38,8 +38,12 @@ public class WireGameTV : MonoBehaviour
     private float RTBotY;
     public int goal;
     private static bool complete;
-   
 
+
+    private void Awake()
+    {
+        SaveGameManager.Instance.WireGameTV = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -92,7 +96,7 @@ public class WireGameTV : MonoBehaviour
 
         if (!LBC.IsTouching(LTC))
         {
-            LTC.transform.position = new Vector3(LBTopX, LBTopY-1, 0);
+            LTC.transform.position = new Vector3(LBTopX, LBTopY - 1, 0);
         }
         if (!RBC.IsTouching(RTC))
         {
@@ -119,22 +123,31 @@ public class WireGameTV : MonoBehaviour
         RTBotX = RT.GetComponent<SpriteRenderer>().bounds.min.x;
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.min.y;
 
-        if(LB.rotation.z <= goal + 1 && LB.rotation.z >= goal - 1)
+        if (LB.rotation.z <= goal + 1 && LB.rotation.z >= goal - 1)
         {
-            if (LT.rotation.z <= goal + 1 && LT.rotation.z >= goal -1)
+            if (LT.rotation.z <= goal + 1 && LT.rotation.z >= goal - 1)
             {
                 if (RB.rotation.z <= goal + 1 && RB.rotation.z >= goal - 1)
                 {
                     if (RT.rotation.z <= goal + 1 && RT.rotation.z >= goal - 1)
                     {
                         complete = true;
-                       
+
                     }
                 }
             }
         }
-        
+        if (complete)
+        {
+            LB.rotation = Quaternion.Euler(0,0,goal);
+            LT.rotation = Quaternion.Euler(0, 0, goal);
+            RB.rotation = Quaternion.Euler(0, 0, goal);
+            RT.rotation = Quaternion.Euler(0, 0, goal);
+        }
+
     }
+
+    
 
     public bool getMousePressed()
     {
@@ -155,4 +168,28 @@ public class WireGameTV : MonoBehaviour
     {
         return complete;
     }
+    #region save and load
+
+    public void Save(ref WireTVData data)
+    {
+        data.WireTVComp = complete;
+
+    }
+
+    public void Load(WireTVData data)
+    {
+        complete = data.WireTVComp;
+    }
+
+
+
+    #endregion
+ 
+}
+
+
+[System.Serializable]
+public struct WireTVData
+{
+    public bool WireTVComp;
 }

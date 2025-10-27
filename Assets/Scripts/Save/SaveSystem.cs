@@ -13,6 +13,8 @@ public class SaveSystem
         public StainedWindowData StainedWindowData;
         public SceneSaveData SceneSaveData;
         public OldTelescopeData OldTelescopeData;
+        public WireTVData WireTVData;
+        public ClockRotGameData ClockRotGameData;
 
     }
 
@@ -74,9 +76,21 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.OldTelescope.Save(ref _saveData.OldTelescopeData);
+            SaveGameManager.Instance.WireGameTV.Save(ref _saveData.WireTVData);
             
 
         }
+        if (_saveData.SceneSaveData.SceneID == "School")
+        {
+
+            SaveGameManager.Instance.ClockRotGame.Save(ref _saveData.ClockRotGameData);
+            
+
+
+        }
+
+
+
 
         SaveGameManager.Instance.SceneData.Save(ref _saveData.SceneSaveData);
 
@@ -122,8 +136,16 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
-            Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
+            SaveGameManager.Instance.WireGameTV.Load(_saveData.WireTVData);
+            //Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
 
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "School")
+        {
+
+            SaveGameManager.Instance.ClockRotGame.Load(_saveData.ClockRotGameData);
+          
 
         }
     }
@@ -140,10 +162,21 @@ public class SaveSystem
             SaveGameManager.Instance.Collectable.Load(_saveData.PlayerData);
 
 
+        }
+
+        if (_saveData.SceneSaveData.SceneID == "TreeHouse")
+        {
+            SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
+            SaveGameManager.Instance.WireGameTV.Load(_saveData.WireTVData);
 
 
         }
+        if (_saveData.SceneSaveData.SceneID == "School")
+        {
+            SaveGameManager.Instance.ClockRotGame.Load(_saveData.ClockRotGameData);
 
+
+        }
 
 
     }
