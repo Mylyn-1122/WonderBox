@@ -502,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &16890936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1125,7 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &258340881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &418723630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3762,7 +3762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &955188491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5490,7 +5490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &1482718902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5779,7 +5779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &1571681241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6536,7 +6536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &1642793729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7383,7 +7383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 0}
   endThread: {fileID: 0}
-  Connected: 0
+  conn: 0
 --- !u!61 &2132239778
 BoxCollider2D:
   m_ObjectHideFlags: 0

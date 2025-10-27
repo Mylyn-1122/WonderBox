@@ -35,6 +35,9 @@ public class SaveGameManager : MonoBehaviour
     public ClockRotGame ClockRotGame { get; set; }
     public LockGameR3 LockGameR3 { get; set; }
     public ThreadGameMan ThreadGameMan { get; set; }
+    public skeleGameManager skeleMan { get; set; }
+    public TrashGame TrashGame { get; set; }
+    public StarGameR7 StarGameR7 { get; set; }
 
 
     public static bool SaveSignal = false;

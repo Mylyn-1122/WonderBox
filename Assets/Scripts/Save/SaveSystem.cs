@@ -17,6 +17,9 @@ public class SaveSystem
         public ClockRotGameData ClockRotGameData;
         public LockGameR3Data LockGameR3Data;
         public ThreadGameManData ThreadGameManData;
+        public skeleGameManagerData skeleGameManagerData;
+        public TrashGameData TrashGameData;
+        public StarGameR7Data StarGameR7Data;
 
     }
 
@@ -96,8 +99,20 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.ThreadGameMan.Save(ref _saveData.ThreadGameManData);
-            
+          
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room6")
+        {
 
+            SaveGameManager.Instance.skeleMan.Save(ref _saveData.skeleGameManagerData);
+            SaveGameManager.Instance.TrashGame.Save(ref _saveData.TrashGameData);
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room7")
+        {
+
+            SaveGameManager.Instance.StarGameR7.Save(ref _saveData.StarGameR7Data);
+            
 
         }
 
@@ -170,6 +185,22 @@ public class SaveSystem
 
 
         }
+        if (_saveData.SceneSaveData.SceneID == "Room6")
+        {
+
+            SaveGameManager.Instance.skeleMan.Load(_saveData.skeleGameManagerData);
+            SaveGameManager.Instance.TrashGame.Load(_saveData.TrashGameData);
+            //add for other minigames
+
+        }
+
+        if (_saveData.SceneSaveData.SceneID == "Room7")
+        {
+
+            SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
+            
+
+        }
 
 
     }
@@ -215,7 +246,21 @@ public class SaveSystem
 
 
         }
+        if (_saveData.SceneSaveData.SceneID == "Room6")
+        {
+            SaveGameManager.Instance.skeleMan.Load(_saveData.skeleGameManagerData);
+            SaveGameManager.Instance.TrashGame.Load(_saveData.TrashGameData);
+            //add more later
 
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room7")
+        {
+            SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
+           
+
+
+        }
 
     }
 }

@@ -25,6 +25,11 @@ public class skeleGameManager : MonoBehaviour
 
     private static bool complete;
 
+    private void Awake()
+    {
+        SaveGameManager.Instance.skeleMan = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -113,7 +118,32 @@ public class skeleGameManager : MonoBehaviour
     {
         return complete;
     }
+    #region save and load
+
+    public void Save(ref skeleGameManagerData data)
+    {
+        data.skeleComp = complete;
+
+    }
+
+    public void Load(skeleGameManagerData data)
+    {
+        complete = data.skeleComp;
+    }
+
+
+
+    #endregion
+
+
 }
+[System.Serializable]
+public struct skeleGameManagerData
+{
+    public bool skeleComp;
+}
+ 
+
 
 
 

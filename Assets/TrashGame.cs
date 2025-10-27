@@ -27,7 +27,10 @@ public class TrashGame : MonoBehaviour
     private bool Five;
     private bool Six;
 
-
+    private void Awake()
+    {
+        SaveGameManager.Instance.TrashGame = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -116,9 +119,32 @@ public class TrashGame : MonoBehaviour
         }
 
     }
+    #region save and load
 
     public static bool returnComp()
     {
         return complete;
     }
+    public void Save(ref TrashGameData data)
+    {
+        data.trashComp = complete;
+
+    }
+
+    public void Load(TrashGameData data)
+    {
+        complete = data.trashComp;
+    }
+
+
+
+#endregion
+
+
 }
+[System.Serializable]
+public struct TrashGameData
+{
+    public bool trashComp;
+}
+
