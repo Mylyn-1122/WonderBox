@@ -59,14 +59,14 @@ public class Mirror_Shard_Game : MonoBehaviour
         Shard6 = GameObject.Find("obj6").transform;
         Shard7 = GameObject.Find("obj7").transform;
         Shard8 = GameObject.Find("obj8").transform;
-        posShard1 = GameObject.Find("obj1Pos").transform;
-        posShard2 = GameObject.Find("obj2Pos").transform;
-        posShard3 = GameObject.Find("obj3Pos").transform;
-        posShard4 = GameObject.Find("obj4Pos").transform;
-        posShard5 = GameObject.Find("obj5Pos").transform;
-        posShard6 = GameObject.Find("obj6Pos").transform;
-        posShard7 = GameObject.Find("obj7Pos").transform;
-        posShard8 = GameObject.Find("obj8Pos").transform;
+        posShard1 = GameObject.Find("posobj1").transform;
+        posShard2 = GameObject.Find("posobj2").transform;
+        posShard3 = GameObject.Find("posobj3").transform;
+        posShard4 = GameObject.Find("posobj4").transform;
+        posShard5 = GameObject.Find("posobj5").transform;
+        posShard6 = GameObject.Find("posobj6").transform;
+        posShard7 = GameObject.Find("posobj7").transform;
+        posShard8 = GameObject.Find("posobj8").transform;
 
 
 
@@ -81,8 +81,8 @@ public class Mirror_Shard_Game : MonoBehaviour
     void Update()
     {
         Vector3 distance = Shard1.position - posShard1.position;
-        float magnitude = distance.magnitude;
-        if (magnitude < 0.5)
+        float magnitude1 = distance.magnitude;
+        if (magnitude1 < 0.5)
         {
             Shard1.position = posShard1.position;
             //print("Solved shard 1");
@@ -95,8 +95,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance2 = Shard2.position - posShard2.position;
-        magnitude = distance2.magnitude;
-        if (magnitude < 0.5)
+        float magnitude2 = distance2.magnitude;
+        if (magnitude2 < 0.5)
         {
 
 
@@ -107,8 +107,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance3 = Shard3.position - posShard3.position;
-        magnitude = distance3.magnitude;
-        if (magnitude < 0.5)
+        float magnitude3 = distance3.magnitude;
+        if (magnitude3 < 0.5)
         {
 
 
@@ -119,8 +119,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance4 = Shard4.position - posShard4.position;
-        magnitude = distance4.magnitude;
-        if (magnitude < 0.5)
+        float magnitude4 = distance4.magnitude;
+        if (magnitude4 < 0.5)
         {
 
 
@@ -131,8 +131,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance5 = Shard5.position - posShard5.position;
-        magnitude = distance5.magnitude;
-        if (magnitude < 0.5)
+        float magnitude5 = distance5.magnitude;
+        if (magnitude5 < 0.5)
         {
 
 
@@ -143,8 +143,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance6 = Shard6.position - posShard6.position;
-        magnitude = distance6.magnitude;
-        if (magnitude < 0.5)
+        float magnitude6 = distance6.magnitude;
+        if (magnitude6 < 0.5)
         {
 
 
@@ -155,8 +155,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance7 = Shard7.position - posShard7.position;
-        magnitude = distance7.magnitude;
-        if (magnitude < 0.5)
+        float magnitude7 = distance7.magnitude;
+        if (magnitude7 < 0.5)
         {
 
 
@@ -167,8 +167,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         Vector3 distance8 = Shard8.position - posShard8.position;
-        magnitude = distance8.magnitude;
-        if (magnitude < 0.5)
+        float magnitude8 = distance8.magnitude;
+        if (magnitude8 < 0.5)
         {
 
 
