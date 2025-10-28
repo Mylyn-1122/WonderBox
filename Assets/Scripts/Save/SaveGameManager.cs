@@ -38,6 +38,8 @@ public class SaveGameManager : MonoBehaviour
     public skeleGameManager skeleMan { get; set; }
     public TrashGame TrashGame { get; set; }
     public StarGameR7 StarGameR7 { get; set; }
+    public LockGameR4 LockGameR4 { get; set; }
+    public Rope_Code Rope_Code { get; set; }
 
 
     public static bool SaveSignal = false;

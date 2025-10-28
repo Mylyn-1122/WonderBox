@@ -49,6 +49,11 @@ public class OldTelescope : MonoBehaviour
             cleared = true;
            
         }
+
+        if (cleared)
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
 

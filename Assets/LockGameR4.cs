@@ -12,7 +12,12 @@ public class LockGameR4 : MonoBehaviour
     private GameObject One;
     private GameObject Two;
     private GameObject open;
-   
+
+    private void Awake()
+    {
+        SaveGameManager.Instance.LockGameR4 = this;
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +46,7 @@ public class LockGameR4 : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject == open)
+                if (hit.collider.gameObject.Equals(open))
                 {
                     if(A1 == 5 && A2 == 2)
                     {
@@ -54,15 +59,40 @@ public class LockGameR4 : MonoBehaviour
                         A2 = 0;
                     }
                 }
-                if (hit.collider.gameObject == One)
+                if (hit.collider.gameObject.Equals(One))
                 {
                     A1++;
                 }
-                if (hit.collider.gameObject == Two)
+                if (hit.collider.gameObject.Equals(Two))
                 {
                     A2++;
                 }
             }
         }
     }
+
+    #region save and load
+
+    public void Save(ref LockGameR4Data data)
+    {
+        data.LockGameR4Comp = complete;
+
+    }
+
+    public void Load(LockGameR4Data data)
+    {
+        complete = data.LockGameR4Comp;
+    }
+
+
+
+    #endregion
+
+
 }
+[System.Serializable]
+public struct LockGameR4Data
+{
+    public bool LockGameR4Comp;
+}
+

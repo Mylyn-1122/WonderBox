@@ -20,6 +20,8 @@ public class SaveSystem
         public skeleGameManagerData skeleGameManagerData;
         public TrashGameData TrashGameData;
         public StarGameR7Data StarGameR7Data;
+        public LockGameR4Data LockGameR4Data;
+        public Rope_CodeData Rope_CodeData;
 
     }
 
@@ -94,6 +96,12 @@ public class SaveSystem
             Debug.Log(RPGManagerR3.getVictor());
             Debug.Log("RPG Save");
         }
+        if (_saveData.SceneSaveData.SceneID == "Room4")
+        {
+
+            SaveGameManager.Instance.LockGameR4.Save(ref _saveData.LockGameR4Data);
+
+        }
 
         if (_saveData.SceneSaveData.SceneID == "Room5")
         {
@@ -112,7 +120,7 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.StarGameR7.Save(ref _saveData.StarGameR7Data);
-            
+            SaveGameManager.Instance.Rope_Code.Save(ref _saveData.Rope_CodeData);
 
         }
 
@@ -177,6 +185,14 @@ public class SaveSystem
 
 
         }
+        if (_saveData.SceneSaveData.SceneID == "Room4")
+        {
+
+            SaveGameManager.Instance.LockGameR4.Load(_saveData.LockGameR4Data);
+            //add for other minigames
+
+
+        }
         if (_saveData.SceneSaveData.SceneID == "Room5")
         {
 
@@ -198,7 +214,8 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
-            
+            SaveGameManager.Instance.Rope_Code.Load( _saveData.Rope_CodeData);
+
 
         }
 
@@ -235,7 +252,7 @@ public class SaveSystem
         }
         if (_saveData.SceneSaveData.SceneID == "Room4")
         {
-        //Need to rebuild stuff for lock game R4
+            SaveGameManager.Instance.LockGameR4.Load(_saveData.LockGameR4Data);
 
 
         }
@@ -257,7 +274,7 @@ public class SaveSystem
         if (_saveData.SceneSaveData.SceneID == "Room7")
         {
             SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
-           
+            SaveGameManager.Instance.Rope_Code.Load( _saveData.Rope_CodeData);
 
 
         }

@@ -55,6 +55,12 @@ public class ClockRotGame : MonoBehaviour
             }
 
         }
+
+        if (cleared)
+        {
+            HHand.rotation = Quaternion.Euler(0, 0, angle);
+            MHand.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     private void OnMouseDown()
