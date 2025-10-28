@@ -46,12 +46,13 @@ public class LockGameR4 : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.Equals(open))
+                if (hit.collider.gameObject == open)
                 {
                     if(A1 == 5 && A2 == 2)
                     {
                         complete = true;
                         closedLock.sprite = openLock;
+                        Debug.Log(open);
                     }
                     else
                     {
@@ -59,13 +60,15 @@ public class LockGameR4 : MonoBehaviour
                         A2 = 0;
                     }
                 }
-                if (hit.collider.gameObject.Equals(One))
+                if (hit.collider.gameObject == One)
                 {
-                    A1++;
+                    A1 += 1;
+                    Debug.Log(A1);
                 }
-                if (hit.collider.gameObject.Equals(Two))
+                if (hit.collider.gameObject == Two)
                 {
-                    A2++;
+                    A2 +=1;
+                    Debug.Log(A2);
                 }
             }
         }
