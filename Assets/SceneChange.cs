@@ -30,7 +30,13 @@ public class SceneChange : MonoBehaviour
 
                     SaveGameManager.SaveSignal = true;
 
-                    
+                    SaveGameManager.R1Stars[0] = Collectable.yellowC;
+                    SaveGameManager.R1Stars[1] = Collectable.blueC;
+                    SaveGameManager.R1Stars[2] = Collectable.redC;
+
+
+
+
                     SceneManager.LoadScene("RPG1");
 
                 }

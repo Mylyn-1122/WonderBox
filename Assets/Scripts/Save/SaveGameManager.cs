@@ -42,6 +42,8 @@ public class SaveGameManager : MonoBehaviour
 
     public static bool SaveSignal = false;
     public static bool RPG1 = false;
+    public static bool[] R1Stars = new bool [3];
+    public static bool JustFinRPG1 = false;
     public static bool LoadSignal = false;
     public static bool RPG3 = false;
     public static bool wg = false;

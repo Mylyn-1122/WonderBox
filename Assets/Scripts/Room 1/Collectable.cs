@@ -16,6 +16,28 @@ public class Collectable : MonoBehaviour
         SaveGameManager.Instance.Collectable = this;
     }
 
+    public void Start()
+    {
+        if (SaveGameManager.JustFinRPG1 == true){
+            if (SaveGameManager.R1Stars[0])
+            {
+                yellowC = true;
+                PickUpItem(2);
+            }
+            if(SaveGameManager.R1Stars[1])
+            {
+                blueC = true;
+                PickUpItem(0);
+            }
+            if (SaveGameManager.R1Stars[2])
+            {
+                redC = true;
+                PickUpItem(1);
+            }
+            SaveGameManager.JustFinRPG1 = false;
+        }
+    }
+
     public void PickUpItem(int id)
     {
 
@@ -79,17 +101,19 @@ public class Collectable : MonoBehaviour
                     {
                         PickUpItem(1);
                         redC = true;
-                        
+                        SaveGameManager.R1Stars[2] = redC;
 
                     }
                     else if (hit.collider.gameObject.name == "starKey_Blue")
                     {
                         PickUpItem(0);
                         blueC = true;
+                        SaveGameManager.R1Stars[1] = blueC;
                     }
                     else if (hit.collider.gameObject.name == "starKey_Yellow") {
                         PickUpItem(2);
                         yellowC = true;
+                        SaveGameManager.R1Stars[0] = yellowC;
                     }
                 }
             }
@@ -111,20 +135,30 @@ public class Collectable : MonoBehaviour
         if (data.YStar)
         {
             PickUpItem(2);
-            yellowC = data.YStar;
+            
         }
+
+        yellowC = data.YStar;
+        SaveGameManager.R1Stars[0] = yellowC;
+
         if (data.BStar)
         {
             PickUpItem(0);
-            blueC = data.BStar;
-        }
-        if (data.RStar)
-        {
-            PickUpItem(0);
-            redC = data.RStar;
+            
         }
 
-        
+        blueC = data.BStar;
+        SaveGameManager.R1Stars[1] = blueC;
+
+        if (data.RStar)
+        {
+            PickUpItem(1);
+            
+        }
+        redC = data.RStar;
+        SaveGameManager.R1Stars[2] = redC;
+
+
         RPG1Comp = data.RPG1Complete;
         SaveGameManager.RPG1 = RPG1Comp;
 

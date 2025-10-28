@@ -53,6 +53,7 @@ public class RPGManagerR1 : MonoBehaviour
             victor = false;
             Debug.Log("Player Lost!");
             SaveGameManager.RPG1 = false;
+            SaveGameManager.JustFinRPG1 = true;
             SceneManager.LoadScene("RPG1");
 
         }
@@ -61,6 +62,7 @@ public class RPGManagerR1 : MonoBehaviour
             victor = true;
             Debug.Log("Player Won!");
             SaveGameManager.RPG1 = true;
+            SaveGameManager.JustFinRPG1 = true;
             SceneManager.LoadScene("Room1Final");
 
 
@@ -84,7 +86,7 @@ public class RPGManagerR1 : MonoBehaviour
                     if (enemy.getHealth() < 0)
                     {
                         SaveGameManager.RPG1 = true;
-
+                        SaveGameManager.JustFinRPG1 = true;
                         SceneManager.LoadScene("Room1Final");
                     }
                     message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
