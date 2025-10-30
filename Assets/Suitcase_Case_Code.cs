@@ -80,38 +80,47 @@ public class Suitcase_Case_Code : MonoBehaviour
                 if (hit.collider.gameObject == One)
                 {
                     answer += "1";
+                    Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Two)
                 {
                     answer += "2";
+                     Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Three)
                 {
                     answer += "3";
+                     Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Four)
                 {
                     answer += "4";
+                     Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Five)
                 {
                     answer += "5";
+                     Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Six)
                 {
                     answer += "6";
+                     Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Seven)
                 {
                     answer += "7";
+                    Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Eight)
                 {
                     answer += "8";
+                     Debug.Log(answer);
                 }
                 if (hit.collider.gameObject == Nine)
                 {
                     answer += "9";
+                     Debug.Log(answer);
                 }
                 Debug.Log("answer is " + answer);
             }
