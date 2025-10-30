@@ -28,16 +28,19 @@ public class Suitcase_Case_Code : MonoBehaviour
     {
         
 
-        Zero = GameObject.Find("0");
-        One = GameObject.Find("1");
-        Two = GameObject.Find("2");
-        Three = GameObject.Find("3");
-        Four = GameObject.Find("4");
-        Five = GameObject.Find("5");
-        Six = GameObject.Find("6");
-        Seven = GameObject.Find("7");
-        Eight = GameObject.Find("8");
-        Nine = GameObject.Find("9");
+        Zero = GameObject.Find("Zero");
+        One = GameObject.Find("One");
+        Two = GameObject.Find("Two");
+        Three = GameObject.Find("Three");
+        Four = GameObject.Find("Four");
+        Five = GameObject.Find("Five");
+        Six = GameObject.Find("Six");
+        Seven = GameObject.Find("Seven");
+        Eight = GameObject.Find("Eight");
+        Nine = GameObject.Find("Nine");
+
+        Enter = GameObject.Find("Enter");
+        Delete = GameObject.Find("Delete");
 
 
     }
@@ -77,6 +80,11 @@ public class Suitcase_Case_Code : MonoBehaviour
 
 
                 }
+                if (hit.collider.gameObject == Zero)
+                {
+                    answer += "0";
+                    Debug.Log('0');
+                }
                 if (hit.collider.gameObject == One)
                 {
                     answer += "1";
@@ -90,7 +98,7 @@ public class Suitcase_Case_Code : MonoBehaviour
                 if (hit.collider.gameObject == Three)
                 {
                     answer += "3";
-                     Debug.Log(answer);
+                     Debug.Log('3');
                 }
                 if (hit.collider.gameObject == Four)
                 {
@@ -110,7 +118,7 @@ public class Suitcase_Case_Code : MonoBehaviour
                 if (hit.collider.gameObject == Seven)
                 {
                     answer += "7";
-                    Debug.Log(answer);
+                    Debug.Log('7');
                 }
                 if (hit.collider.gameObject == Eight)
                 {
