@@ -96,7 +96,7 @@ public class WireGameTV : MonoBehaviour
 
         if (!LBC.IsTouching(LTC))
         {
-            LTC.transform.position = new Vector3(LBTopX, LBTopY - 1, 0);
+            LTC.transform.position = new Vector3(LBTopX, LBTopY, 0);
         }
         if (!RBC.IsTouching(RTC))
         {
