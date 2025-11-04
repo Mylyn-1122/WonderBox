@@ -25,6 +25,7 @@ public class ThreadGame : MonoBehaviour
 
             Vector3 posDiff = convMousePos - Line.transform.position;
             Line.SetPosition(2, convMousePos);
+            Line.SetPosition(1, convMousePos);
 
             Vector3 endWireDiff = convMousePos - endThread.position;
             float magnitude = endWireDiff.magnitude;
@@ -32,6 +33,7 @@ public class ThreadGame : MonoBehaviour
             {
                 transform.position = endThread.position;
                 Line.SetPosition(2, endThread.position);
+                Line.SetPosition(1, endThread.position);
                 Dragging = false;
                 Connected = true;
                 conn = true;
