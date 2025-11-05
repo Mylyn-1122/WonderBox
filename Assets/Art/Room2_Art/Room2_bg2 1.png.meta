@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 151de48e04fb5dd47880b6a57641ecd2
+guid: 86a97840130614af68380c8d3d2b2bc4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2841843245814843217
-    second: Untitled143_20251103221515_0
+      213: 325072385083975841
+    second: Room2_bg2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,59 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Win64
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -152,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled143_20251103221515_0
+      name: Room2_bg2_0
       rect:
         serializedVersion: 2
-        x: 898
-        y: 1186
-        width: 674
-        height: 679
+        x: 1266
+        y: 660
+        width: 110
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa8fcd9ef9ebf88d0800000000000000
-      internalID: -2841843245814843217
+      spriteID: 1a82837ac93e28400800000000000000
+      internalID: 325072385083975841
       vertices: []
       indices: 
       edges: []
@@ -177,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 57427cc6ae8b740c9b548e0e9d63ab9e
     internalID: 0
     vertices: []
     indices: 
@@ -185,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Untitled143_20251103221515_0: -2841843245814843217
+      Room2_bg2_0: 325072385083975841
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

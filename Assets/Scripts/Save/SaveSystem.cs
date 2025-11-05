@@ -12,16 +12,27 @@ public class SaveSystem
         public PlayerSaveData PlayerData;
         public StainedWindowData StainedWindowData;
         public SceneSaveData SceneSaveData;
+
         public OldTelescopeData OldTelescopeData;
         public WireTVData WireTVData;
+        public KeyShardGameData KeyShardGameData;
+
         public ClockRotGameData ClockRotGameData;
         public LockGameR3Data LockGameR3Data;
+
         public ThreadGameManData ThreadGameManData;
+
         public skeleGameManagerData skeleGameManagerData;
         public TrashGameData TrashGameData;
+
         public StarGameR7Data StarGameR7Data;
+
         public LockGameR4Data LockGameR4Data;
         public Rope_CodeData Rope_CodeData;
+
+        public MirrorShardData MirrorShardData;
+        public SuitcaseData SuitcaseData;
+        public TicketShardData TicketShardData;
 
     }
 
@@ -84,7 +95,8 @@ public class SaveSystem
 
             SaveGameManager.Instance.OldTelescope.Save(ref _saveData.OldTelescopeData);
             SaveGameManager.Instance.WireGameTV.Save(ref _saveData.WireTVData);
-            
+            SaveGameManager.Instance.KeyShardGame.Save(ref _saveData.KeyShardGameData);
+
 
         }
         if (_saveData.SceneSaveData.SceneID == "School")
@@ -121,6 +133,14 @@ public class SaveSystem
 
             SaveGameManager.Instance.StarGameR7.Save(ref _saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Save(ref _saveData.Rope_CodeData);
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room10")
+        {
+
+            SaveGameManager.Instance.MirrorShard.Save(ref _saveData.MirrorShardData);
+            SaveGameManager.Instance.Suitcase.Save(ref _saveData.SuitcaseData);
+            SaveGameManager.Instance.TicketShard.Save(ref _saveData.TicketShardData);
 
         }
 
@@ -172,6 +192,8 @@ public class SaveSystem
 
             SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
             SaveGameManager.Instance.WireGameTV.Load(_saveData.WireTVData);
+            SaveGameManager.Instance.KeyShardGame.Load(_saveData.KeyShardGameData);
+
             //Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
 
 
@@ -216,6 +238,14 @@ public class SaveSystem
             SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Load( _saveData.Rope_CodeData);
 
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room10")
+        {
+
+            SaveGameManager.Instance.MirrorShard.Load(_saveData.MirrorShardData);
+            SaveGameManager.Instance.Suitcase.Load(_saveData.SuitcaseData);
+            SaveGameManager.Instance.TicketShard.Load(_saveData.TicketShardData);
 
         }
 
@@ -240,7 +270,7 @@ public class SaveSystem
         {
             SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
             SaveGameManager.Instance.WireGameTV.Load(_saveData.WireTVData);
-
+            SaveGameManager.Instance.KeyShardGame.Load(_saveData.KeyShardGameData);
 
         }
         if (_saveData.SceneSaveData.SceneID == "School")
@@ -276,6 +306,13 @@ public class SaveSystem
             SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Load( _saveData.Rope_CodeData);
 
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room10")
+        {
+            SaveGameManager.Instance.MirrorShard.Load(_saveData.MirrorShardData);
+            SaveGameManager.Instance.Suitcase.Load(_saveData.SuitcaseData);
+            SaveGameManager.Instance.TicketShard.Load(_saveData.TicketShardData);
 
         }
 

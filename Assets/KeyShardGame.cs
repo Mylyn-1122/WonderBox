@@ -31,8 +31,12 @@ public class KeyShardGame : MonoBehaviour
 
 
 
+    private static bool victor;
 
-
+    private void Awake()
+    {
+        SaveGameManager.Instance.KeyShardGame = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +49,7 @@ public class KeyShardGame : MonoBehaviour
         posShard2 = GameObject.Find("obj2Pos").transform;
         posShard3 = GameObject.Find("obj3Pos").transform;
 
-
+        victor = false;
 
 
 
@@ -108,7 +112,7 @@ public class KeyShardGame : MonoBehaviour
                
             }
 
-
+            victor = true;
            
 
 
@@ -116,5 +120,35 @@ public class KeyShardGame : MonoBehaviour
 
         }
     }
+
+    public static bool getVictor()
+    {
+        return victor;
+    }
+    #region save and load
+
+    public void Save(ref KeyShardGameData data)
+    {
+        data.KeyShardComp = victor;
+
+    }
+
+    public void Load(KeyShardGameData data)
+    {
+        victor = data.KeyShardComp;
+    }
+
+
+
+    #endregion
+
+
 }
+
+[System.Serializable]
+public struct KeyShardGameData
+{
+    public bool KeyShardComp;
+}
+
 

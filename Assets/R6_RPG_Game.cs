@@ -16,24 +16,24 @@ public class R6_RPG_Game : MonoBehaviour
 
     private bool playerTurn = true;
 
-    
+
     private SpriteRenderer Enemy;
     private Sprite Enemy1;
-    private Sprite Enemy2;
-    private Sprite Enemy3;
-    private Sprite Enemy4;
+    public Sprite Enemy2;
+    public Sprite Enemy3;
+    public Sprite Enemy4;
 
     private bool one;
     private bool two;
     private bool three;
     private bool four;
-    
+
     private GameObject nav;
 
     private GameObject Attack;
     private GameObject Defend;
     private GameObject Hold;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +46,7 @@ public class R6_RPG_Game : MonoBehaviour
         Hold = GameObject.Find("Hold");
         player = tempPlayer.GetComponent<RPGPlayer>();
         enemy = tempEnemy.GetComponent<RPGEnemy>();
+        
 
         dialogueManager = FindFirstObjectByType<DialogueManager>();
 
@@ -55,6 +56,9 @@ public class R6_RPG_Game : MonoBehaviour
         two = false;
         three = false;
         four = false;
+
+        Enemy = GameObject.Find("Enemy").GetComponent<SpriteRenderer>();
+        Enemy.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     // Update is called once per frame
@@ -69,7 +73,7 @@ public class R6_RPG_Game : MonoBehaviour
             Debug.Log("Player Lost!");
             one = false;
             two = false;
-            three = false; 
+            three = false;
             four = false;
 
             Enemy.sprite = Enemy1;
@@ -78,12 +82,13 @@ public class R6_RPG_Game : MonoBehaviour
         }
         else if (enemy.getHealth() <= 0)
         {
-             if (one == false)
+            if (one == false)
             {
                 one = true;
                 enemy.setHealth(-75);
             }
-            else {
+            else
+            {
                 if (two == false)
                 {
                     two = true;
@@ -91,156 +96,165 @@ public class R6_RPG_Game : MonoBehaviour
                 }
                 else
                 {
-                    if (three == false){
+                    if (three == false)
+                    {
                         three = true;
                     }
-                    
-                    else{
-                             four = true;
-                        }
+
+                    else
+                    {
+                        four = true;
+                    }
                 }
             }
-            }
+
             Enemy.GetComponent<SpriteRenderer>().enabled = false;
             nav.GetComponent<SpriteRenderer>().enabled = true;
             nav.GetComponent<BoxCollider2D>().enabled = true;
-            player.setHealth(-(100-player.getHealth()));
+            player.setHealth(-(100 - player.getHealth()));
+        }
         if (Input.GetMouseButtonDown(0))
         {
 
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-            if (hit.collider.gameObject.Equals(nav))
+            if (hit.collider != null)
             {
-                if (one == true && two == false)
+                if (hit.collider.gameObject.Equals(nav))
                 {
-                    Enemy.sprite = Enemy2;
-                    Enemy.GetComponent<SpriteRenderer>().enabled = true;
+                    if (one == true && two == false)
+                    {
+                        Enemy.sprite = Enemy2;
+                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
 
 
+                    }
+                    else if (two == true && three == false)
+                    {
+                        Enemy.sprite = Enemy3;
+                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
+
+
+                    }
+                    else if (three == true && four == false)
+                    {
+                        Camera.main.transform.position = new Vector3(0, 40, -10);
+                    }
+                    else if (four == true)
+                    {
+                        victor = true;
+                        Enemy.sprite = Enemy4;
+                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
+
+                    }
+
+
+                    nav.GetComponent<SpriteRenderer>().enabled = false;
+                    nav.GetComponent<BoxCollider2D>().enabled = false;
                 }
-                else if (two == true && three == false)
+
+                if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
                 {
-                    Enemy.sprite = Enemy3;
-                    Enemy.GetComponent<SpriteRenderer>().enabled = true;
+                    enemy.setHealth(player.getAttack());
+                    playerTurn = false;
 
-
+                    message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
+                    dialogueFinished = false;
+                    player.setAttackMultiplier(0);
                 }
-                else if (three == true && four == false)
+                else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
                 {
-                    Camera.main.transform.position = new Vector3(0, 40, -10);
+                    RoledMultiplier = Random.Range(2, 5);
+                    player.setAttackMultiplier(RoledMultiplier);
+                    playerTurn = false;
+                    message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
+                    dialogueFinished = false;
                 }
-                else if (four == true)
+                else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
                 {
-                    victor = true;
-                    Enemy.sprite = Enemy4;
-                    Enemy.GetComponent<SpriteRenderer>().enabled = true;
-
+                    DefP = true;
+                    playerTurn = false;
+                    message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
+                    dialogueFinished = false;
                 }
-
-
-                nav.GetComponent<SpriteRenderer>().enabled = false;
-                nav.GetComponent<BoxCollider2D>().enabled = false;
             }
 
-            if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
+            if (!playerTurn && dialogueFinished)
             {
-                enemy.setHealth(player.getAttack());
-                playerTurn = false;
-
-                message[0] = "The player attacked the enemy with attack power of " + player.getAttack() + ", enemy has " + enemy.getHealth();
-                dialogueFinished = false;
-                player.setAttackMultiplier(0);
-            }
-            else if (hit.collider.gameObject.Equals(Hold) && playerTurn == true)
-            {
-                RoledMultiplier = Random.Range(2, 5);
-                player.setAttackMultiplier(RoledMultiplier);
-                playerTurn = false;
-                message[0] = "The player rolled an attack multiplier of " + RoledMultiplier + ", the player now has an attack multiplier of " + player.getAttackMultiplier();
-                dialogueFinished = false;
-            }
-            else if (hit.collider.gameObject.Equals(Defend) && playerTurn == true)
-            {
-                DefP = true;
-                playerTurn = false;
-                message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
-                dialogueFinished = false;
-            }
-        }
-
-        if (!playerTurn && dialogueFinished)
-        {
-            if (DefP == true)
-            {
-                if (enemy.getAttack() - player.getDefense() < 0)
+                if (DefP == true)
                 {
-                    player.setHealth(0);
+                    if (enemy.getAttack() - player.getDefense() < 0)
+                    {
+                        player.setHealth(0);
+                    }
+                    else
+                    {
+                        player.setHealth(enemy.getAttack() - player.getDefense());
+
+                    }
                 }
                 else
                 {
-                    player.setHealth(enemy.getAttack() - player.getDefense());
-
+                    player.setHealth(enemy.getAttack());
                 }
+                message[0] = "The enemy attacked the player, player has " + player.getHealth();
+                dialogueFinished = false;
+                playerTurn = true;
+                DefP = false;
             }
-            else
+
+            if (!dialogueFinished)
             {
-                player.setHealth(enemy.getAttack());
+                dialogueManager.ShowBox(message);
             }
-            message[0] = "The enemy attacked the player, player has " + player.getHealth();
-            dialogueFinished = false;
-            playerTurn = true;
-            DefP = false;
-        }
+            if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
+            {
+                dialogueFinished = true;
+            }
 
-        if (!dialogueFinished)
-        {
-            dialogueManager.ShowBox(message);
-        }
-        if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
-        {
-            dialogueFinished = true;
+
+
         }
 
 
-
-    }
 
 
         
 
-    public static bool getVictor() {
+
+
+        /*
+        // Edit for room 6
+        #region Save and Load
+        private void ls()
+        {
+            SceneManager.LoadScene("Room1Final");
+        }
+
+        public void Save(ref RPGMusicBox data)
+        {
+            data.RPG1Complete = getVictor();
+        }
+
+        public void Load(RPGMusicBox data)
+        {
+            victor = data.RPG1Complete;
+        }
+        #endregion
+
+
+
+        // Edit for room 6
+        [System.Serializable]
+        public struct RPGMusicBox
+        {
+         public bool RPG1Complete;
+        }
+    */
+    }
+    public static bool getVictor()
+    {
         return victor;
     }
-   
-    
-    /*
-    // Edit for room 6
-    #region Save and Load
-    private void ls()
-    {
-        SceneManager.LoadScene("Room1Final");
-    }
 
-    public void Save(ref RPGMusicBox data)
-    {
-        data.RPG1Complete = getVictor();
-    }
-
-    public void Load(RPGMusicBox data)
-    {
-        victor = data.RPG1Complete;
-    }
-    #endregion
-
-
-
-    // Edit for room 6
-    [System.Serializable]
-    public struct RPGMusicBox
-    {
-     public bool RPG1Complete;
-    }
-*/ 
 }

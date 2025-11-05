@@ -46,7 +46,10 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
 
-
+    private void Awake()
+    {
+        SaveGameManager.Instance.MirrorShard = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -195,5 +198,30 @@ public class Mirror_Shard_Game : MonoBehaviour
 
         }
     }
+    #region save and load
+
+    public void Save(ref MirrorShardData data)
+    {
+        data.MirrorShardComp = complete;
+
+    }
+
+    public void Load(MirrorShardData data)
+    {
+        complete = data.MirrorShardComp;
+    }
+
+
+
+    #endregion
+
+
 }
+
+[System.Serializable]
+public struct MirrorShardData
+{
+    public bool MirrorShardComp;
+}
+
 

@@ -22,6 +22,15 @@ public class Suitcase_Case_Code : MonoBehaviour
     private GameObject Delete;
     private GameObject Enter;
 
+    private SpriteRenderer closed;
+    public Sprite open;
+    private GameObject picture;
+
+
+    private void Awake()
+    {
+        SaveGameManager.Instance.Suitcase = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +51,13 @@ public class Suitcase_Case_Code : MonoBehaviour
         Enter = GameObject.Find("Enter");
         Delete = GameObject.Find("Delete");
 
+        picture = GameObject.Find("picture");
+        closed = gameObject.GetComponent<SpriteRenderer>();
+
+        picture.GetComponent<BoxCollider2D>().enabled = false;
+        picture.GetComponent<SpriteRenderer>().enabled = false;
+
+        complete = false;
 
     }
 
@@ -65,7 +81,7 @@ public class Suitcase_Case_Code : MonoBehaviour
                 {
                     if (answer.Equals("0730"))
                     {
-
+                        complete = true;
 
                         Debug.Log("Solved!");
                     }
@@ -135,6 +151,25 @@ public class Suitcase_Case_Code : MonoBehaviour
            
         }
         //sets key inactive when clicked
+        if (complete)
+        {
+            picture.GetComponent<BoxCollider2D>().enabled = true;
+            picture.GetComponent<SpriteRenderer>().enabled = true;
+
+            closed.sprite = open;
+
+            One.GetComponent<BoxCollider2D>().enabled = false;
+            Two.GetComponent<BoxCollider2D>().enabled = false;
+            Three.GetComponent<BoxCollider2D>().enabled = false;
+            Four.GetComponent<BoxCollider2D>().enabled = false;
+            Five.GetComponent<BoxCollider2D>().enabled = false;
+            Six.GetComponent<BoxCollider2D>().enabled = false;
+            Seven.GetComponent<BoxCollider2D>().enabled = false;
+            Eight.GetComponent<BoxCollider2D>().enabled = false;
+            Nine.GetComponent<BoxCollider2D>().enabled = false;
+            Enter.GetComponent<BoxCollider2D>().enabled = false;
+            Delete.GetComponent<BoxCollider2D>().enabled = false;
+        }
        
     }
 
@@ -144,5 +179,27 @@ public class Suitcase_Case_Code : MonoBehaviour
         return complete;
     }
 
+    #region save and load
 
+    public void Save(ref SuitcaseData data)
+    {
+        data.SuitcaseComp = complete;
+
+    }
+
+    public void Load(SuitcaseData data)
+    {
+        complete = data.SuitcaseComp;
+    }
+
+
+
+    #endregion
+
+
+}
+[System.Serializable]
+public struct SuitcaseData
+{
+    public bool SuitcaseComp;
 }
