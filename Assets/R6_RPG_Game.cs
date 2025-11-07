@@ -18,7 +18,7 @@ public class R6_RPG_Game : MonoBehaviour
 
 
     private SpriteRenderer Enemy;
-    private Sprite Enemy1;
+    public Sprite Enemy1;
     public Sprite Enemy2;
     public Sprite Enemy3;
     public Sprite Enemy4;
@@ -85,32 +85,42 @@ public class R6_RPG_Game : MonoBehaviour
             if (one == false)
             {
                 one = true;
+                Enemy.sprite = Enemy2;
                 enemy.setHealth(-75);
+                enemy.GetComponent<SpriteRenderer>().enabled = true;
             }
             else
             {
                 if (two == false)
                 {
                     two = true;
+                    Enemy.sprite = Enemy3;
                     enemy.setHealth(-95);
+                    enemy.GetComponent<SpriteRenderer>().enabled = true;
                 }
                 else
                 {
                     if (three == false)
                     {
                         three = true;
+                        Enemy.sprite = Enemy4;
+                        enemy.setHealth(-115);
+                        enemy.GetComponent<SpriteRenderer>().enabled = true;
                     }
 
                     else
                     {
                         four = true;
+                        enemy.GetComponent<SpriteRenderer>().enabled = false;
+                        nav.GetComponent<SpriteRenderer>().enabled = true;
+                        nav.GetComponent<BoxCollider2D>().enabled = true;
+                        dialogueFinished = true;
                     }
                 }
             }
 
-            Enemy.GetComponent<SpriteRenderer>().enabled = false;
-            nav.GetComponent<SpriteRenderer>().enabled = true;
-            nav.GetComponent<BoxCollider2D>().enabled = true;
+            //Enemy.GetComponent<SpriteRenderer>().enabled = false;
+            
             player.setHealth(-(100 - player.getHealth()));
         }
         if (Input.GetMouseButtonDown(0))
@@ -120,39 +130,6 @@ public class R6_RPG_Game : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.Equals(nav))
-                {
-                    if (one == true && two == false)
-                    {
-                        Enemy.sprite = Enemy2;
-                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
-
-
-                    }
-                    else if (two == true && three == false)
-                    {
-                        Enemy.sprite = Enemy3;
-                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
-
-
-                    }
-                    else if (three == true && four == false)
-                    {
-                        Camera.main.transform.position = new Vector3(0, 40, -10);
-                    }
-                    else if (four == true)
-                    {
-                        victor = true;
-                        Enemy.sprite = Enemy4;
-                        Enemy.GetComponent<SpriteRenderer>().enabled = true;
-
-                    }
-
-
-                    nav.GetComponent<SpriteRenderer>().enabled = false;
-                    nav.GetComponent<BoxCollider2D>().enabled = false;
-                }
-
                 if (hit.collider.gameObject.Equals(Attack) && playerTurn == true)
                 {
                     enemy.setHealth(player.getAttack());
@@ -174,83 +151,91 @@ public class R6_RPG_Game : MonoBehaviour
                 {
                     DefP = true;
                     playerTurn = false;
-                    message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
+                    message[0] = "The player has chosen to block the enemy's attack. The enemy has " + enemy.getHealth();
                     dialogueFinished = false;
                 }
-            }
-
-            if (!playerTurn && dialogueFinished)
-            {
-                if (DefP == true)
+                if (hit.collider.gameObject.Equals(nav))
                 {
-                    if (enemy.getAttack() - player.getDefense() < 0)
+                    if (one == true && two == false)
                     {
-                        player.setHealth(0);
-                    }
-                    else
-                    {
-                        player.setHealth(enemy.getAttack() - player.getDefense());
+                        //Enemy.sprite = Enemy2;
+                        //Enemy.GetComponent<SpriteRenderer>().enabled = true;
+
 
                     }
+                    else if (two == true && three == false)
+                    {
+                        //Enemy.sprite = Enemy3;
+                        //Enemy.GetComponent<SpriteRenderer>().enabled = true;
+
+
+                    }
+                    else if (three == true && four == false)
+                    {
+                        //Camera.main.transform.position = new Vector3(0, 40, -10);
+                        //Enemy.sprite = Enemy4;
+                        //Enemy.GetComponent<SpriteRenderer>().enabled = true;
+                    }
+                    else if (four == true)
+                    {
+                        victor = true;
+                        
+
+                    }
+
+
+                    nav.GetComponent<SpriteRenderer>().enabled = false;
+                    nav.GetComponent<BoxCollider2D>().enabled = false;
                 }
-                else
-                {
-                    player.setHealth(enemy.getAttack());
-                }
-                message[0] = "The enemy attacked the player, player has " + player.getHealth();
-                dialogueFinished = false;
-                playerTurn = true;
-                DefP = false;
+
+                
             }
 
-            if (!dialogueFinished)
-            {
-                dialogueManager.ShowBox(message);
-            }
-            if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
-            {
-                dialogueFinished = true;
-            }
+           
 
 
 
         }
+
+
+        if (!playerTurn && dialogueFinished)
+        {
+            if (DefP == true)
+            {
+                if (enemy.getAttack() - player.getDefense() < 0)
+                {
+                    player.setHealth(0);
+                }
+                else
+                {
+                    player.setHealth(enemy.getAttack() - player.getDefense());
+
+                }
+            }
+            else
+            {
+                player.setHealth(enemy.getAttack());
+            }
+            message[0] = "The enemy attacked the player, player has " + player.getHealth();
+            dialogueFinished = false;
+            playerTurn = true;
+            DefP = false;
+        }
+
+        if (!dialogueFinished)
+        {
+            dialogueManager.ShowBox(message);
+        }
+        if (!dialogueFinished && Input.GetKeyDown(KeyCode.Space))
+        {
+            dialogueFinished = true;
+        }
+
 
 
 
 
         
-
-
-
-        /*
-        // Edit for room 6
-        #region Save and Load
-        private void ls()
-        {
-            SceneManager.LoadScene("Room1Final");
-        }
-
-        public void Save(ref RPGMusicBox data)
-        {
-            data.RPG1Complete = getVictor();
-        }
-
-        public void Load(RPGMusicBox data)
-        {
-            victor = data.RPG1Complete;
-        }
-        #endregion
-
-
-
-        // Edit for room 6
-        [System.Serializable]
-        public struct RPGMusicBox
-        {
-         public bool RPG1Complete;
-        }
-    */
     }
     public static bool getVictor()
     {
