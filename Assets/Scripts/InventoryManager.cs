@@ -32,6 +32,8 @@ public class InventoryManager : MonoBehaviour
         }
 
         
+
+        
     }
     void ChangeSelectedSlot(int slot)
     {
@@ -80,6 +82,7 @@ public class InventoryManager : MonoBehaviour
                 {
                     countStar++;
                     Debug.Log("Star ++!");
+                    //Debug.Log(InventorySlots.Length);
                 }
                 if (countStar == 3)
                 {
@@ -92,6 +95,7 @@ public class InventoryManager : MonoBehaviour
 
             
         }
+        
         return false;
 
     }
@@ -129,11 +133,32 @@ public class InventoryManager : MonoBehaviour
 
         return null;
 
+    } 
+
+    public void useItem(int slots)
+    {
+        for (int i = 0; i < slots; i++)
+        {
+            InventorySlot slot = InventorySlots[slots];
+            DraggableItem itemInSlot = slot.GetComponentInChildren<DraggableItem>();
+            if (itemInSlot != null)
+            {
+
+                Destroy(itemInSlot.gameObject);
+            }
+
+
+        }
+        
     }
 
     public static bool getStars() {
         return allStars;
     }
 
+    public static void setStars(bool val)
+    {
+        allStars = val;
+    }
     
 }

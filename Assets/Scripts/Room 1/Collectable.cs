@@ -118,6 +118,11 @@ public class Collectable : MonoBehaviour
                 }
             }
         }
+
+        if (yellowC&& blueC&&redC)
+        {
+            InventoryManager.setStars(true);
+        }
     }
 
     #region Save and Load

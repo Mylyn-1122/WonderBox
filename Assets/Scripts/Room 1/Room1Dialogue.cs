@@ -5,14 +5,15 @@ using UnityEngine;
 public class Room1Dialouge : MonoBehaviour
 {
     private DialogueManager dMan;
+    public InventoryManager inventoryManager;
     private string[] R1 = { "I'm so high up..." , "Its beautiful."};
     private string[] R2 = { "Woah!", "It opened!"};
     private string[] R3 = { "I don't want to touch that yet." };
     private bool text1 = false;
     private bool text2 = false;
     private bool text3 = false;
-    
 
+    //public spawnStars stars;
 
 
 
@@ -55,8 +56,11 @@ public class Room1Dialouge : MonoBehaviour
                     {
                         text2 = dMan.ShowBox(R2);
                         Camera.main.transform.position = new Vector3(20, -20, -10);
-
-
+                        /*stars.starOne();
+                        stars.starTwo();
+                        stars.starThree();
+                        */
+                        inventoryManager.useItem(3);
                     }
                 }
 
