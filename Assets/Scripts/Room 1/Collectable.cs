@@ -10,6 +10,8 @@ public class Collectable : MonoBehaviour
     public static bool yellowC;
     public static bool blueC;
     public static bool RPG1Comp = false;
+    public static bool watchC;
+    public static bool ticketC;
 
     private void Awake()
     {
@@ -114,6 +116,16 @@ public class Collectable : MonoBehaviour
                         PickUpItem(2);
                         yellowC = true;
                         SaveGameManager.R1Stars[0] = yellowC;
+                    }
+                    else if(hit.collider.gameObject.name == "watch")
+                    {
+                        PickUpItem(0);
+                        watchC = true;
+                    }
+                    else if(hit.collider.gameObject.name == "ticket")
+                    {
+                        PickUpItem(1);
+                        ticketC = true;
                     }
                 }
             }
