@@ -135,20 +135,28 @@ public class InventoryManager : MonoBehaviour
 
     } 
 
-    public void useItem(int slots)
+    public Item useItem(int slots)
     {
+        InventorySlot slot = null;
+        DraggableItem itemInSlot = null;
+        Item item = null;
         for (int i = 0; i < slots; i++)
         {
-            InventorySlot slot = InventorySlots[slots];
-            DraggableItem itemInSlot = slot.GetComponentInChildren<DraggableItem>();
+
+            slot = InventorySlots[i];
+            itemInSlot = slot.GetComponentInChildren<DraggableItem>();
+            item = itemInSlot.item;
             if (itemInSlot != null)
             {
 
                 Destroy(itemInSlot.gameObject);
+                //Debug.Log("working");
             }
+            
 
 
         }
+        return item;
         
     }
 
