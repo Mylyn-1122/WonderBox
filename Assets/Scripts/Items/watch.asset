@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8515087145ef410b84be6af5e657215, type: 3}
+  m_Name: watch
+  m_EditorClassIdentifier: 
+  tile: {fileID: 0}
+  type: 0
+  actiontype: 0
+  range: {x: 5, y: 4}
+  stackable: 0
+  image: {fileID: 679136466078453385, guid: 6e14923bc77eb4a64af1795b2e8efb09, type: 3}

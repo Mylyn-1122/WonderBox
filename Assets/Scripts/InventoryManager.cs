@@ -150,7 +150,7 @@ public class InventoryManager : MonoBehaviour
             {
 
                 Destroy(itemInSlot.gameObject);
-                //Debug.Log("working");
+                Debug.Log("working");
             }
             
 
