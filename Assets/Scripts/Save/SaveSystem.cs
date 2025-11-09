@@ -21,6 +21,7 @@ public class SaveSystem
         public LockGameR3Data LockGameR3Data;
 
         public ThreadGameManData ThreadGameManData;
+        public watchGameData watchGameData;
 
         public skeleGameManagerData skeleGameManagerData;
         public TrashGameData TrashGameData;
@@ -119,7 +120,9 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.ThreadGameMan.Save(ref _saveData.ThreadGameManData);
-          
+            SaveGameManager.Instance.Collectable.Save(ref _saveData.PlayerData);
+            SaveGameManager.Instance.watchGame.Save(ref _saveData.watchGameData);
+
         }
         if (_saveData.SceneSaveData.SceneID == "Room6")
         {
@@ -219,6 +222,8 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.ThreadGameMan.Load(_saveData.ThreadGameManData);
+            SaveGameManager.Instance.Collectable.Load(_saveData.PlayerData);
+            SaveGameManager.Instance.watchGame.Load(_saveData.watchGameData);
             //add for other minigames
 
 
@@ -289,6 +294,8 @@ public class SaveSystem
         if (_saveData.SceneSaveData.SceneID == "Room5")
         {
             SaveGameManager.Instance.ThreadGameMan.Load(_saveData.ThreadGameManData);
+            SaveGameManager.Instance.Collectable.Load(_saveData.PlayerData);
+            SaveGameManager.Instance.watchGame.Load(_saveData.watchGameData);
             //add more later
 
 

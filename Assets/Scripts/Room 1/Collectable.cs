@@ -38,6 +38,18 @@ public class Collectable : MonoBehaviour
             }
             SaveGameManager.JustFinRPG1 = false;
         }
+
+        if (SaveGameManager.R5Ticket)
+        {
+            ticketC = true;
+            PickUpItem(1);
+        }
+        if (SaveGameManager.R5Watch)
+        {
+            watchC = true;
+            PickUpItem(0);
+        }
+
     }
 
     public void PickUpItem(int id)
@@ -145,6 +157,8 @@ public class Collectable : MonoBehaviour
         data.BStar = blueC;
         data.RStar = redC;
         data.RPG1Complete = SaveGameManager.RPG1;
+        data.ticket = ticketC;
+        data.watch = watchC;
     }
 
     public void Load(PlayerSaveData data)
@@ -179,6 +193,15 @@ public class Collectable : MonoBehaviour
         RPG1Comp = data.RPG1Complete;
         SaveGameManager.RPG1 = RPG1Comp;
 
+        if (data.ticket)
+        {
+            PickUpItem(1);
+        }
+
+        if (data.watch)
+        {
+            PickUpItem(0);
+        }
 
     }
     #endregion
@@ -191,4 +214,6 @@ public struct PlayerSaveData
     public bool BStar;
     public bool RStar;
     public bool RPG1Complete;
+    public bool ticket;
+    public bool watch;
 }

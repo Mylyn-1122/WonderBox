@@ -6,6 +6,12 @@ public class watchGame : MonoBehaviour
     private static bool start;
     private static bool end;
     public InventoryManager inventoryManager;
+
+    private void Awake()
+    {
+        SaveGameManager.Instance.watchGame = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,10 +42,15 @@ public class watchGame : MonoBehaviour
                     else
                     {
                         end = true;
-                        inventoryManager.useItem(1);
+                        
                     }
                 }
             }
+        }
+
+        if (end)
+        {
+            inventoryManager.useItem(1);
         }
     }
 
@@ -53,5 +64,29 @@ public class watchGame : MonoBehaviour
         return end;
     }
 
+    #region save and load
+
+    public void Save(ref watchGameData data)
+    {
+        data.watchComp = end;
+
+    }
+
+    public void Load(watchGameData data)
+    {
+        end = data.watchComp;
+    }
+
+
+
+    #endregion
+
 
 }
+[System.Serializable]
+public struct watchGameData
+{
+    public bool watchComp;
+}
+
+

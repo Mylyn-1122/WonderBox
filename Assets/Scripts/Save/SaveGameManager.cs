@@ -40,6 +40,7 @@ public class SaveGameManager : MonoBehaviour
     public LockGameR3 LockGameR3 { get; set; }
 
     public ThreadGameMan ThreadGameMan { get; set; }
+    public watchGame watchGame { get; set; }
 
     public skeleGameManager skeleMan { get; set; }
     public TrashGame TrashGame { get; set; }
@@ -60,6 +61,8 @@ public class SaveGameManager : MonoBehaviour
     public static bool LoadSignal = false;
     public static bool RPG3 = false;
     public static bool wg = false;
+    public static bool R5Ticket = false;
+    public static bool R5Watch = false;
 
     private bool _isSaving;
     private bool _isLoading;
