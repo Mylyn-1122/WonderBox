@@ -9,6 +9,12 @@ public class LockGameR3 : MonoBehaviour
     private static bool complete;
     SpriteRenderer closedSafe;
     public Sprite openSafe;
+
+    private DialogueManager dMan;
+
+    private string[] compTextD = { "Oh my gosh!","I used to love this game!","She always helped me beat the boss, I couldn't even pass the first level","...What was her name again?"};
+    private bool compText = false;
+
     
 
     private GameObject One;
@@ -36,6 +42,8 @@ public class LockGameR3 : MonoBehaviour
     void Start()
     {
         closedSafe = gameObject.GetComponent<SpriteRenderer>();
+        dMan = FindAnyObjectByType<DialogueManager>();
+
       
         
 
@@ -87,7 +95,7 @@ public class LockGameR3 : MonoBehaviour
                     if (answer.Equals("0730"))
                     {
                        
-                     
+                        compText = dMan.ShowBox(compTextD);
                         complete = true;
                         
                     }
