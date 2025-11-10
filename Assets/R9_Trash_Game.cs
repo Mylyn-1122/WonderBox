@@ -137,7 +137,7 @@ public class R9_Trash_Game : MonoBehaviour
 
         Vector3 distance6 = Trash7pos.position - TrashBag.position;
         float magnitude6 = distance6.magnitude;
-        if (magnitude5 < 0.5)
+        if (magnitude6 < 0.5)
         {
             Seven = true;
             T7.SetActive(false);

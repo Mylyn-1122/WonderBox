@@ -58,16 +58,16 @@ public class R9_ShardGame : MonoBehaviour
         Shard4 = GameObject.Find("obj4").transform;
         Shard5 = GameObject.Find("obj5").transform;
         Shard6 = GameObject.Find("obj6").transform;
-        Shard6 = GameObject.Find("obj7").transform;
-        Shard6 = GameObject.Find("obj8").transform;
+        Shard7 = GameObject.Find("obj7").transform;
+        Shard8 = GameObject.Find("obj8").transform;
         posShard1 = GameObject.Find("objPos1").transform;
         posShard2 = GameObject.Find("objPos2").transform;
         posShard3 = GameObject.Find("objPos3").transform;
         posShard4 = GameObject.Find("objPos4").transform;
         posShard5 = GameObject.Find("objPos5").transform;
         posShard6 = GameObject.Find("objPos6").transform;
-        posShard6 = GameObject.Find("objPos7").transform;
-        posShard6 = GameObject.Find("objPos8").transform;
+        posShard7 = GameObject.Find("objPos7").transform;
+        posShard8 = GameObject.Find("objPos8").transform;
 
 
 
@@ -96,8 +96,8 @@ public class R9_ShardGame : MonoBehaviour
 
 
         Vector3 distance2 = Shard2.position - posShard2.position;
-        magnitude = distance2.magnitude;
-        if (magnitude < 0.5)
+        float magnitude2 = distance2.magnitude;
+        if (magnitude2 < 0.5)
         {
 
 
@@ -108,8 +108,8 @@ public class R9_ShardGame : MonoBehaviour
 
 
         Vector3 distance3 = Shard3.position - posShard3.position;
-        magnitude = distance3.magnitude;
-        if (magnitude < 0.5)
+        float magnitude3 = distance3.magnitude;
+        if (magnitude3 < 0.5)
         {
 
 
@@ -120,8 +120,8 @@ public class R9_ShardGame : MonoBehaviour
 
 
         Vector3 distance4 = Shard4.position - posShard4.position;
-        magnitude = distance4.magnitude;
-        if (magnitude < 0.5)
+        float magnitude4 = distance4.magnitude;
+        if (magnitude4 < 0.5)
         {
 
 
@@ -132,8 +132,8 @@ public class R9_ShardGame : MonoBehaviour
 
 
         Vector3 distance5 = Shard5.position - posShard5.position;
-        magnitude = distance5.magnitude;
-        if (magnitude < 0.5)
+        float magnitude5 = distance5.magnitude;
+        if (magnitude5 < 0.5)
         {
 
 
@@ -143,8 +143,8 @@ public class R9_ShardGame : MonoBehaviour
         }
 
         Vector3 distance6 = Shard6.position - posShard6.position;
-        magnitude = distance6.magnitude;
-        if (magnitude < 0.5)
+        float magnitude6 = distance6.magnitude;
+        if (magnitude6 < 0.5)
         {
 
 
@@ -154,8 +154,8 @@ public class R9_ShardGame : MonoBehaviour
         }
 
         Vector3 distance7 = Shard7.position - posShard7.position;
-        magnitude = distance7.magnitude;
-        if (magnitude < 0.5)
+        float magnitude7 = distance7.magnitude;
+        if (magnitude7 < 0.5)
         {
 
 
@@ -165,8 +165,8 @@ public class R9_ShardGame : MonoBehaviour
         }
 
         Vector3 distance8 = Shard8.position - posShard8.position;
-        magnitude = distance8.magnitude;
-        if (magnitude < 0.5)
+        float magnitude8 = distance8.magnitude;
+        if (magnitude8 < 0.5)
         {
 
 
