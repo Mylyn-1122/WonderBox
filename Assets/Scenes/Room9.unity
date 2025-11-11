@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf2a04ede4d9f2498f2896a71ba48f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 1285035356}
   itemsToPickUp: []
 --- !u!4 &212935761
 Transform:
