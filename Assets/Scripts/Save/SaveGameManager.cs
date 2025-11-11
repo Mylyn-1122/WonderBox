@@ -31,7 +31,7 @@ public class SaveGameManager : MonoBehaviour
     public SceneLoad SceneLoad { get; set; }
 
     public OldTelescope OldTelescope { get; set; }
-    public WireGameTV WireGameTV { get; set; }
+    public TVR2 TVR2 { get; set; }
     public KeyShardGame KeyShardGame { get; set; }
 
     public WaterGame WaterGame { get; set; }
@@ -61,6 +61,7 @@ public class SaveGameManager : MonoBehaviour
     public Mirror_Shard_Game MirrorShard { get; set; }
     public Suitcase_Case_Code Suitcase { get; set; }
     public Ticket_Shard_Minigame TicketShard { get; set; }
+    public TVR10 TVR10 { get; set; }
 
     public static bool SaveSignal = false;
     public static bool RPG1 = false;

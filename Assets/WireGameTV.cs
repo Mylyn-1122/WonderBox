@@ -40,10 +40,7 @@ public class WireGameTV : MonoBehaviour
     private static bool complete;
 
 
-    private void Awake()
-    {
-        SaveGameManager.Instance.WireGameTV = this;
-    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -139,7 +136,7 @@ public class WireGameTV : MonoBehaviour
         }
         if (complete)
         {
-            LB.rotation = Quaternion.Euler(0,0, goal);
+            LB.rotation = Quaternion.Euler(0, 0, goal);
             LT.rotation = Quaternion.Euler(0, 0, goal);
             RB.rotation = Quaternion.Euler(0, 0, goal);
             RT.rotation = Quaternion.Euler(0, 0, goal);
@@ -147,7 +144,7 @@ public class WireGameTV : MonoBehaviour
 
     }
 
-    
+
 
     public bool getMousePressed()
     {
@@ -168,28 +165,9 @@ public class WireGameTV : MonoBehaviour
     {
         return complete;
     }
-    #region save and load
 
-    public void Save(ref WireTVData data)
+    public static void setComp()
     {
-        data.WireTVComp = complete;
-
+        complete = true;
     }
-
-    public void Load(WireTVData data)
-    {
-        complete = data.WireTVComp;
-    }
-
-
-
-    #endregion
- 
-}
-
-
-[System.Serializable]
-public struct WireTVData
-{
-    public bool WireTVComp;
 }

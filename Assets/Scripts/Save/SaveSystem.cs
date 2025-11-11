@@ -14,7 +14,7 @@ public class SaveSystem
         public SceneSaveData SceneSaveData;
 
         public OldTelescopeData OldTelescopeData;
-        public WireTVData WireTVData;
+        public WireTVDataR2 WireTVData2;
         public KeyShardGameData KeyShardGameData;
 
         public ClockRotGameData ClockRotGameData;
@@ -43,6 +43,7 @@ public class SaveSystem
         public MirrorShardData MirrorShardData;
         public SuitcaseData SuitcaseData;
         public TicketShardData TicketShardData;
+        public WireTVDataR10 TVDataR10;
 
     }
 
@@ -104,7 +105,7 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.OldTelescope.Save(ref _saveData.OldTelescopeData);
-            SaveGameManager.Instance.WireGameTV.Save(ref _saveData.WireTVData);
+            SaveGameManager.Instance.TVR2.Save(ref _saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Save(ref _saveData.KeyShardGameData);
 
 
@@ -175,7 +176,7 @@ public class SaveSystem
             SaveGameManager.Instance.MirrorShard.Save(ref _saveData.MirrorShardData);
             SaveGameManager.Instance.Suitcase.Save(ref _saveData.SuitcaseData);
             SaveGameManager.Instance.TicketShard.Save(ref _saveData.TicketShardData);
-
+            SaveGameManager.Instance.TVR10.Save(ref _saveData.TVDataR10);
         }
 
 
@@ -225,7 +226,7 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
-            SaveGameManager.Instance.WireGameTV.Load(_saveData.WireTVData);
+            SaveGameManager.Instance.TVR2.Load(_saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Load(_saveData.KeyShardGameData);
 
             //Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
@@ -298,7 +299,7 @@ public class SaveSystem
             SaveGameManager.Instance.MirrorShard.Load(_saveData.MirrorShardData);
             SaveGameManager.Instance.Suitcase.Load(_saveData.SuitcaseData);
             SaveGameManager.Instance.TicketShard.Load(_saveData.TicketShardData);
-
+            SaveGameManager.Instance.TVR10.Load( _saveData.TVDataR10);
         }
 
 
@@ -321,7 +322,7 @@ public class SaveSystem
         if (_saveData.SceneSaveData.SceneID == "TreeHouse")
         {
             SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
-            SaveGameManager.Instance.WireGameTV.Load(_saveData.WireTVData);
+            SaveGameManager.Instance.TVR2.Load(_saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Load(_saveData.KeyShardGameData);
 
         }
@@ -383,7 +384,7 @@ public class SaveSystem
             SaveGameManager.Instance.MirrorShard.Load(_saveData.MirrorShardData);
             SaveGameManager.Instance.Suitcase.Load(_saveData.SuitcaseData);
             SaveGameManager.Instance.TicketShard.Load(_saveData.TicketShardData);
-
+            SaveGameManager.Instance.TVR10.Load(_saveData.TVDataR10);
         }
 
     }
