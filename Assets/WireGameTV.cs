@@ -139,7 +139,7 @@ public class WireGameTV : MonoBehaviour
         }
         if (complete)
         {
-            LB.rotation = Quaternion.Euler(0,0,goal);
+            LB.rotation = Quaternion.Euler(0,0, goal);
             LT.rotation = Quaternion.Euler(0, 0, goal);
             RB.rotation = Quaternion.Euler(0, 0, goal);
             RT.rotation = Quaternion.Euler(0, 0, goal);

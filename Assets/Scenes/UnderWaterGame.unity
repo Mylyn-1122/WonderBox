@@ -551,8 +551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d87c801275b94610a21da373f80a456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -0.01
-  strength: 10
+  gravity: -10
+  strength: 5
 --- !u!50 &1028570876
 Rigidbody2D:
   serializedVersion: 4
@@ -975,7 +975,7 @@ MonoBehaviour:
   prefab: {fileID: 6748832067582460228, guid: c8d93dfc40bc74031bded41e9f6cc44f, type: 3}
   spawnRate: 1
   minHeight: -3
-  maxHeight: -1
+  maxHeight: -1.5
 --- !u!4 &1711633049
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,7 +1020,7 @@ Animator:
   m_GameObject: {fileID: 1758295648}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ab2c36279a2a479ab4183ee34429318, type: 2}
+  m_Controller: {fileID: 9100000, guid: e55a421c6e86a43eda710e421f52ebeb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

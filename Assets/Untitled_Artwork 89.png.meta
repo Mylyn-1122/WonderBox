@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8dfc468b1644240bc88701f19a102949
+guid: e4b10e87e7eff473e8ea816b009f3b1b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3329925201974892488
-    second: Room2_Compass_0
+      213: -2404626033649132581
+    second: Untitled_Artwork 89_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Room2_Compass_0
+      name: Untitled_Artwork 89_0
       rect:
         serializedVersion: 2
-        x: 591
-        y: 138
-        width: 672
-        height: 781
+        x: 1147
+        y: 278
+        width: 287
+        height: 198
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c795581455463e20800000000000000
-      internalID: 3329925201974892488
+      spriteID: bdbdfa6dc5d01aed0800000000000000
+      internalID: -2404626033649132581
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a9eb33ef1ff0c490288d14f3e1c2d30e
+    spriteID: 0a605542074194dcfba8bbd637cca85c
     internalID: 0
     vertices: []
     indices: 
@@ -133,7 +133,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Room2_Compass_0: 3329925201974892488
+      Untitled_Artwork 89_0: -2404626033649132581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
