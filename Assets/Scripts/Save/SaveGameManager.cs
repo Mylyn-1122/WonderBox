@@ -56,6 +56,8 @@ public class SaveGameManager : MonoBehaviour
 
     public Rope_Code Rope_Code { get; set; }
 
+    public R9_ShardGame R9Shard { get; set; }
+
     public Mirror_Shard_Game MirrorShard { get; set; }
     public Suitcase_Case_Code Suitcase { get; set; }
     public Ticket_Shard_Minigame TicketShard { get; set; }
