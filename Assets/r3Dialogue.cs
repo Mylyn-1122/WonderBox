@@ -50,38 +50,39 @@ public class r3Dialogue : MonoBehaviour
                         text1 = dMan.ShowBox(R1);
                     }
                 }
-            }
 
-            if (hit.collider.gameObject.Equals(board))
-            {
-                if (!text2)
-                {
-                    text2 = dMan.ShowBox(R2);
-                }
-            }
 
-            if (hit.collider.gameObject.Equals(classroom))
-            {
-                if (!text3)
+                if (hit.collider.gameObject.Equals(board))
                 {
-                    text3 = dMan.ShowBox(R3);
+                    if (!text2)
+                    {
+                        text2 = dMan.ShowBox(R2);
+                    }
                 }
-            }
 
-            
-            if (hit.collider.gameObject.Equals(clock))
-            {
-                if (!text4)
+                if (hit.collider.gameObject.Equals(classroom))
                 {
-                    text4 = dMan.ShowBox(R4);
+                    if (!text3)
+                    {
+                        text3 = dMan.ShowBox(R3);
+                    }
                 }
-            }
-                
-            if (hit.collider.gameObject.Equals(lunch))
-            {
-                if (!text5)
+
+
+                if (hit.collider.gameObject.Equals(clock))
                 {
-                    text5 = dMan.ShowBox(R5);
+                    if (!text4)
+                    {
+                        text4 = dMan.ShowBox(R4);
+                    }
+                }
+
+                if (hit.collider.gameObject.Equals(lunch))
+                {
+                    if (!text5)
+                    {
+                        text5 = dMan.ShowBox(R5);
+                    }
                 }
             }
 
