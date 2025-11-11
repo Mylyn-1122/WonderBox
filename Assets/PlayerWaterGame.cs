@@ -39,6 +39,6 @@ public class PlayerWaterGame : MonoBehaviour
 
     IEnumerator wait()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
     }
 }

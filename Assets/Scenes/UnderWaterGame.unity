@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -10
-  strength: 5
+  strength: 10
 --- !u!50 &1028570876
 Rigidbody2D:
   serializedVersion: 4
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6748832067582460228, guid: c8d93dfc40bc74031bded41e9f6cc44f, type: 3}
   spawnRate: 1
-  minHeight: -3
+  minHeight: -5
   maxHeight: -1.5
 --- !u!4 &1711633049
 Transform:
