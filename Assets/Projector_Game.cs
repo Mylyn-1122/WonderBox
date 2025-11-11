@@ -10,6 +10,9 @@ public class Projector_Game : MonoBehaviour
     private Transform target;
     private bool mouse_press = false;
     private static bool cleared;
+
+    private GameObject snakeB;
+    public Sprite snakeC;
     
 
 
@@ -22,7 +25,7 @@ public class Projector_Game : MonoBehaviour
     {
         target = transform;
         cleared = false;
-
+        snakeB = GameObject.Find("blurredSnake");
        
 
     }
@@ -44,6 +47,11 @@ public class Projector_Game : MonoBehaviour
         {
             cleared = true;
            
+        }
+
+        if (cleared)
+        {
+            snakeB.GetComponent<SpriteRenderer>().sprite = snakeC;
         }
     }
 

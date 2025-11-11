@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 271635353}
   - component: {fileID: 271635352}
   m_Layer: 0
-  m_Name: Untitled161_20251012182529_0
+  m_Name: blurredSnake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4723,13 +4723,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268465368}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5735764, w: 0.8191521}
   m_LocalPosition: {x: 0.3559, y: -20.6941, z: 1}
   m_LocalScale: {x: 13.937885, y: 13.351041, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 70}
 --- !u!114 &1268465371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4742,6 +4742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d8ac311b88b8048aa8f2555d59919a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snakeC: {fileID: -4687677409603503962, guid: 3c44282363f134fcd991ff7296119514, type: 3}
   angle: 0
 --- !u!61 &1268465372
 BoxCollider2D:
@@ -6576,6 +6577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643123056}
   - component: {fileID: 1643123055}
+  - component: {fileID: 1643123057}
   m_Layer: 0
   m_Name: R8StarGame
   m_TagString: Untagged
@@ -6619,6 +6621,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643123057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643123054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2887caa0cd6348d7ab682194ea89ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1668354712
 PrefabInstance:
   m_ObjectHideFlags: 0

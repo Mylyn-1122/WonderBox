@@ -28,6 +28,8 @@ public class SaveSystem
 
         public StarGameR7Data StarGameR7Data;
 
+        public StarGameR8Data StarGameR8Data;
+
         public LockGameR4Data LockGameR4Data;
         public R4ShardGameData R4ShardGameData;
 
@@ -116,6 +118,7 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.LockGameR4.Save(ref _saveData.LockGameR4Data);
+            SaveGameManager.Instance.R4ShardGame.Save(ref _saveData.R4ShardGameData);
 
         }
         if (_saveData.SceneSaveData.SceneID == "WaterGame")
@@ -145,6 +148,14 @@ public class SaveSystem
 
             SaveGameManager.Instance.StarGameR7.Save(ref _saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Save(ref _saveData.Rope_CodeData);
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room8")
+        {
+
+            SaveGameManager.Instance.StarGameR8.Save(ref _saveData.StarGameR8Data);
+
+
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room10")
@@ -223,6 +234,7 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.LockGameR4.Load(_saveData.LockGameR4Data);
+            SaveGameManager.Instance.R4ShardGame.Load(_saveData.R4ShardGameData);
             //add for other minigames
 
 
@@ -251,6 +263,14 @@ public class SaveSystem
 
             SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Load( _saveData.Rope_CodeData);
+
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room8")
+        {
+
+            SaveGameManager.Instance.StarGameR8.Load(_saveData.StarGameR8Data);
+            
 
 
         }
@@ -297,6 +317,7 @@ public class SaveSystem
         if (_saveData.SceneSaveData.SceneID == "Room4")
         {
             SaveGameManager.Instance.LockGameR4.Load(_saveData.LockGameR4Data);
+            SaveGameManager.Instance.R4ShardGame.Load(_saveData.R4ShardGameData);
 
 
         }
@@ -321,6 +342,14 @@ public class SaveSystem
         {
             SaveGameManager.Instance.StarGameR7.Load(_saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Load( _saveData.Rope_CodeData);
+
+
+        }
+        if (_saveData.SceneSaveData.SceneID == "Room8")
+        {
+
+            SaveGameManager.Instance.StarGameR8.Load(_saveData.StarGameR8Data);
+
 
 
         }
