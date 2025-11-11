@@ -115,6 +115,12 @@ public class SaveSystem
             SaveGameManager.Instance.LockGameR4.Save(ref _saveData.LockGameR4Data);
 
         }
+        if (_saveData.SceneSaveData.SceneID == "WaterGame")
+        {
+
+            SaveGameManager.Instance.LockGameR4.Save(ref _saveData.LockGameR4Data);
+
+        }
 
         if (_saveData.SceneSaveData.SceneID == "Room5")
         {

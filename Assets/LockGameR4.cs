@@ -51,8 +51,7 @@ public class LockGameR4 : MonoBehaviour
                     if(A1 == 5 && A2 == 2)
                     {
                         complete = true;
-                        closedLock.sprite = openLock;
-                        Debug.Log(open);
+                        
                     }
                     else
                     {
@@ -72,6 +71,17 @@ public class LockGameR4 : MonoBehaviour
                 }
             }
         }
+
+        if (complete)
+        {
+            closedLock.sprite = openLock;
+            //Debug.Log(open);
+        }
+    }
+
+    public static bool getComp()
+    {
+        return complete;
     }
 
     #region save and load
