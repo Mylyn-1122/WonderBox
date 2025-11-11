@@ -43,7 +43,10 @@ public class R9_Trash_Game : MonoBehaviour
 
 
 
-
+    private void Awake()
+    {
+        SaveGameManager.Instance.trashR8 = this;
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -157,4 +160,24 @@ public class R9_Trash_Game : MonoBehaviour
     {
         return complete;
     }
+    #region Save and Load
+
+    public void Save(ref trashR8Data data)
+    {
+        data.trashR8C = complete;
+    }
+
+    public void Load(trashR8Data data)
+    {
+        complete = data.trashR8C;
+    }
+    #endregion
+
 }
+
+[System.Serializable]
+public struct trashR8Data
+{
+    public bool trashR8C;
+}
+

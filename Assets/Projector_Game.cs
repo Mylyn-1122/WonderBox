@@ -18,7 +18,10 @@ public class Projector_Game : MonoBehaviour
 
     public float angle;
 
-    
+    private void Awake()
+    {
+        SaveGameManager.Instance.projectorR8 = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,4 +72,26 @@ public class Projector_Game : MonoBehaviour
     public static bool getClear() {
         return cleared;
     }
+
+    #region Save and Load
+
+    public void Save(ref projectorDataR8 data)
+    {
+        data.projectorR8C = cleared;
+    }
+
+    public void Load(projectorDataR8 data)
+    {
+        cleared = data.projectorR8C;
+    }
+    #endregion
+
 }
+
+[System.Serializable]
+public struct projectorDataR8
+{
+    public bool projectorR8C;
+}
+
+

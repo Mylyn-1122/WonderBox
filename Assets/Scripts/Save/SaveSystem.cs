@@ -29,6 +29,8 @@ public class SaveSystem
         public StarGameR7Data StarGameR7Data;
 
         public StarGameR8Data StarGameR8Data;
+        public projectorDataR8 projectorDataR8;
+        public trashR8Data trashR8Data;
 
         public LockGameR4Data LockGameR4Data;
         public R4ShardGameData R4ShardGameData;
@@ -154,8 +156,8 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.StarGameR8.Save(ref _saveData.StarGameR8Data);
-
-
+            SaveGameManager.Instance.projectorR8.Save(ref _saveData.projectorDataR8);
+            SaveGameManager.Instance.trashR8.Save(ref _saveData.trashR8Data);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room10")
@@ -270,8 +272,8 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.StarGameR8.Load(_saveData.StarGameR8Data);
-            
-
+            SaveGameManager.Instance.projectorR8.Load(_saveData.projectorDataR8);
+            SaveGameManager.Instance.trashR8.Load(_saveData.trashR8Data);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room10")
@@ -349,8 +351,8 @@ public class SaveSystem
         {
 
             SaveGameManager.Instance.StarGameR8.Load(_saveData.StarGameR8Data);
-
-
+            SaveGameManager.Instance.projectorR8.Load(_saveData.projectorDataR8);
+            SaveGameManager.Instance.trashR8.Load(_saveData.trashR8Data);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room10")
