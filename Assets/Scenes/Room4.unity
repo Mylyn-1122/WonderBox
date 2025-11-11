@@ -5242,7 +5242,7 @@ GameObject:
   - component: {fileID: 1191382812}
   - component: {fileID: 1191382811}
   m_Layer: 0
-  m_Name: IMG_3703_0
+  m_Name: fishNav
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6884,7 +6884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a7150109452a240a2ca52b09ba7948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 1323085180}
   itemsToPickUp: []
 --- !u!212 &1533113893
 SpriteRenderer:

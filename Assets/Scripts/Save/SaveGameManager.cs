@@ -48,6 +48,8 @@ public class SaveGameManager : MonoBehaviour
     public StarGameR7 StarGameR7 { get; set; }
 
     public LockGameR4 LockGameR4 { get; set; }
+    public R4_ShardGame R4ShardGame { get; set; }
+
     public Rope_Code Rope_Code { get; set; }
 
     public Mirror_Shard_Game MirrorShard { get; set; }

@@ -39,7 +39,10 @@ public class R4_ShardGame : MonoBehaviour
 
 
 
-
+    private void Awake()
+    {
+        SaveGameManager.Instance.R4ShardGame = this;
+    }
 
 
     // Start is called before the first frame update
@@ -162,4 +165,62 @@ public class R4_ShardGame : MonoBehaviour
 
         }
     }
+    #region Load finished pieces funciton
+
+    public void loadFin()
+    {
+
+        Shard1 = GameObject.Find("obj1").transform;
+        Shard2 = GameObject.Find("obj2").transform;
+        Shard3 = GameObject.Find("obj3").transform;
+        Shard4 = GameObject.Find("obj4").transform;
+        Shard5 = GameObject.Find("obj5").transform;
+        Shard6 = GameObject.Find("obj6").transform;
+      
+        posShard1 = GameObject.Find("obj1Pos").transform;
+        posShard2 = GameObject.Find("obj2Pos").transform;
+        posShard3 = GameObject.Find("obj3Pos").transform;
+        posShard4 = GameObject.Find("obj4Pos").transform;
+        posShard5 = GameObject.Find("obj5Pos").transform;
+        posShard6 = GameObject.Find("obj6Pos").transform;
+      
+
+        Shard1.position = posShard1.position;
+        Shard2.position = posShard2.position;
+        Shard3.position = posShard3.position;
+        Shard4.position = posShard4.position;
+        Shard5.position = posShard5.position;
+        Shard6.position = posShard6.position;
+    
+    }
+
+    #endregion
+
+    #region Save and Load
+
+    public void Save(ref R4ShardGameData data)
+    {
+        data.R4ShardGameC = complete;
+        data.R4ShardGameText = compText;
+
+    }
+
+    public void Load(R4ShardGameData data)
+    {
+        if (data.R4ShardGameC)
+        {
+            complete = data.R4ShardGameC;
+            compText = data.R4ShardGameText;
+            loadFin();
+        }
+    }
+    #endregion
+
+}
+
+[System.Serializable]
+public struct R4ShardGameData
+{
+    public bool R4ShardGameC;
+    public bool R4ShardGameText;
 }

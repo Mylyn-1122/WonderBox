@@ -29,6 +29,9 @@ public class SaveSystem
         public StarGameR7Data StarGameR7Data;
 
         public LockGameR4Data LockGameR4Data;
+        public R4ShardGameData R4ShardGameData;
+
+
         public Rope_CodeData Rope_CodeData;
 
         public MirrorShardData MirrorShardData;
