@@ -24,7 +24,7 @@ public class SceneData : MonoBehaviour
         if(Data.UniqueName == "RPG3")
         {
             SaveGameManager.RPG3 = RPGManagerR3.getVictor();
-            data.SceneID = "Room3";
+            data.SceneID = "School";
         }
         if (Data.UniqueName == "WaterGame")
         {

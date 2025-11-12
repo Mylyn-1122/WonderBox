@@ -171,48 +171,9 @@ public class Collectable : MonoBehaviour
     }
 
     public void Load(PlayerSaveData data)
-    {/*
-        if (data.YStar)
-        {
-            PickUpItem(2);
-            
-        }
-
-        yellowC = data.YStar;
-        SaveGameManager.R1Stars[0] = yellowC;
-
-        if (data.BStar)
-        {
-            PickUpItem(0);
-            
-        }
-
-        blueC = data.BStar;
-        SaveGameManager.R1Stars[1] = blueC;
-
-        if (data.RStar)
-        {
-            PickUpItem(1);
-            
-        }
-        redC = data.RStar;
-        SaveGameManager.R1Stars[2] = redC;
-
-        */
+    {
         RPG1Comp = data.RPG1Complete;
         SaveGameManager.RPG1 = RPG1Comp;
-
-        /*
-        if (data.ticket)
-        {
-            PickUpItem(1);
-        }
-
-        if (data.watch)
-        {
-            PickUpItem(0);
-        }
-        */
 
     }
     #endregion

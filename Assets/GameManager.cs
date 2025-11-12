@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     {
         if (win)
         {
+            SaveGameManager.wg = true;
             SaveGameManager.wgFin = true;
             ls();
         }
