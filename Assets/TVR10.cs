@@ -6,11 +6,11 @@ public class TVR10 : MonoBehaviour
     {
         SaveGameManager.Instance.TVR10 = this;
     }
-    private static bool complete;
+    private static bool complete = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        complete = false;
+      
     }
 
     // Update is called once per frame
