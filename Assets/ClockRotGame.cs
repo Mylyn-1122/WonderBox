@@ -7,7 +7,7 @@ public class ClockRotGame : MonoBehaviour
     private Vector3 object_pos;
     private Transform target;
     private bool mouse_press = false;
-    private static bool cleared;
+    private static bool cleared = false;
 
 
 
@@ -25,7 +25,7 @@ public class ClockRotGame : MonoBehaviour
     void Start()
     {
         target = transform;
-        cleared = false;
+       
 
         MHand = GameObject.Find("MHand").transform;
         HHand = GameObject.Find("HHand").transform;
@@ -34,6 +34,12 @@ public class ClockRotGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (cleared)
+        {
+            HHand.rotation = Quaternion.Euler(0, 0, angle);
+            MHand.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
         if (mouse_press)
         {
             mouse_pos = Input.mousePosition;
@@ -56,11 +62,11 @@ public class ClockRotGame : MonoBehaviour
 
         }
 
-        if (cleared)
-        {
-            HHand.rotation = Quaternion.Euler(0, 0, angle);
-            MHand.rotation = Quaternion.Euler(0, 0, angle);
-        }
+        
+    }
+    private void setPlace()
+    {
+
     }
 
     private void OnMouseDown()
@@ -87,7 +93,12 @@ public class ClockRotGame : MonoBehaviour
 
     public void Load(ClockRotGameData data)
     {
-        cleared = data.ClockRotComplete;
+        if (data.ClockRotComplete)
+        {
+            cleared = data.ClockRotComplete;
+            
+        }
+        
     }
 
 
