@@ -19,6 +19,7 @@ public class SaveSystem
 
         public ClockRotGameData ClockRotGameData;
         public LockGameR3Data LockGameR3Data;
+        public R3Data R3Data;
 
         public ThreadGameManData ThreadGameManData;
         public watchGameData watchGameData;
@@ -34,6 +35,7 @@ public class SaveSystem
 
         public LockGameR4Data LockGameR4Data;
         public R4ShardGameData R4ShardGameData;
+        public R4SaveData R4SaveData;
 
 
         public Rope_CodeData Rope_CodeData;
@@ -82,13 +84,13 @@ public class SaveSystem
 
         if (_saveData.SceneSaveData.SceneID == "MusicBox")
         {
-            Debug.Log(_saveData.PlayerData.RPG1Complete);
-            Debug.Log(Collectable.RPG1Comp);
+            //Debug.Log(_saveData.PlayerData.RPG1Complete);
+            //Debug.Log(Collectable.RPG1Comp);
             SaveGameManager.Instance.Collectable.Save(ref _saveData.PlayerData);
             SaveGameManager.Instance.StainedGlassWindowGame.Save(ref _saveData.StainedWindowData);
 
             
-            Debug.Log("Music Box Save");
+            //Debug.Log("Music Box Save");
 
         }
 
@@ -97,8 +99,8 @@ public class SaveSystem
             SaveGameManager.Instance.Collectable.Save(ref _saveData.PlayerData);
             SaveGameManager.Instance.StainedGlassWindowGame.Save(ref _saveData.StainedWindowData);
 
-            Debug.Log(RPGManagerR1.getVictor());
-            Debug.Log("RPG Save");
+           // Debug.Log(RPGManagerR1.getVictor());
+            //Debug.Log("RPG Save");
         }
 
         if (_saveData.SceneSaveData.SceneID == "TreeHouse")
@@ -116,8 +118,16 @@ public class SaveSystem
             SaveGameManager.Instance.ClockRotGame.Save(ref _saveData.ClockRotGameData);
             SaveGameManager.Instance.LockGameR3.Save(ref _saveData.LockGameR3Data);
 
-            Debug.Log(RPGManagerR3.getVictor());
-            Debug.Log("RPG Save");
+            SaveGameManager.Instance.saveManR3.Save(ref _saveData.R3Data);
+            //Debug.Log(RPGManagerR3.getVictor());
+           // Debug.Log("RPG Save");
+        }
+        if (_saveData.SceneSaveData.SceneID == "RPG3")
+        {
+            SaveGameManager.Instance.ClockRotGame.Save(ref _saveData.ClockRotGameData);
+            SaveGameManager.Instance.LockGameR3.Save(ref _saveData.LockGameR3Data);
+
+            SaveGameManager.Instance.saveManR3.Save(ref _saveData.R3Data);
         }
         if (_saveData.SceneSaveData.SceneID == "Room4")
         {
@@ -125,12 +135,15 @@ public class SaveSystem
             SaveGameManager.Instance.LockGameR4.Save(ref _saveData.LockGameR4Data);
             SaveGameManager.Instance.R4ShardGame.Save(ref _saveData.R4ShardGameData);
 
+            SaveGameManager.Instance.saveManR4.Save(ref _saveData.R4SaveData);
         }
         if (_saveData.SceneSaveData.SceneID == "WaterGame")
         {
 
             SaveGameManager.Instance.LockGameR4.Save(ref _saveData.LockGameR4Data);
+            SaveGameManager.Instance.R4ShardGame.Save(ref _saveData.R4ShardGameData);
 
+            SaveGameManager.Instance.saveManR4.Save(ref _saveData.R4SaveData);
         }
 
         if (_saveData.SceneSaveData.SceneID == "Room5")
@@ -178,7 +191,6 @@ public class SaveSystem
             SaveGameManager.Instance.TicketShard.Save(ref _saveData.TicketShardData);
             SaveGameManager.Instance.TVR10.Save(ref _saveData.TVDataR10);
         }
-
 
 
 
@@ -238,6 +250,8 @@ public class SaveSystem
 
             SaveGameManager.Instance.ClockRotGame.Load(_saveData.ClockRotGameData);
             SaveGameManager.Instance.LockGameR3.Load(_saveData.LockGameR3Data);
+
+            SaveGameManager.Instance.saveManR3.Load(_saveData.R3Data);
             //Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
 
 
@@ -249,7 +263,7 @@ public class SaveSystem
             SaveGameManager.Instance.R4ShardGame.Load(_saveData.R4ShardGameData);
             //add for other minigames
 
-
+            SaveGameManager.Instance.saveManR4.Load(_saveData.R4SaveData);
         }
         if (_saveData.SceneSaveData.SceneID == "Room5")
         {
@@ -331,14 +345,14 @@ public class SaveSystem
             SaveGameManager.Instance.ClockRotGame.Load(_saveData.ClockRotGameData);
             SaveGameManager.Instance.LockGameR3.Load(_saveData.LockGameR3Data);
 
-
+            SaveGameManager.Instance.saveManR3.Load(_saveData.R3Data);
         }
         if (_saveData.SceneSaveData.SceneID == "Room4")
         {
             SaveGameManager.Instance.LockGameR4.Load(_saveData.LockGameR4Data);
             SaveGameManager.Instance.R4ShardGame.Load(_saveData.R4ShardGameData);
 
-
+            SaveGameManager.Instance.saveManR4.Load(_saveData.R4SaveData);
         }
         if (_saveData.SceneSaveData.SceneID == "Room5")
         {

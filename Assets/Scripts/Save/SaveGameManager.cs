@@ -38,6 +38,7 @@ public class SaveGameManager : MonoBehaviour
 
     public ClockRotGame ClockRotGame { get; set; }
     public LockGameR3 LockGameR3 { get; set; }
+    public saveManR3 saveManR3 { get; set; }
 
     public ThreadGameMan ThreadGameMan { get; set; }
     public watchGame watchGame { get; set; }
@@ -53,6 +54,7 @@ public class SaveGameManager : MonoBehaviour
 
     public LockGameR4 LockGameR4 { get; set; }
     public R4_ShardGame R4ShardGame { get; set; }
+    public saveManR4 saveManR4 { get; set; }
 
     public Rope_Code Rope_Code { get; set; }
 
@@ -69,7 +71,9 @@ public class SaveGameManager : MonoBehaviour
     public static bool JustFinRPG1 = false;
     public static bool LoadSignal = false;
     public static bool RPG3 = false;
+    public static bool RPG3Fin = false;
     public static bool wg = false;
+    public static bool wgFin = false;
     public static bool R5Ticket = false;
     public static bool R5Watch = false;
 

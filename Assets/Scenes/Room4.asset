@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a13886a477c64bf5a0968fe2e59c158, type: 3}
   m_Name: Room4
   m_EditorClassIdentifier: 
-  UniqueName: gazebo
+  UniqueName: Room4
   SceneIndex: 5

@@ -32,6 +32,11 @@ public class LockGameR4 : MonoBehaviour
         A2 = 0;
         complete = false;
         Debug.Log(complete);
+
+        
+
+      
+        
     }
 
     // Update is called once per frame

@@ -12,17 +12,17 @@ public class Collectable : MonoBehaviour
     public static bool RPG1Comp = false;
     public static bool watchC;
     public static bool ticketC;
-    //private GameObject saveMan;
+    
 
     private void Awake()
     {
         SaveGameManager.Instance.Collectable = this;
-        //saveMan = GameObject.Find("SaveGameManager");
+        
     }
 
     public void Start()
     {
-        //saveMan.GetComponent<SaveGameManager>().saveGame();
+       
         SaveSystem.Save();
         if (SaveGameManager.JustFinRPG1 == true){
             if (SaveGameManager.R1Stars[0])
@@ -45,6 +45,8 @@ public class Collectable : MonoBehaviour
             SaveSystem.Load();
         }
 
+        
+
         if (SaveGameManager.R5Ticket)
         {
             ticketC = true;
@@ -55,7 +57,8 @@ public class Collectable : MonoBehaviour
             watchC = true;
             PickUpItem(0);
         }
-       
+
+        SaveSystem.Load();
     }
 
     public void PickUpItem(int id)
