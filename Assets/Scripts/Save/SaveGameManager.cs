@@ -121,6 +121,16 @@ public class SaveGameManager : MonoBehaviour
         }
     }
 
+    public void saveGame()
+    {
+        SaveSignal = true;
+    }
+
+    public void loadGame()
+    {
+        LoadSignal = true;
+    }
+
     public async void SaveAsync()
     {
         _isSaving = true;
