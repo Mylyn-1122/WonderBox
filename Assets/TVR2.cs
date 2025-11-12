@@ -6,11 +6,12 @@ public class TVR2 : MonoBehaviour
     {
         SaveGameManager.Instance.TVR2 = this;
     }
-    private static bool complete;
+    private static bool complete = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        complete = false;
+        
+        WireGameTV.cancel();
     }
 
     // Update is called once per frame
@@ -20,6 +21,11 @@ public class TVR2 : MonoBehaviour
         {
             complete = true;
         }
+    }
+
+    public static bool getComplete()
+    {
+        return complete;
     }
     #region save and load
 

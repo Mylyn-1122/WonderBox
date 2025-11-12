@@ -8,7 +8,7 @@ public class OldTelescope : MonoBehaviour
     private Vector3 object_pos;
     private Transform target;
     private bool mouse_press = false;
-    private static bool cleared;
+    private static bool cleared = false;
     
 
 
@@ -25,7 +25,7 @@ public class OldTelescope : MonoBehaviour
     void Start()
     {
         target = transform;
-        cleared = false;
+        
 
        
 
@@ -34,6 +34,10 @@ public class OldTelescope : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (cleared)
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
         if (mouse_press)
         {
             mouse_pos = Input.mousePosition;
@@ -50,10 +54,7 @@ public class OldTelescope : MonoBehaviour
            
         }
 
-        if (cleared)
-        {
-            this.transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
+        
     }
 
 
@@ -81,7 +82,10 @@ public class OldTelescope : MonoBehaviour
 
     public void Load(OldTelescopeData data)
     {
-        cleared = data.TelescopeComp;
+        if (data.TelescopeComp)
+        {
+            cleared = data.TelescopeComp;
+        }
     }
 
 

@@ -170,4 +170,9 @@ public class WireGameTV : MonoBehaviour
     {
         complete = true;
     }
+
+    public static void cancel()
+    {
+        complete = false;
+    }
 }

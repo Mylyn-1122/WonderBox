@@ -13,10 +13,12 @@ public class SaveSystem
         public PlayerSaveData PlayerData;
         public StainedWindowData StainedWindowData;
         public SceneSaveData SceneSaveData;
+        
 
         public OldTelescopeData OldTelescopeData;
         public WireTVDataR2 WireTVData2;
         public KeyShardGameData KeyShardGameData;
+        public R2SaveData R2Data;
 
         public ClockRotGameData ClockRotGameData;
         public LockGameR3Data LockGameR3Data;
@@ -24,15 +26,19 @@ public class SaveSystem
 
         public ThreadGameManData ThreadGameManData;
         public watchGameData watchGameData;
+        public R5Data R5Data;
 
         public skeleGameManagerData skeleGameManagerData;
         public TrashGameData TrashGameData;
+        public R6Data R6Data;
 
         public StarGameR7Data StarGameR7Data;
+        public R7Data R7Data;
 
         public StarGameR8Data StarGameR8Data;
         public projectorDataR8 projectorDataR8;
         public trashR8Data trashR8Data;
+        public R8Data R8Data;
 
         public LockGameR4Data LockGameR4Data;
         public R4ShardGameData R4ShardGameData;
@@ -42,12 +48,13 @@ public class SaveSystem
         public Rope_CodeData Rope_CodeData;
 
         public R9ShardData R9ShardData;
+        public R9Data R9Data;
 
         public MirrorShardData MirrorShardData;
         public SuitcaseData SuitcaseData;
         public TicketShardData TicketShardData;
         public WireTVDataR10 TVDataR10;
-
+        public R10Data R10Data;
     }
 
     public static string SaveFileName()
@@ -110,6 +117,7 @@ public class SaveSystem
             SaveGameManager.Instance.OldTelescope.Save(ref _saveData.OldTelescopeData);
             SaveGameManager.Instance.TVR2.Save(ref _saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Save(ref _saveData.KeyShardGameData);
+            SaveGameManager.Instance.saveManR2.Save(ref _saveData.R2Data);
 
 
         }
@@ -242,6 +250,7 @@ public class SaveSystem
             SaveGameManager.Instance.TVR2.Load(_saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Load(_saveData.KeyShardGameData);
 
+            SaveGameManager.Instance.saveManR2.Load(_saveData.R2Data);
             //Debug.Log(_saveData.OldTelescopeData.TelescopeComp);
 
 
@@ -339,7 +348,7 @@ public class SaveSystem
             SaveGameManager.Instance.OldTelescope.Load(_saveData.OldTelescopeData);
             SaveGameManager.Instance.TVR2.Load(_saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Load(_saveData.KeyShardGameData);
-
+            SaveGameManager.Instance.saveManR2.Load(_saveData.R2Data);
         }
         if (_saveData.SceneSaveData.SceneID == "School")
         {
