@@ -31,11 +31,19 @@ public class LockGameR4 : MonoBehaviour
         A1 = 0;
         A2 = 0;
         complete = false;
+        Debug.Log(complete);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (complete)
+        {
+            closedLock.sprite = openLock;
+            
+            //Debug.Log(open);
+        }
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -72,12 +80,10 @@ public class LockGameR4 : MonoBehaviour
             }
         }
 
-        if (complete)
-        {
-            closedLock.sprite = openLock;
-            //Debug.Log(open);
-        }
+        
     }
+
+    
 
     public static bool getComp()
     {
@@ -94,7 +100,11 @@ public class LockGameR4 : MonoBehaviour
 
     public void Load(LockGameR4Data data)
     {
-        complete = data.LockGameR4Comp;
+        if (data.LockGameR4Comp)
+        {
+            complete = data.LockGameR4Comp;
+            
+        }
     }
 
 
