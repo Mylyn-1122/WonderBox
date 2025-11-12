@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LockGameR4 : MonoBehaviour
 {
-    private static bool complete;
+    private static bool complete = false;
     SpriteRenderer closedLock;
     public Sprite openLock;
     private int A1;
@@ -30,7 +30,7 @@ public class LockGameR4 : MonoBehaviour
 
         A1 = 0;
         A2 = 0;
-        complete = false;
+      
         Debug.Log(complete);
 
         

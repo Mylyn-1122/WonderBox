@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 public class SaveSystem
 {
+    
     private static SaveData _saveData = new SaveData();
 
     [System.Serializable]
@@ -80,7 +81,7 @@ public class SaveSystem
 
     private static void HandleSaveData()
     {
-        
+        Debug.Log(_saveData.SceneSaveData.SceneID);
 
         if (_saveData.SceneSaveData.SceneID == "MusicBox")
         {

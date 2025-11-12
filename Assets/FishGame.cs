@@ -22,7 +22,7 @@ public class FishGame : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Fish")
                 {
-
+                   
                     SceneManager.LoadScene("UnderWaterGame");
                 }
             }
