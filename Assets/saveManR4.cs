@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class saveManR4 : MonoBehaviour
 {
@@ -9,10 +10,16 @@ public class saveManR4 : MonoBehaviour
         SaveGameManager.Instance.saveManR4 = this;
        
     }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(5);
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartCoroutine(wait());
         SaveSystem.Save();
         if (SaveGameManager.wgFin)
         {

@@ -7417,12 +7417,20 @@ PrefabInstance:
       value: SaveGameManager
       objectReference: {fileID: 0}
     - target: {fileID: 1545997403146098247, guid: 8bad2fadf6e5c44f3a6e73ba07db8499, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545997403146098247, guid: 8bad2fadf6e5c44f3a6e73ba07db8499, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545997403146098247, guid: 8bad2fadf6e5c44f3a6e73ba07db8499, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1111.7277
+      value: 1111.7278
       objectReference: {fileID: 0}
     - target: {fileID: 1545997403146098247, guid: 8bad2fadf6e5c44f3a6e73ba07db8499, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 992.4067
+      value: 992.40674
       objectReference: {fileID: 0}
     - target: {fileID: 1545997403146098247, guid: 8bad2fadf6e5c44f3a6e73ba07db8499, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9609,6 +9617,7 @@ SceneRoots:
   - {fileID: 1998667637}
   - {fileID: 1091594545}
   - {fileID: 2080508887}
+  - {fileID: 1705848861}
   - {fileID: 215516072}
   - {fileID: 1851625027}
   - {fileID: 1854650887}
@@ -9661,9 +9670,8 @@ SceneRoots:
   - {fileID: 1386800901}
   - {fileID: 337690733}
   - {fileID: 933794337}
-  - {fileID: 1705848861}
-  - {fileID: 1317576744}
   - {fileID: 1323085179}
+  - {fileID: 1317576744}
   - {fileID: 756065028}
   - {fileID: 1803460726}
   - {fileID: 222991455}
