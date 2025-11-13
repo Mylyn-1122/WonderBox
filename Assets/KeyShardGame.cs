@@ -121,10 +121,27 @@ public class KeyShardGame : MonoBehaviour
         }
     }
 
+
     public static bool getVictor()
     {
         return victor;
     }
+
+    public void loadFin()
+    {
+        Shard1 = GameObject.Find("obj1").transform;
+        Shard2 = GameObject.Find("obj2").transform;
+        Shard3 = GameObject.Find("obj3").transform;
+
+        posShard1 = GameObject.Find("obj1Pos").transform;
+        posShard2 = GameObject.Find("obj2Pos").transform;
+        posShard3 = GameObject.Find("obj3Pos").transform;
+
+        Shard1.position = posShard1.position;
+        Shard2.position = posShard2.position;
+        Shard3.position = posShard3.position;
+    }
+
     #region save and load
 
     public void Save(ref KeyShardGameData data)
@@ -135,7 +152,12 @@ public class KeyShardGame : MonoBehaviour
 
     public void Load(KeyShardGameData data)
     {
-        victor = data.KeyShardComp;
+        if (data.KeyShardComp)
+        {
+            victor = data.KeyShardComp;
+            loadFin();
+            compText = data.KeyShardText;
+        }
     }
 
 
@@ -149,6 +171,7 @@ public class KeyShardGame : MonoBehaviour
 public struct KeyShardGameData
 {
     public bool KeyShardComp;
+    public bool KeyShardText;
 }
 
 

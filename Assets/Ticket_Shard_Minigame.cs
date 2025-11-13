@@ -158,17 +158,44 @@ private Transform Shard1;
         return complete;
     }
 
+    public void loadFin()
+    {
+        Shard1 = GameObject.Find("Obj1").transform;
+        Shard2 = GameObject.Find("Obj2").transform;
+        Shard3 = GameObject.Find("Obj3").transform;
+        Shard4 = GameObject.Find("Obj4").transform;
+        Shard5 = GameObject.Find("Obj5").transform;
+        posShard1 = GameObject.Find("obj1Pos").transform;
+        posShard2 = GameObject.Find("obj2Pos").transform;
+        posShard3 = GameObject.Find("obj3Pos").transform;
+        posShard4 = GameObject.Find("obj4Pos").transform;
+        posShard5 = GameObject.Find("obj5Pos").transform;
+
+
+        Shard1.position = posShard1.position;
+        Shard2.position = posShard2.position;
+        Shard3.position = posShard3.position;
+        Shard4.position = posShard4.position;
+        Shard5.position = posShard5.position;
+        
+    }
+
     #region save and load
 
     public void Save(ref TicketShardData data)
     {
         data.TicketShardComp = complete;
+        data.TicketShardText = compText;
 
     }
 
     public void Load(TicketShardData data)
     {
-        complete = data.TicketShardComp;
+        if (data.TicketShardComp) {
+            complete = data.TicketShardComp;
+            loadFin();
+            compText = data.TicketShardText;
+        }
     }
 
 
@@ -182,5 +209,6 @@ private Transform Shard1;
 public struct TicketShardData
 {
     public bool TicketShardComp;
+    public bool TicketShardText;
 }
 

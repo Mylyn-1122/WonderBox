@@ -200,21 +200,56 @@ public class Mirror_Shard_Game : MonoBehaviour
 
     }
 
+
     public static bool getComp()
     {
         return complete;
     }
-    #region save and load
 
-    public void Save(ref MirrorShardData data)
+    public void loadFin()
+    {
+        Shard1 = GameObject.Find("obj1").transform;
+        Shard2 = GameObject.Find("obj2").transform;
+        Shard3 = GameObject.Find("obj3").transform;
+        Shard4 = GameObject.Find("obj4").transform;
+        Shard5 = GameObject.Find("obj5").transform;
+        Shard6 = GameObject.Find("obj6").transform;
+        Shard7 = GameObject.Find("obj7").transform;
+        Shard8 = GameObject.Find("obj8").transform;
+        posShard1 = GameObject.Find("posobj1").transform;
+        posShard2 = GameObject.Find("posobj2").transform;
+        posShard3 = GameObject.Find("posobj3").transform;
+        posShard4 = GameObject.Find("posobj4").transform;
+        posShard5 = GameObject.Find("posobj5").transform;
+        posShard6 = GameObject.Find("posobj6").transform;
+        posShard7 = GameObject.Find("posobj7").transform;
+        posShard8 = GameObject.Find("posobj8").transform;
+
+        Shard1.position = posShard1.position;
+        Shard2.position = posShard2.position;
+        Shard3.position = posShard3.position;
+        Shard4.position = posShard4.position;
+        Shard5.position = posShard5.position;
+        Shard6.position = posShard6.position;
+        Shard7.position = posShard7.position;
+        Shard8.position = posShard8.position;
+    }
+
+        #region save and load
+
+        public void Save(ref MirrorShardData data)
     {
         data.MirrorShardComp = complete;
-
+        data.MirrorText = compText;
     }
 
     public void Load(MirrorShardData data)
     {
-        complete = data.MirrorShardComp;
+        if (data.MirrorShardComp) {
+            complete = data.MirrorShardComp;
+            loadFin();
+            compText = data.MirrorText;
+        }
     }
 
 
@@ -228,6 +263,8 @@ public class Mirror_Shard_Game : MonoBehaviour
 public struct MirrorShardData
 {
     public bool MirrorShardComp;
+    public bool MirrorText;
+
 }
 
 
