@@ -29,7 +29,7 @@ public class R4_ShardGame : MonoBehaviour
     private DialogueManager dMan;
 
 
-    private string[] compTextD = { "Its fixed now!" };
+    private string[] compTextD = { "Ah, I still have this picture?","There's something written on the back:", "'I wish I was a bird; I want to fly far away from all my troubles.","...","No time for that now, I suppose"};
     private bool compText = false;
 
 

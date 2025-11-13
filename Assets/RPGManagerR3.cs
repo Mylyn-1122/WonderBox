@@ -91,13 +91,13 @@ public class RPGManagerR3 : MonoBehaviour
             if (one == false)
             {
                 one = true;
-                enemy.setHealth(-5);
+                enemy.setHealth(-75);
             }
             else {
                 if (two == false)
                 {
                     two = true;
-                    enemy.setHealth(-5);
+                    enemy.setHealth(-95);
                 }
                 else
                 {
