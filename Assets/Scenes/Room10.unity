@@ -7774,7 +7774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c864762f29f994b8216e9a12722252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 213110790}
   itemsToPickUp: []
 --- !u!212 &1873284005
 SpriteRenderer:
