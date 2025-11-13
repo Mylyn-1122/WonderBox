@@ -5,13 +5,13 @@ public class TVR10 : MonoBehaviour
     private void Awake()
     {
         SaveGameManager.Instance.TVR10 = this;
-        WireGameTV.cancel();
+       
     }
     private static bool complete = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      
+        WireGameTV.cancel();
     }
 
     // Update is called once per frame

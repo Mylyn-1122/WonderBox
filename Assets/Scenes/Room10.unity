@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 151065774}
   - component: {fileID: 151065773}
   - component: {fileID: 151065775}
+  - component: {fileID: 151065776}
   m_Layer: 0
   m_Name: WireLT
   m_TagString: TopL
@@ -510,6 +511,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5696647}
   m_EdgeRadius: 0
+--- !u!114 &151065776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151065771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bfbd52f71842bf90fc677dde4dfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: 0
 --- !u!1 &177893077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,6 +2214,7 @@ GameObject:
   - component: {fileID: 530624649}
   - component: {fileID: 530624648}
   - component: {fileID: 530624650}
+  - component: {fileID: 530624651}
   m_Layer: 0
   m_Name: WireRB
   m_TagString: BottomR
@@ -2323,6 +2338,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.5200706}
   m_EdgeRadius: 0
+--- !u!114 &530624651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530624647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bfbd52f71842bf90fc677dde4dfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: 0
 --- !u!1001 &542017640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3365,6 +3393,7 @@ GameObject:
   - component: {fileID: 800423968}
   - component: {fileID: 800423967}
   - component: {fileID: 800423969}
+  - component: {fileID: 800423970}
   m_Layer: 0
   m_Name: WireLB
   m_TagString: BottomL
@@ -3488,6 +3517,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.52712}
   m_EdgeRadius: 0
+--- !u!114 &800423970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800423966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bfbd52f71842bf90fc677dde4dfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: 0
 --- !u!1 &824435951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6724,6 +6766,7 @@ GameObject:
   - component: {fileID: 1634512301}
   - component: {fileID: 1634512300}
   - component: {fileID: 1634512302}
+  - component: {fileID: 1634512303}
   m_Layer: 0
   m_Name: WireRT
   m_TagString: TopR
@@ -6847,6 +6890,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5508605}
   m_EdgeRadius: 0
+--- !u!114 &1634512303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634512299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085bfbd52f71842bf90fc677dde4dfe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: 0
 --- !u!1 &1663957911
 GameObject:
   m_ObjectHideFlags: 0

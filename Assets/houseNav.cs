@@ -24,12 +24,14 @@ public class houseNav : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.Equals(Lock) && KeyShardGame.getVictor())
-            {
-                Camera.main.transform.position = new Vector3(0, 20, -10);
-            }else if(hit.collider.gameObject.Equals(house))
-            {
-                Camera.main.transform.position = new Vector3(-20, -20, -10);
+            if (OldTelescope.getClear()) {
+                if (hit.collider.gameObject.Equals(Lock) && KeyShardGame.getVictor())
+                {
+                    Camera.main.transform.position = new Vector3(0, 20, -10);
+                } else if (hit.collider.gameObject.Equals(house))
+                {
+                    Camera.main.transform.position = new Vector3(-20, -20, -10);
+                }
             }
         }
     }

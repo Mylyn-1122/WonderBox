@@ -74,12 +74,15 @@ public class WireGameTV : MonoBehaviour
         RTBotX = RT.GetComponent<SpriteRenderer>().bounds.min.x;
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.min.y;
         complete = false;
+        //Debug.Log(complete);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
         LBTopX = LB.GetComponent<SpriteRenderer>().bounds.max.x;
         LBTopY = LB.GetComponent<SpriteRenderer>().bounds.max.y;
         LBBotX = LB.GetComponent<SpriteRenderer>().bounds.min.x;
@@ -117,6 +120,7 @@ public class WireGameTV : MonoBehaviour
             float angleDeg = (180 / Mathf.PI) * angleRad - 90;
             this.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
 
+            
             //print(this.transform.rotation);
         }
 
@@ -124,16 +128,16 @@ public class WireGameTV : MonoBehaviour
 
         
 
-        if (LB.rotation.z <= goal + 1 && LB.rotation.z >= goal - 1)
+        if (LB.rotation.z <= goal + .05 && LB.rotation.z >= goal - .05)
         {
-            if (LT.rotation.z <= goal + 1 && LT.rotation.z >= goal - 1)
+            if (LT.rotation.z <= goal + .05 && LT.rotation.z >= goal - .05)
             {
-                if (RB.rotation.z <= goal + 1 && RB.rotation.z >= goal - 1)
+                if (RB.rotation.z <= goal + .05 && RB.rotation.z >= goal - .05)
                 {
-                    if (RT.rotation.z <= goal + 1 && RT.rotation.z >= goal - 1)
+                    if (RT.rotation.z <= goal + .05 && RT.rotation.z >= goal - .05)
                     {
                         complete = true;
-
+                        //Debug.Log(complete);
                     }
                 }
             }
