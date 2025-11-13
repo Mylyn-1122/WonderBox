@@ -33,7 +33,7 @@ public class watchGame : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.Equals(ghost))
+                if (hit.collider.gameObject.Equals(ghost) && !end)
                 {
                     if(start == false)
                     {
@@ -42,7 +42,7 @@ public class watchGame : MonoBehaviour
                     else
                     {
                         end = true;
-                        
+                        inventoryManager.useItem(1);
                     }
                 }
             }
@@ -50,7 +50,7 @@ public class watchGame : MonoBehaviour
 
         if (end)
         {
-            inventoryManager.useItem(1);
+            //inventoryManager.useItem(1);
         }
     }
 

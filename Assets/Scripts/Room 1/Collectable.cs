@@ -10,8 +10,7 @@ public class Collectable : MonoBehaviour
     public static bool yellowC;
     public static bool blueC;
     public static bool RPG1Comp = false;
-    public static bool watchC;
-    public static bool ticketC;
+    
     
 
     private void Awake()
@@ -47,16 +46,7 @@ public class Collectable : MonoBehaviour
 
         
 
-        if (SaveGameManager.R5Ticket)
-        {
-            ticketC = true;
-            PickUpItem(1);
-        }
-        if (SaveGameManager.R5Watch)
-        {
-            watchC = true;
-            PickUpItem(0);
-        }
+        
 
         SaveSystem.Load();
     }
@@ -138,16 +128,7 @@ public class Collectable : MonoBehaviour
                         yellowC = true;
                         SaveGameManager.R1Stars[0] = yellowC;
                     }
-                    else if(hit.collider.gameObject.name == "watch")
-                    {
-                        PickUpItem(0);
-                        watchC = true;
-                    }
-                    else if(hit.collider.gameObject.name == "ticket")
-                    {
-                        PickUpItem(1);
-                        ticketC = true;
-                    }
+                    
                 }
             }
         }
@@ -166,8 +147,7 @@ public class Collectable : MonoBehaviour
         data.BStar = blueC;
         data.RStar = redC;
         data.RPG1Complete = SaveGameManager.RPG1;
-        data.ticket = ticketC;
-        data.watch = watchC;
+        
     }
 
     public void Load(PlayerSaveData data)
@@ -186,6 +166,5 @@ public struct PlayerSaveData
     public bool BStar;
     public bool RStar;
     public bool RPG1Complete;
-    public bool ticket;
-    public bool watch;
+    
 }

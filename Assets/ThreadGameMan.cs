@@ -12,6 +12,7 @@ public class ThreadGameMan : MonoBehaviour
     private void Start()
     {
         wins = false;
+        ThreadGameManager.notWin();
     }
 
     private void Update()
@@ -22,6 +23,10 @@ public class ThreadGameMan : MonoBehaviour
         }
     }
 
+    public static bool getWins()
+    {
+        return wins;
+    }
     #region save and load
 
     public void Save(ref ThreadGameManData data)
@@ -32,7 +37,11 @@ public class ThreadGameMan : MonoBehaviour
 
     public void Load(ThreadGameManData data)
     {
-        wins = data.ThreadGameR5Comp;
+        if (data.ThreadGameR5Comp)
+        {
+            wins = data.ThreadGameR5Comp;
+            ThreadGameManager.setWin();
+        }
     }
 
 

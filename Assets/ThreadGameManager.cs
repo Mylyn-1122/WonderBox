@@ -7,17 +7,24 @@ using System.Collections.Generic;
 public class ThreadGameManager : MonoBehaviour
 {
     public List<ThreadGame> Threads;
-    public static bool win;
+    public static bool win = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        win = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (win)
+        {
+            foreach (ThreadGame t in Threads)
+            {
+                t.conn = true;
+            }
+        }
         int connectedThreads = 0;
 
         foreach(ThreadGame t in Threads)
@@ -37,5 +44,15 @@ public class ThreadGameManager : MonoBehaviour
     public static bool winGet()
     {
         return win;
+    }
+
+    public static void notWin()
+    {
+        win = false;
+    }
+
+    public static void setWin()
+    {
+        win = true;
     }
 }

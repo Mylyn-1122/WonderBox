@@ -4,7 +4,7 @@ using System.Collections;
 public class saveManR4 : MonoBehaviour
 {
     public static bool WGComp = false;
-
+    public static bool R4C = false;
     private void Awake()
     {
         SaveGameManager.Instance.saveManR4 = this;
@@ -38,6 +38,7 @@ public class saveManR4 : MonoBehaviour
     {
 
         data.WGComplete= SaveGameManager.wg;
+        data.R4Complete = (SaveGameManager.wg && R4_ShardGame.getComp());
         
     }
 
@@ -47,6 +48,8 @@ public class saveManR4 : MonoBehaviour
         WGComp = data.WGComplete;
         SaveGameManager.wg = WGComp;
 
+        R4C = data.R4Complete;
+        SaveGameManager.R4 = R4C;
 
     }
     #endregion
@@ -57,6 +60,7 @@ public struct R4SaveData
 {
     
     public bool WGComplete;
+    public bool R4Complete;
     
 }
 

@@ -31,14 +31,21 @@ public class ThreadGame : MonoBehaviour
             float magnitude = endWireDiff.magnitude;
             if(magnitude < 0.5f)
             {
-                transform.position = endThread.position;
-                Line.SetPosition(2, endThread.position);
-                Line.SetPosition(1, endThread.position);
+                //transform.position = endThread.position;
+                //Line.SetPosition(2, endThread.position);
+                //Line.SetPosition(1, endThread.position);
                 Dragging = false;
                 Connected = true;
                 conn = true;
                 
             }
+        }
+
+        if (conn)
+        {
+            transform.position = endThread.position;
+            Line.SetPosition(2, endThread.position);
+            Line.SetPosition(1, endThread.position);
         }
 
         
@@ -65,14 +72,7 @@ public class ThreadGame : MonoBehaviour
         return Connected;
     }
 
-    /*public void SetConnected(bool pConnected)
-    {
-        Connected = pConnected;
-        if (!Connected)
-        {
-
-        }
-    }
-    */
+    
+    
 }
 
