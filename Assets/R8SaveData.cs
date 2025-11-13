@@ -19,7 +19,7 @@ public class R8SaveData : MonoBehaviour
     public void Save(ref R8Data data)
     {
 
-        data.R8Complete = SaveGameManager.R8;
+        data.R8Complete = (R9_Trash_Game.returnComp() && R8StarGame.compGet() && Projector_Game.getClear());
 
     }
 

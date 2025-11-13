@@ -14,6 +14,7 @@ public class StarGameR7 : MonoBehaviour
     void Start()
     {
         victor = false;
+        ThreadGameManager.notWin();
     }
 
     // Update is called once per frame
@@ -40,7 +41,11 @@ public class StarGameR7 : MonoBehaviour
 
     public void Load(StarGameR7Data data)
     {
-        victor = data.starCleared;
+        if (data.starCleared)
+        {
+            victor = data.starCleared;
+            ThreadGameManager.setWin();
+        }
     }
 
 

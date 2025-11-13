@@ -13,6 +13,7 @@ public class R8StarGame : MonoBehaviour
     void Start()
     {
         comp = false;
+        ThreadGameManager.notWin();
     }
 
     // Update is called once per frame
@@ -38,7 +39,11 @@ public class R8StarGame : MonoBehaviour
 
     public void Load(StarGameR8Data data)
     {
-        comp = data.StarGameR8C;
+        if (data.StarGameR8C)
+        {
+            comp = data.StarGameR8C;
+            ThreadGameManager.setWin();
+        }
     }
     #endregion
 

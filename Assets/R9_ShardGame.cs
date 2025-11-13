@@ -193,6 +193,11 @@ public class R9_ShardGame : MonoBehaviour
 
         }
     }
+
+    public static bool getComp()
+    {
+        return complete;
+    }
     #region Load finished pieces funciton
 
     public void loadFin()

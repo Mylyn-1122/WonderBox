@@ -19,7 +19,7 @@ public class R6SaveData : MonoBehaviour
     public void Save(ref R6Data data)
     {
 
-        data.R6Complete = SaveGameManager.R6;
+        data.R6Complete = (R6_RPG_Game.getVictor()&&R6_Password_Game.returnClear());
 
     }
 

@@ -70,6 +70,7 @@ public class SaveGameManager : MonoBehaviour
     public Suitcase_Case_Code Suitcase { get; set; }
     public Ticket_Shard_Minigame TicketShard { get; set; }
     public TVR10 TVR10 { get; set; }
+    public R10SaveData R10SaveData { get; set; }
 
     public static bool SaveSignal = false;
     public static bool RPG1 = false;

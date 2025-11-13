@@ -197,6 +197,12 @@ public class Mirror_Shard_Game : MonoBehaviour
 
 
         }
+
+    }
+
+    public static bool getComp()
+    {
+        return complete;
     }
     #region save and load
 

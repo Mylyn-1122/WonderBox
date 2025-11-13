@@ -17,12 +17,16 @@ public class TVR10 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (WireGameTV.getComplete())
+        if (WireGameTV.getComplete())
         {
             complete = true;
-        }\*/
+        }
     }
 
+    public static bool getComp()
+    {
+        return complete;
+    }
     #region save and load
 
     public void Save(ref WireTVDataR10 data)

@@ -153,6 +153,11 @@ private Transform Shard1;
         }
     }
 
+    public static bool getComp()
+    {
+        return complete;
+    }
+
     #region save and load
 
     public void Save(ref TicketShardData data)

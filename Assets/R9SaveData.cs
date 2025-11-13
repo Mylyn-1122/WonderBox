@@ -19,7 +19,7 @@ public class R9SaveData : MonoBehaviour
     public void Save(ref R9Data data)
     {
 
-        data.R9Complete = SaveGameManager.R9;
+        data.R9Complete = (R9_ShardGame.getComp());
 
     }
 

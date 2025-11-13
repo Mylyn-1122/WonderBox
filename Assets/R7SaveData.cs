@@ -19,8 +19,8 @@ public class R7SaveData : MonoBehaviour
     public void Save(ref R7Data data)
     {
 
-        data.R7Complete = SaveGameManager.R7;
-
+        data.R7Complete = (StarGameR7.victorGet());
+        //add password game, maybe ropes?
     }
 
     public void Load(R7Data data)

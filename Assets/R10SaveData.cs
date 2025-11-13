@@ -3,6 +3,12 @@ using UnityEngine;
 public class R10SaveData : MonoBehaviour
 {
     public static bool R10C;
+
+    private void Awake()
+    {
+        SaveGameManager.Instance.R10SaveData = this;
+
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +25,7 @@ public class R10SaveData : MonoBehaviour
     public void Save(ref R10Data data)
     {
 
-        data.R10Complete = SaveGameManager.R10;
+        data.R10Complete = (TVR10.getComp() && Ticket_Shard_Minigame.getComp()&&Mirror_Shard_Game.getComp()&&Suitcase_Case_Code.returnClear());
 
     }
 
