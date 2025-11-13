@@ -80,26 +80,6 @@ public class WireGameTV : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mouse_press)
-        {
-            mouse_pos = Input.mousePosition;
-            object_pos = Camera.main.WorldToScreenPoint(target.position);
-            float angleRad = Mathf.Atan2(mouse_pos.y - object_pos.y, mouse_pos.x - object_pos.x);
-            float angleDeg = (180 / Mathf.PI) * angleRad - 90;
-            this.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
-
-            //print(this.transform.rotation);
-        }
-
-        if (!LBC.IsTouching(LTC))
-        {
-            LTC.transform.position = new Vector3(LBTopX, LBTopY, 0);
-        }
-        if (!RBC.IsTouching(RTC))
-        {
-            RTC.transform.position = new Vector3(RBTopX, RBTopY, 0);
-        }
-
         LBTopX = LB.GetComponent<SpriteRenderer>().bounds.max.x;
         LBTopY = LB.GetComponent<SpriteRenderer>().bounds.max.y;
         LBBotX = LB.GetComponent<SpriteRenderer>().bounds.min.x;
@@ -120,6 +100,30 @@ public class WireGameTV : MonoBehaviour
         RTBotX = RT.GetComponent<SpriteRenderer>().bounds.min.x;
         RTBotY = RT.GetComponent<SpriteRenderer>().bounds.min.y;
 
+        if (!LBC.IsTouching(LTC))
+        {
+            LTC.transform.position = new Vector3(LBTopX, LBTopY, LT.rotation.z);
+        }
+        if (!RBC.IsTouching(RTC))
+        {
+            RTC.transform.position = new Vector3(RBTopX, RBTopY, RT.rotation.z);
+        }
+
+        if (mouse_press)
+        {
+            mouse_pos = Input.mousePosition;
+            object_pos = Camera.main.WorldToScreenPoint(target.position);
+            float angleRad = Mathf.Atan2(mouse_pos.y - object_pos.y, mouse_pos.x - object_pos.x);
+            float angleDeg = (180 / Mathf.PI) * angleRad - 90;
+            this.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
+
+            //print(this.transform.rotation);
+        }
+
+        
+
+        
+
         if (LB.rotation.z <= goal + 1 && LB.rotation.z >= goal - 1)
         {
             if (LT.rotation.z <= goal + 1 && LT.rotation.z >= goal - 1)
@@ -136,10 +140,12 @@ public class WireGameTV : MonoBehaviour
         }
         if (complete)
         {
+            
             LB.rotation = Quaternion.Euler(0, 0, goal);
             LT.rotation = Quaternion.Euler(0, 0, goal);
             RB.rotation = Quaternion.Euler(0, 0, goal);
             RT.rotation = Quaternion.Euler(0, 0, goal);
+            
         }
 
     }
