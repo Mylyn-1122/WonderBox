@@ -5,6 +5,7 @@ public class watchGame : MonoBehaviour
     private GameObject ghost;
     private static bool start;
     private static bool end;
+    public static bool used;
     public InventoryManager inventoryManager;
 
     private void Awake()
@@ -43,6 +44,8 @@ public class watchGame : MonoBehaviour
                     {
                         end = true;
                         inventoryManager.useItem(1);
+                        used = true;
+
                     }
                 }
             }
