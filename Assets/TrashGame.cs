@@ -11,6 +11,7 @@ public class TrashGame : MonoBehaviour
     private Transform Trash6pos;
     
     private static bool complete;
+    public static bool trashcomp;
    
 
     private GameObject T1;
@@ -59,6 +60,7 @@ public class TrashGame : MonoBehaviour
         Four = false;
         Five = false;
         Six = false;
+        trashcomp = false;
     }
 
     // Update is called once per frame
@@ -115,6 +117,7 @@ public class TrashGame : MonoBehaviour
         if (One && Two && Three && Four && Five && Six)
         {
             complete = true;
+            trashcomp = true;
             
         }
 

@@ -24,6 +24,7 @@ public class skeleGameManager : MonoBehaviour
     private bool solvedLeg;
 
     private static bool complete;
+    public static bool comdialogue;
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class skeleGameManager : MonoBehaviour
         solvedBeak = false;
 
         complete = false;
+        comdialogue = false;
     }
 
     // Update is called once per frame
@@ -111,6 +113,7 @@ public class skeleGameManager : MonoBehaviour
         if(solvedRib && solvedLeg && solvedHead && solvedBeak && solvedWing && solvedNeck)
         {
             complete = true;
+            comdialogue = true;
         }
     }
 

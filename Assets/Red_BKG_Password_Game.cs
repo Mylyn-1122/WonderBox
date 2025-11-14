@@ -19,7 +19,7 @@ public class RedBKG_Password_Game : MonoBehaviour
     private GameObject Seven;
     private GameObject Eight;
     private GameObject Nine;
-
+     public static bool comred;
 
     private GameObject Delete;
     private GameObject Enter;
@@ -30,16 +30,19 @@ public class RedBKG_Password_Game : MonoBehaviour
     {
      
 
-        Zero = GameObject.Find("0");
-        One = GameObject.Find("1");
-        Two = GameObject.Find("2");
-        Three = GameObject.Find("3");
-        Four = GameObject.Find("4");
-        Five = GameObject.Find("5");
-        Six = GameObject.Find("6");
-        Seven = GameObject.Find("7");
-        Eight = GameObject.Find("8");
-        Nine = GameObject.Find("9");
+        Zero = GameObject.Find("Zero");
+        One = GameObject.Find("One");
+        Two = GameObject.Find("Two");
+        Three = GameObject.Find("Three");
+        Four = GameObject.Find("Four");
+        Five = GameObject.Find("Five");
+        Six = GameObject.Find("Six");
+        Seven = GameObject.Find("Seven");
+        Eight = GameObject.Find("Eight");
+        Nine = GameObject.Find("Nine");
+        Delete = GameObject.Find("Delete");
+        Enter = GameObject.Find("Enter");
+        comred = false;
 
 
     }
@@ -65,7 +68,7 @@ public class RedBKG_Password_Game : MonoBehaviour
                     if (answer.Equals("0730"))
                     {
 
-
+                        comred = true;
                         Debug.Log("Solved!");
                     }
                    
@@ -78,6 +81,10 @@ public class RedBKG_Password_Game : MonoBehaviour
                     }
 
 
+                }
+                if (hit.collider.gameObject == Zero)
+                {
+                    answer +="0";
                 }
                 if (hit.collider.gameObject == One)
                 {
