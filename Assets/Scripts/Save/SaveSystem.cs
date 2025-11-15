@@ -55,6 +55,8 @@ public class SaveSystem
         public TicketShardData TicketShardData;
         public WireTVDataR10 TVDataR10;
         public R10Data R10Data;
+
+        public MemoryData MemoryData;
     }
 
     public static string SaveFileName()
@@ -97,9 +99,9 @@ public class SaveSystem
             SaveGameManager.Instance.Collectable.Save(ref _saveData.PlayerData);
             SaveGameManager.Instance.StainedGlassWindowGame.Save(ref _saveData.StainedWindowData);
 
-            
-            //Debug.Log("Music Box Save");
 
+            //Debug.Log("Music Box Save");
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
 
         if (_saveData.SceneSaveData.SceneID == "RPGMusicBox")
@@ -107,8 +109,9 @@ public class SaveSystem
             SaveGameManager.Instance.Collectable.Save(ref _saveData.PlayerData);
             SaveGameManager.Instance.StainedGlassWindowGame.Save(ref _saveData.StainedWindowData);
 
-           // Debug.Log(RPGManagerR1.getVictor());
+            // Debug.Log(RPGManagerR1.getVictor());
             //Debug.Log("RPG Save");
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
 
         if (_saveData.SceneSaveData.SceneID == "TreeHouse")
@@ -118,6 +121,7 @@ public class SaveSystem
             SaveGameManager.Instance.TVR2.Save(ref _saveData.WireTVData2);
             SaveGameManager.Instance.KeyShardGame.Save(ref _saveData.KeyShardGameData);
             SaveGameManager.Instance.saveManR2.Save(ref _saveData.R2Data);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
 
 
         }
@@ -129,7 +133,8 @@ public class SaveSystem
 
             SaveGameManager.Instance.saveManR3.Save(ref _saveData.R3Data);
             //Debug.Log(RPGManagerR3.getVictor());
-           // Debug.Log("RPG Save");
+            // Debug.Log("RPG Save");
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
         if (_saveData.SceneSaveData.SceneID == "RPG3")
         {
@@ -137,6 +142,7 @@ public class SaveSystem
             SaveGameManager.Instance.LockGameR3.Save(ref _saveData.LockGameR3Data);
 
             SaveGameManager.Instance.saveManR3.Save(ref _saveData.R3Data);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
         if (_saveData.SceneSaveData.SceneID == "Room4")
         {
@@ -145,6 +151,7 @@ public class SaveSystem
             SaveGameManager.Instance.R4ShardGame.Save(ref _saveData.R4ShardGameData);
 
             SaveGameManager.Instance.saveManR4.Save(ref _saveData.R4SaveData);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
         if (_saveData.SceneSaveData.SceneID == "WaterGame")
         {
@@ -153,6 +160,7 @@ public class SaveSystem
             SaveGameManager.Instance.R4ShardGame.Save(ref _saveData.R4ShardGameData);
 
             SaveGameManager.Instance.saveManR4.Save(ref _saveData.R4SaveData);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
 
         if (_saveData.SceneSaveData.SceneID == "Room5")
@@ -161,6 +169,7 @@ public class SaveSystem
             SaveGameManager.Instance.ThreadGameMan.Save(ref _saveData.ThreadGameManData);
             SaveGameManager.Instance.Collectable.Save(ref _saveData.PlayerData);
             SaveGameManager.Instance.watchGame.Save(ref _saveData.watchGameData);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room6")
@@ -168,6 +177,7 @@ public class SaveSystem
 
             SaveGameManager.Instance.skeleMan.Save(ref _saveData.skeleGameManagerData);
             SaveGameManager.Instance.TrashGame.Save(ref _saveData.TrashGameData);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room7")
@@ -175,6 +185,7 @@ public class SaveSystem
 
             SaveGameManager.Instance.StarGameR7.Save(ref _saveData.StarGameR7Data);
             SaveGameManager.Instance.Rope_Code.Save(ref _saveData.Rope_CodeData);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room8")
@@ -183,13 +194,15 @@ public class SaveSystem
             SaveGameManager.Instance.StarGameR8.Save(ref _saveData.StarGameR8Data);
             SaveGameManager.Instance.projectorR8.Save(ref _saveData.projectorDataR8);
             SaveGameManager.Instance.trashR8.Save(ref _saveData.trashR8Data);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room9")
         {
 
             SaveGameManager.Instance.R9Shard.Save(ref _saveData.R9ShardData);
-           
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
+
 
         }
         if (_saveData.SceneSaveData.SceneID == "Room10")
@@ -199,6 +212,7 @@ public class SaveSystem
             SaveGameManager.Instance.Suitcase.Save(ref _saveData.SuitcaseData);
             SaveGameManager.Instance.TicketShard.Save(ref _saveData.TicketShardData);
             SaveGameManager.Instance.TVR10.Save(ref _saveData.TVDataR10);
+            SaveGameManager.Instance.MemoryShards.Save(ref _saveData.MemoryData);
         }
 
 
@@ -326,7 +340,7 @@ public class SaveSystem
             SaveGameManager.Instance.TVR10.Load( _saveData.TVDataR10);
         }
 
-
+        SaveGameManager.Instance.MemoryShards.Load( _saveData.MemoryData);
     }
 
     #endregion
@@ -410,6 +424,6 @@ public class SaveSystem
             SaveGameManager.Instance.TicketShard.Load(_saveData.TicketShardData);
             SaveGameManager.Instance.TVR10.Load(_saveData.TVDataR10);
         }
-
+        SaveGameManager.Instance.MemoryShards.Load(_saveData.MemoryData);
     }
 }

@@ -18,6 +18,9 @@ TagManager:
   - Fish
   - Picture
   - Words
+  - NextPage
+  - LastPage
+  - Forget
   layers:
   - Default
   - TransparentFX

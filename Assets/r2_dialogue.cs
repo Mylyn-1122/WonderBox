@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class r2_dialogue : MonoBehaviour
 {
@@ -25,11 +27,14 @@ public class r2_dialogue : MonoBehaviour
     private bool text5 = false;
     private bool text6 = false;
 
-    
+    private VideoPlayer player;
+    private bool animation2Finished = false;
+    private GameObject hat;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         dMan = FindAnyObjectByType<DialogueManager>();  
         Sheep = GameObject.Find("sheep");
         Tv = GameObject.Find("TV");
@@ -37,6 +42,11 @@ public class r2_dialogue : MonoBehaviour
         Tree = GameObject.Find("Tree");
         sky = GameObject.Find("sky");
         fren = GameObject.Find("friends");
+
+        player = GameObject.Find("R2Cutsceen").GetComponent<VideoPlayer>();
+        player.isLooping = false;
+        hat = GameObject.Find("hat");
+        //SaveSystem.Load();
     }
 
     // Update is called once per frame
@@ -98,7 +108,26 @@ public class r2_dialogue : MonoBehaviour
                         text6 = dMan.ShowBox(R6);
                     }
                 }
+                if (hit.collider.gameObject.Equals(hat))
+                {
+                    player.gameObject.SetActive(true);
+                    player.Play();
+                    MemoryShards.max++;
+                    SaveSystem.Save();
+                }
             }
         }
+
+        if (animation2Finished)
+        {
+            SceneManager.LoadScene("Room2", LoadSceneMode.Single);
+        }
+        player.loopPointReached += EndReached;
+    }
+
+    void EndReached(UnityEngine.Video.VideoPlayer vp)
+    {
+        vp.gameObject.SetActive(false);
+        animation2Finished = true;
     }
 }

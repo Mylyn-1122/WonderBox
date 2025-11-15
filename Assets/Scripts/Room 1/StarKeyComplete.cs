@@ -92,7 +92,7 @@ public class StarKeyComplete: MonoBehaviour
             completeRoom = true;
             player.gameObject.SetActive(true);
             player.Play();
-            
+            //SaveSystem.Save();
 
 
         }

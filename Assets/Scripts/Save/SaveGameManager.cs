@@ -72,6 +72,8 @@ public class SaveGameManager : MonoBehaviour
     public TVR10 TVR10 { get; set; }
     public R10SaveData R10SaveData { get; set; }
 
+    public MemoryShards MemoryShards { get; set; }
+
     public static bool SaveSignal = false;
     public static bool RPG1 = false;
     public static bool[] R1Stars = new bool [3];

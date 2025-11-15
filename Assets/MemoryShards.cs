@@ -7,7 +7,7 @@ using TMPro;
 public class MemoryShards : MonoBehaviour
 {
     public List<Sprite> images;
-    public  List<string> text;
+    public List<string> text;
     public static int count;
 
     private GameObject next;
@@ -17,14 +17,24 @@ public class MemoryShards : MonoBehaviour
     private GameObject pictures;
     private GameObject words;
 
-   
+    public static int max;
+
+    public static bool forgort;
+
+    private int newCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private void Awake()
+    {
+        SaveGameManager.Instance.MemoryShards = this;
+    }
+
     void Start()
     {
         count = 0;
-        next = GameObject.Find("NextPage");
-        last = GameObject.Find("LastPage");
-        forget = GameObject.Find("Forget");
+        next = GameObject.FindGameObjectWithTag("NextPage");
+        last = GameObject.FindGameObjectWithTag("LastPage");
+        forget = GameObject.FindGameObjectWithTag("Forget");
 
         pictures = GameObject.FindGameObjectWithTag("Picture");
 
@@ -42,70 +52,108 @@ public class MemoryShards : MonoBehaviour
         forget.GetComponent<Image>().enabled = false;
         forget.GetComponent<BoxCollider2D>().enabled = false;
 
-        pictures.GetComponent<SpriteRenderer>().sprite = images[count];
+        pictures.GetComponent<Image>().sprite = images[count];
         words.GetComponent<TextMeshProUGUI>().text = text[count];
 
         //images = new Sprite[9];
         //text = new string[9];
+        max = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (words.GetComponent<TextMeshProUGUI>().enabled)
+        
+        /*if (words.GetComponent<TextMeshProUGUI>().enabled)
         {
             last.GetComponent<BoxCollider2D>().enabled = true;
             next.GetComponent<BoxCollider2D>().enabled = true;
             forget.GetComponent<BoxCollider2D>().enabled = true;
         }
-        
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+        */
 
-            if (Input.GetMouseButtonDown(0))
+        pictures.GetComponent<Image>().sprite = images[count];
+        words.GetComponent<TextMeshProUGUI>().text = text[count];
+
+        if (forgort)
+        {
+            if (images.Count > 1)
             {
-
-
-                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-                if (hit.collider != null)
+                if (count == max)
                 {
-                    if (hit.collider.gameObject.Equals(next))
-                    {
-                        if (count < images.Count - 1)
-                        {
-                            count++;
-
-                        }
-                    }
-                    else if (hit.collider.gameObject.Equals(last))
-                    {
-                        if (count > 0)
-                        {
-                            count--;
-
-                        }
-                    }else if (hit.collider.gameObject.Equals(forget))
-                {
-                    if(images.Count > 0)
-                    {
-                        images.RemoveAt(count);
-                        text.RemoveAt(count);
-                    }
+                    newCount = count - 1;
                 }
-                pictures.GetComponent<Image>().sprite = images[count];
-                words.GetComponent<TextMeshProUGUI>().text = text[count];
+                images.RemoveAt(count);
+                text.RemoveAt(count);
+                count = newCount;
             }
-                
-            }
+            forgort = false;
         }
+
+        //Debug.Log(count);
+
+        pictures.GetComponent<Image>().sprite = images[count];
+        words.GetComponent<TextMeshProUGUI>().text = text[count];
+    }
+        
 
         
      
 
     public static void incCount()
     {
-        count++;
+        if (count < max)
+        {
+            count++;
+
+        }
     }
 
+    public static void decCOunt()
+    {
+        if (count >= 1)
+        {
+            count--;
+            
+        }
+    }
+
+    public static void forgor()
+    {
+        forgort = true;
+
+        max--;
+        
+    }
+
+    #region save and load
+
+    public void Save(ref MemoryData data)
+    {
+        data.maxData = max;
+        
+    }
+
+    public void Load(MemoryData data)
+    {
+        
+        
+            max = data.maxData;
+            
+        
+    }
+
+
+
+    #endregion
+
+
+}
+
+[System.Serializable]
+public struct MemoryData
+{
+    public int maxData;
     
+
 }
