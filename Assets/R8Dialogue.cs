@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class R8Dialogue : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class R8Dialogue : MonoBehaviour
     private string[] R5 ={"Ugh...","This place was always such a mess, none of the visitors had the decency to clean up after themselves."};
     private string[] R6 ={"Some old astrology books.","Can't believe I brought these with me."};
     private string[] R7 ={"That's better."};
+    private GameObject left;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +35,8 @@ public class R8Dialogue : MonoBehaviour
         nav = GameObject.Find("Navigate_Arrow (7)");   
         nav2 = GameObject.Find("Navigate_Arrow"); 
         nav3 = GameObject.Find("Square");
+        MemoryShards.max = 7;
+        left = GameObject.Find("Leaving");
     }
 
     // Update is called once per frame
@@ -97,16 +102,24 @@ public class R8Dialogue : MonoBehaviour
                     {
                         text6 = dMan.ShowBox(R6);
                     }
+
+
                 }
 
-                if (R9_Trash_Game.trashcomp)
+                if (hit.collider.gameObject.Equals(left)&&R8StarGame.compGet()&&R9_Trash_Game.returnComp())
                 {
-                    if (!text7)
-                    {
-                        text7 = dMan.ShowBox(R7);
-                        R9_Trash_Game.trashcomp = false;
-                    }
+                    SceneManager.LoadScene("Room9", LoadSceneMode.Single);
                 }
+                
+            }
+        }
+
+        if (R9_Trash_Game.trashcomp)
+        {
+            if (!text7)
+            {
+                text7 = dMan.ShowBox(R7);
+                R9_Trash_Game.trashcomp = false;
             }
         }
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class R7Dialogue : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class R7Dialogue : MonoBehaviour
     private bool text4 = false;
      private bool text5 = false;
      private bool text6 = false;
+    private GameObject ropeH;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +33,8 @@ public class R7Dialogue : MonoBehaviour
          navup = GameObject.Find("Navigate_Arrow (4)");
          rope = GameObject.Find("Rope");
          comp = GameObject.Find("Comp");
-        
+        ropeH = GameObject.Find("Rope_H");
+        MemoryShards.max = 6;
     }
 
     // Update is called once per frame
@@ -98,6 +101,11 @@ public class R7Dialogue : MonoBehaviour
                         text4 = dMan.ShowBox(R4);
                     }
                 }
+
+                if (hit.collider.gameObject.Equals(ropeH))
+                {
+                    SceneManager.LoadScene("Room8", LoadSceneMode.Single);
+                }
             }
 
             if(RedBKG_Password_Game.comred)
@@ -108,6 +116,8 @@ public class R7Dialogue : MonoBehaviour
                     RedBKG_Password_Game.comred = false;
                 }
             }
+
+
         } 
     }
 }

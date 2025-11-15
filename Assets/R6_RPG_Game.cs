@@ -70,7 +70,7 @@ public class R6_RPG_Game : MonoBehaviour
         if (player.getHealth() <= 0)
         {
             victor = false;
-            Debug.Log("Player Lost!");
+            //Debug.Log("Player Lost!");
             one = false;
             two = false;
             three = false;
@@ -104,7 +104,7 @@ public class R6_RPG_Game : MonoBehaviour
                     {
                         three = true;
                         Enemy.sprite = Enemy4;
-                        enemy.setHealth(-115);
+                        enemy.setHealth(-100);
                         enemy.GetComponent<SpriteRenderer>().enabled = true;
                     }
 
@@ -179,7 +179,7 @@ public class R6_RPG_Game : MonoBehaviour
                     else if (four == true)
                     {
                         victor = true;
-                        
+                        Camera.main.transform.position = new Vector3(20, 20, -10);
 
                     }
 

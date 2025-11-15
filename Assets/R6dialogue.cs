@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class R6dialogue : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class R6dialogue : MonoBehaviour
     private bool text7 = false;
      private bool text8 = false;
 
-
+    private GameObject left;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,9 +37,9 @@ public class R6dialogue : MonoBehaviour
         crack = GameObject.Find("crack"); 
         bird = GameObject.Find("Untitled_Artwork 76_0"); 
         nav2 = GameObject.Find("Square (1)");  
-        comp = GameObject.Find("Comp");  
-
-        
+        comp = GameObject.Find("Comp");
+        left = GameObject.Find("Leaving");
+        MemoryShards.max=5;
     }
 
     // Update is called once per frame
@@ -122,6 +123,8 @@ public class R6dialogue : MonoBehaviour
                     }
                 }
 
+
+
             }
 
             if (skeleGameManager.comdialogue)
@@ -137,6 +140,14 @@ public class R6dialogue : MonoBehaviour
                 if(!text8)
                 {
                     text8 = dMan.ShowBox(R8);
+                }
+            }
+
+            if(hit.collider != null)
+            {
+                if (hit.collider.gameObject.Equals(left))
+                {
+                    SceneManager.LoadScene("Room7", LoadSceneMode.Single);
                 }
             }
         }
