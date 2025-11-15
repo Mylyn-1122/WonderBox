@@ -16,6 +16,8 @@ TagManager:
   - Obs
   - Scoring
   - Fish
+  - Picture
+  - Words
   layers:
   - Default
   - TransparentFX

@@ -58,7 +58,7 @@ public class Finale_RPG_Game : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            
+
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
@@ -94,6 +94,7 @@ public class Finale_RPG_Game : MonoBehaviour
                     dialogueFinished = false;
                 }
             }
+        }
 
             if (!playerTurn && dialogueFinished)
             {
@@ -127,7 +128,7 @@ public class Finale_RPG_Game : MonoBehaviour
             {
                 dialogueFinished = true;
             }
-        }
+        
     
 
 

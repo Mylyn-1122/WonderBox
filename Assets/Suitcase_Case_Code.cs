@@ -85,6 +85,10 @@ public class Suitcase_Case_Code : MonoBehaviour
 
                         Debug.Log("Solved!");
                     }
+                    else
+                    {
+                        answer = "";
+                    }
                    
                 }
                 if (hit.collider.gameObject == Delete)
