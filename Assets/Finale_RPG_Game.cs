@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Finale_RPG_Game : MonoBehaviour
 {
@@ -20,6 +22,15 @@ public class Finale_RPG_Game : MonoBehaviour
     private GameObject Defend;
     private GameObject Hold;
 
+    private bool win1;
+    private bool win2;
+
+    private static int health;
+
+    private VideoPlayer videoG;
+    private VideoPlayer videoB;
+    private bool animation2Finished = false;
+
     
 
     // Start is called before the first frame update
@@ -34,6 +45,14 @@ public class Finale_RPG_Game : MonoBehaviour
         enemy = tempEnemy.GetComponent<RPGEnemy>();
 
         dialogueManager = FindFirstObjectByType<DialogueManager>();
+
+        videoG = GameObject.Find("GoodEnd").GetComponent<VideoPlayer>();
+        videoG.isLooping = false;
+
+        videoB = GameObject.Find("BadEnd").GetComponent<VideoPlayer>();
+        videoB.isLooping = false;
+        win1 = false;
+        win2 = false;
     }
 
     // Update is called once per frame
@@ -46,14 +65,46 @@ public class Finale_RPG_Game : MonoBehaviour
             victor = false;
             Debug.Log("Player Lost!");
 
+            videoB.gameObject.SetActive(true);
+            videoB.Play();
+
+            if (animation2Finished)
+            {
+                SceneManager.LoadScene("Room1", LoadSceneMode.Single);
+            }
+            videoB.loopPointReached += EndReached;
+            
+
         }
         else if (enemy.getHealth() <= 0)
         {
-            victor = true;
-            Debug.Log("Player Won!");
+            if (win2)
+            {
+                victor = true;
+                Debug.Log("Player Won!");
 
+                videoG.gameObject.SetActive(true);
+                videoG.Play();
 
-
+                if (animation2Finished)
+                {
+                    Camera.main.transform.position = new Vector3(0, 20, -10);
+                }
+                videoG.loopPointReached += EndReached;
+            }
+            if (!win1)
+            {
+                win1 = true;
+                health = -75;
+                enemy.setHealth(health);
+            }
+            if (win1&&!win2)
+            {
+                win2 = true;
+                health = -100;
+                enemy.setHealth(health);
+            }
+            
 
         }
         if (Input.GetMouseButtonDown(0))
@@ -143,6 +194,16 @@ public class Finale_RPG_Game : MonoBehaviour
         victor = value;
     }
 
+    void EndReached(UnityEngine.Video.VideoPlayer vp)
+    {
+        vp.gameObject.SetActive(false);
+        animation2Finished = true;
+    }
+
+    public static void setH()
+    {
+        health = -200;
+    }
 }
 /*
     #region Save and Load

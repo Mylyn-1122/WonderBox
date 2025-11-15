@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class R9_Dialogue : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class R9_Dialogue : MonoBehaviour
         book =GameObject.Find("Untitled123_20250924223528_0");  
         door =GameObject.Find("Square (1)");  
         paint =GameObject.Find("Square");  
-        mirror = GameObject.Find("Square (2)");  
-
+        mirror = GameObject.Find("Square (2)");
+        MemoryShards.max = 8;
     }
 
     // Update is called once per frame
@@ -49,6 +50,11 @@ public class R9_Dialogue : MonoBehaviour
                     if (!text1)
                     {
                         text1 = dMan.ShowBox(R1);
+                    }
+
+                    if (text1 && R9_ShardGame.getComp())
+                    {
+                        SceneManager.LoadScene("Room10", LoadSceneMode.Single);
                     }
                 }
             

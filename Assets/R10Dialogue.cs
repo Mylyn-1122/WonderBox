@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class R10Dialogue : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class R10Dialogue : MonoBehaviour
     private bool text4 = false;
     private bool text5 = false;
     private bool idk = true;
-    
+    private GameObject end;
 
 
 
@@ -27,7 +28,8 @@ public class R10Dialogue : MonoBehaviour
         nav = GameObject.Find("Square (2)");
         nav2 = GameObject.Find("Square (3)");
         nav3 = GameObject.Find("Square (4)");
-
+        end = GameObject.Find("TheEnd");
+       
     }
 
     // Update is called once per frame
@@ -74,6 +76,11 @@ public class R10Dialogue : MonoBehaviour
                         text5 = dMan.ShowBox(R5);
                     }
                 }
+                if (hit.collider.gameObject.Equals(end)&&Mirror_Shard_Game.getComp()&&Suitcase_Case_Code.returnClear())
+                {
+                    SceneManager.LoadScene("Finale", LoadSceneMode.Single);
+                }
+                //Debug.Log(TVR10.getComp() && Ticket_Shard_Minigame.getComp() && Mirror_Shard_Game.getComp() && Suitcase_Case_Code.returnClear());
             }
         }
 
