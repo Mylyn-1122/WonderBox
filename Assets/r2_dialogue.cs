@@ -19,7 +19,7 @@ public class r2_dialogue : MonoBehaviour
     private string [] R3 = {"Huh, I remember I gave this to her...when did it break?","Wait why am I remembering this now...","Ugh, this place is seriously messing with me."};
     private string[] R4 = {"For some reason this picture feels so cozy."};
     private string[] R5 = {"The sky again?", "This is getting creepy."};
-    private string[] R6 = {"Who are these people?","Why can't I remember their faces?","...","I don't want to look at this anymore."};
+    private string[] R6 = {"Who are these people?","Why can't I remember their faces?","...why is this the same scene as in that book? Are those my memories?","I don't want to look at this anymore."};
     private bool text1 = false;
     private bool text2 = false;
     private bool text3 = false;
@@ -30,6 +30,7 @@ public class r2_dialogue : MonoBehaviour
     private VideoPlayer player;
     private bool animation2Finished = false;
     private GameObject hat;
+    private bool aniStart;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,8 +46,11 @@ public class r2_dialogue : MonoBehaviour
 
         player = GameObject.Find("R2Cutsceen").GetComponent<VideoPlayer>();
         player.isLooping = false;
-        hat = GameObject.Find("hat");
+        hat = GameObject.FindGameObjectWithTag("Respawn");
         //SaveSystem.Load();
+        MemoryShards.max = 1;
+        animation2Finished = false;
+        aniStart = false;
     }
 
     // Update is called once per frame
@@ -108,19 +112,20 @@ public class r2_dialogue : MonoBehaviour
                         text6 = dMan.ShowBox(R6);
                     }
                 }
-                if (hit.collider.gameObject.Equals(hat))
+                if (hit.collider.gameObject.Equals(hat)&&TVR2.getComplete()&&KeyShardGame.getVictor())
                 {
                     player.gameObject.SetActive(true);
                     player.Play();
-                    MemoryShards.max++;
-                    SaveSystem.Save();
+                    //MemoryShards.max++;
+                    //SaveSystem.Save();
+                    aniStart = true;
                 }
             }
         }
 
-        if (animation2Finished)
+        if (animation2Finished && aniStart)
         {
-            SceneManager.LoadScene("Room2", LoadSceneMode.Single);
+            SceneManager.LoadScene("Room3", LoadSceneMode.Single);
         }
         player.loopPointReached += EndReached;
     }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class r3Dialogue : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class r3Dialogue : MonoBehaviour
     private bool text4 = false;
     private bool text5 = false;
 
+    private GameObject exit;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +32,8 @@ public class r3Dialogue : MonoBehaviour
         classroom = GameObject.Find("Introarrow");
         clock = GameObject.Find("Clock");
         lunch = GameObject.Find("Locker");
+        exit = GameObject.Find("Exit");
+        MemoryShards.max = 2;
     }
 
     // Update is called once per frame
@@ -84,6 +89,11 @@ public class r3Dialogue : MonoBehaviour
                         text5 = dMan.ShowBox(R5);
                     }
                 }
+                if (hit.collider.gameObject.Equals(exit)&&ClockRotGame.getClear())
+                {
+                    SceneManager.LoadScene("Room4", LoadSceneMode.Single);
+                }
+
             }
 
         }
