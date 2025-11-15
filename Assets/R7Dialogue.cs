@@ -8,13 +8,13 @@ public class R7Dialogue : MonoBehaviour
      private GameObject navup;
      private GameObject rope;
      private GameObject comp;
-      private string[] R1 = {"Is this...a constellation chart?"};
-      private string[] R2 = {"Woah...","Hey, this kinda looks like a constellation!"};
+    private string[] R1 = {"Is this...a constellation chart?"};
+    private string[] R2 = {"Woah...","Hey, this kinda looks like a constellation!"};
     private string[] R3 = {"This looks useful.","Maybe I can attach this to something to climb out of here."};
     private string[] R4 = {"Is this...my college computer?", "What happened to it..."};
     private string[] R5 = {"...", "I dont't think...", "I don't think I ever made any friends afer them","There was just too much to do and-","I let time get by me...","...some college expirence, huh?", "Let's just move on."};
     private string[] R6 = {"..."};
-      private bool idk = true;
+    private bool idk = true;
     private bool text1 = false;
     private bool text2 = false;
     private bool text3 = false;

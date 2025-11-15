@@ -13,6 +13,7 @@ public class Projector_Game : MonoBehaviour
 
     private GameObject snakeB;
     public Sprite snakeC;
+    public static bool procomp = false;
     
 
 
@@ -49,6 +50,7 @@ public class Projector_Game : MonoBehaviour
         if (this.transform.rotation.z <= angle + 0.1 && this.transform.rotation.z >= angle - 0.1)
         {
             cleared = true;
+            procomp = true;
            
         }
 

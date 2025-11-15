@@ -36,7 +36,7 @@ public class R9_ShardGame : MonoBehaviour
     private DialogueManager dMan;
 
 
-    private string[] compTextD = { "Its fixed now!" };
+    private string[] compTextD = {"Everyone knew this was a consultation prize.", "I hate being so...inadquate."};
     private bool compText = false;
 
 

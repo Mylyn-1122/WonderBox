@@ -12,6 +12,7 @@ public class R9_Trash_Game : MonoBehaviour
     private Transform Trash7pos;
    
     private static bool complete;
+    public static bool trashcomp =false;
    
    
     private GameObject T1;
@@ -149,6 +150,7 @@ public class R9_Trash_Game : MonoBehaviour
         if (One && Two && Three && Four && Five && Six && Seven)
         {
             complete = true;
+            trashcomp = true;
            
         }
 

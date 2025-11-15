@@ -29,7 +29,7 @@ private Transform Shard1;
     private DialogueManager dMan;
 
 
-    private string[] compTextD = { "Its fixed now!" };
+    private string[] compTextD = {"...","Ok, I'm freaked out. I need to get out of here."};
     private bool compText = false;
 
 

@@ -35,7 +35,7 @@ public class Mirror_Shard_Game : MonoBehaviour
     private DialogueManager dMan;
 
 
-    private string[] compTextD = { "Its fixed now!" };
+    private string[] compTextD = {"...","Looks like i've seen better days haha..."};
     private bool compText = false;
 
 
