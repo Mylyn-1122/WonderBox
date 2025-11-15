@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 
 public class MemoryShards : MonoBehaviour
 {
-    public  Sprite[] images;
-    public  string[] text;
+    public List<Sprite> images;
+    public  List<string> text;
     public static int count;
 
     private GameObject next;
     private GameObject last;
+    private GameObject forget;
 
     private GameObject pictures;
     private GameObject words;
@@ -22,6 +24,7 @@ public class MemoryShards : MonoBehaviour
         count = 0;
         next = GameObject.Find("NextPage");
         last = GameObject.Find("LastPage");
+        forget = GameObject.Find("Forget");
 
         pictures = GameObject.FindGameObjectWithTag("Picture");
 
@@ -36,6 +39,12 @@ public class MemoryShards : MonoBehaviour
         next.GetComponent<Image>().enabled = false;
         next.GetComponent<BoxCollider2D>().enabled = false;
 
+        forget.GetComponent<Image>().enabled = false;
+        forget.GetComponent<BoxCollider2D>().enabled = false;
+
+        pictures.GetComponent<SpriteRenderer>().sprite = images[count];
+        words.GetComponent<TextMeshProUGUI>().text = text[count];
+
         //images = new Sprite[9];
         //text = new string[9];
     }
@@ -47,6 +56,7 @@ public class MemoryShards : MonoBehaviour
         {
             last.GetComponent<BoxCollider2D>().enabled = true;
             next.GetComponent<BoxCollider2D>().enabled = true;
+            forget.GetComponent<BoxCollider2D>().enabled = true;
         }
         
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -61,7 +71,7 @@ public class MemoryShards : MonoBehaviour
                 {
                     if (hit.collider.gameObject.Equals(next))
                     {
-                        if (count < images.Length - 1)
+                        if (count < images.Count - 1)
                         {
                             count++;
 
@@ -74,8 +84,15 @@ public class MemoryShards : MonoBehaviour
                             count--;
 
                         }
+                    }else if (hit.collider.gameObject.Equals(forget))
+                {
+                    if(images.Count > 0)
+                    {
+                        images.RemoveAt(count);
+                        text.RemoveAt(count);
                     }
-                pictures.GetComponent<SpriteRenderer>().sprite = images[count];
+                }
+                pictures.GetComponent<Image>().sprite = images[count];
                 words.GetComponent<TextMeshProUGUI>().text = text[count];
             }
                 
