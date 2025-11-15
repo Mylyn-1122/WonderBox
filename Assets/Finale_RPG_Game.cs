@@ -31,7 +31,8 @@ public class Finale_RPG_Game : MonoBehaviour
     private VideoPlayer videoB;
     private bool animation2Finished = false;
 
-    
+
+    private GameObject home;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,9 @@ public class Finale_RPG_Game : MonoBehaviour
         videoB.isLooping = false;
         win1 = false;
         win2 = false;
+
+        home = GameObject.Find("home");
+        
     }
 
     // Update is called once per frame
@@ -70,7 +74,7 @@ public class Finale_RPG_Game : MonoBehaviour
 
             if (animation2Finished)
             {
-                SceneManager.LoadScene("Room1", LoadSceneMode.Single);
+                SceneManager.LoadScene("Room1Final", LoadSceneMode.Single);
             }
             videoB.loopPointReached += EndReached;
             
@@ -78,32 +82,49 @@ public class Finale_RPG_Game : MonoBehaviour
         }
         else if (enemy.getHealth() <= 0)
         {
-            if (win2)
+            if (!victor)
             {
-                victor = true;
-                Debug.Log("Player Won!");
-
-                videoG.gameObject.SetActive(true);
-                videoG.Play();
-
-                if (animation2Finished)
+                if (win2)
                 {
+                    victor = true;
+                    Debug.Log("Player Won!");
+
+                    videoG.gameObject.SetActive(true);
+                    videoG.Play();
+
+                    if (animation2Finished)
+                    {
+                        Camera.main.transform.position = new Vector3(0, 20, -10);
+                    }
+                    videoG.loopPointReached += EndReached;
                     Camera.main.transform.position = new Vector3(0, 20, -10);
+
                 }
-                videoG.loopPointReached += EndReached;
+                if (win1 && !win2)
+                {
+                    win2 = true;
+                    health = -100;
+                    enemy.setHealth(health);
+                    player.setHealth(-(100 - player.getHealth()));
+                    message[0] = "You: We lost our dreams, hopes, any possible life we may have had where we are happy…what's the point of going back?" + "\n" +
+                        "It’s still worth it to try! We can’t change the past but we lose our future if we only wallow in our memories! I know it hurts, but we have to try! Even if it’s scary, even if we might fail again. This can’t be the end."
+                        ;
+                    dialogueFinished = false;
+
+                }
+                if (!win1)
+                {
+                    win1 = true;
+                    health = -75;
+                    enemy.setHealth(health);
+                    player.setHealth(-(100 - player.getHealth()));
+
+                    message[0] = "Creature: Who are you anymore! We replaced ourselves, can you still recognize the person in the mirror?" + "\n" + "You: I can’t say I do, but that's fine! Nothing stays the same forever; isn’t that the point of life? To change and grow until we can look back and be proud of ourselves?";
+                    dialogueFinished = false;
+
+                }
             }
-            if (!win1)
-            {
-                win1 = true;
-                health = -75;
-                enemy.setHealth(health);
-            }
-            if (win1&&!win2)
-            {
-                win2 = true;
-                health = -100;
-                enemy.setHealth(health);
-            }
+            
             
 
         }
@@ -143,6 +164,8 @@ public class Finale_RPG_Game : MonoBehaviour
                     playerTurn = false;
                     message[0] = "The player has chosen to block the enemy's attack" + enemy.getHealth();
                     dialogueFinished = false;
+                }else if(hit.collider.gameObject.Equals(home)){
+                    SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
                 }
             }
         }
