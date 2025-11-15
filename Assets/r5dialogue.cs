@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class r5dialogue : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class r5dialogue : MonoBehaviour
     private bool text6 = false;
     private bool fin = false;
 
+    private GameObject left;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,7 +37,8 @@ public class r5dialogue : MonoBehaviour
         bird = GameObject.Find("mr.birdman");
         ghost = GameObject.Find("ghost");
         train = GameObject.Find("Navigate_Arrow (7)");
-        
+        left = GameObject.Find("Leaving");
+        MemoryShards.max = 4;
     }
 
     // Update is called once per frame
@@ -120,20 +124,25 @@ public class r5dialogue : MonoBehaviour
                     }
                 }
 
-            }
 
-            if (fin == true && watchGame.used)
-            {
-                if (hit.collider.gameObject.Equals(ghost))
+
+                if (fin == true && watchGame.used)
                 {
+                    if (hit.collider.gameObject.Equals(ghost))
+                    {
                         if (!text4)
                         {
                             text4 = dMan.ShowBox(R4);
                         }
+                    }
+
                 }
 
+                if (hit.collider.gameObject.Equals(left))
+                {
+                    SceneManager.LoadScene("Room6", LoadSceneMode.Single);
+                }
             }
-
 
 
         }

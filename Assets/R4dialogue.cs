@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class R4dialogue : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class R4dialogue : MonoBehaviour
     private bool text2 = false;
     private bool text3 = false;
     private bool idk = true;
+    private GameObject leaving;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +24,9 @@ public class R4dialogue : MonoBehaviour
         fish = GameObject.Find("Inside");
         lake = GameObject.Find("Lake");
         chess = GameObject.Find("Square");
+        leaving = GameObject.Find("Leaving");
+
+        MemoryShards.max = 3;
     }
 
 
@@ -65,7 +70,10 @@ public class R4dialogue : MonoBehaviour
                         text3 = dMan.ShowBox(R3);
                     }
                 }
-                
+                if (hit.collider.gameObject.Equals(leaving)&&LockGameR4.getComp())
+                {
+                    SceneManager.LoadScene("Room5", LoadSceneMode.Single);
+                }
                 
 
             }
