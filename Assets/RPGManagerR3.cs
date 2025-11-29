@@ -41,6 +41,8 @@ public class RPGManagerR3 : MonoBehaviour
 
     private GameObject nav;
 
+    public Sprite Enemy0;
+
 
 
 
@@ -84,6 +86,13 @@ public class RPGManagerR3 : MonoBehaviour
         {
             endScreen.sprite = Lose;
             Camera.main.transform.position = new Vector3(0, 40, -10);
+            one = false;
+            two = false;
+            three = false;
+            enemy.setHealth(-50);
+            bg.color = new Color32(255, 255, 255, 100);
+            Enemy.sprite = Enemy0;
+            Enemy.GetComponent<SpriteRenderer>().enabled = true;
 
         }
         else if (enemy.getHealth() <= 0)

@@ -397,7 +397,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09721446, y: 0.014955521}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -407,7 +407,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.7029347, y: 1.8375359}
   m_EdgeRadius: 0
 --- !u!1 &230239963
 GameObject:
@@ -1432,6 +1432,7 @@ MonoBehaviour:
   Enemy2: {fileID: 1510799729092139373, guid: 87a918e6f40074adea34a5307e7ed530, type: 3}
   Enemy3: {fileID: 7525781026108326416, guid: 5e14fb768134c475f8e32317fa50bf3f, type: 3}
   Lose: {fileID: 9128261822129973467, guid: 948afcba9cdca47479a5f4f6b9f980a9, type: 3}
+  Enemy0: {fileID: 6674398931390140104, guid: 5773f78e4acad493eb7d00ed0cc14010, type: 3}
 --- !u!4 &1048727983
 Transform:
   m_ObjectHideFlags: 0

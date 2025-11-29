@@ -1082,7 +1082,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 593878998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f9700ff38c47c1a4fea20fc387518, type: 3}
+  m_Script: {fileID: 11500000, guid: 918d07fd15a7143b397cd2ea29212be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 40, y: 0, z: 0}
@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 610057187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f9700ff38c47c1a4fea20fc387518, type: 3}
+  m_Script: {fileID: 11500000, guid: 918d07fd15a7143b397cd2ea29212be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: -20, y: 0, z: 0}
@@ -1712,10 +1712,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 885177635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f9700ff38c47c1a4fea20fc387518, type: 3}
+  m_Script: {fileID: 11500000, guid: 918d07fd15a7143b397cd2ea29212be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
+  destination: {x: -0.1283, y: 0, z: 0}
   mainCamera: {fileID: 392314632}
 --- !u!1001 &937942097
 PrefabInstance:
@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 970219168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f9700ff38c47c1a4fea20fc387518, type: 3}
+  m_Script: {fileID: 11500000, guid: 918d07fd15a7143b397cd2ea29212be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 20, y: 0, z: 0}
@@ -3149,7 +3149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366834902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f9700ff38c47c1a4fea20fc387518, type: 3}
+  m_Script: {fileID: 11500000, guid: 918d07fd15a7143b397cd2ea29212be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 20, y: 0, z: 0}
@@ -4064,10 +4064,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859169117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429f9700ff38c47c1a4fea20fc387518, type: 3}
+  m_Script: {fileID: 11500000, guid: 918d07fd15a7143b397cd2ea29212be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
+  destination: {x: -0.1283, y: 0, z: 0}
   mainCamera: {fileID: 392314632}
 --- !u!1 &1911346057
 GameObject:

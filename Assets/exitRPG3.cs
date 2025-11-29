@@ -29,6 +29,14 @@ public class exitRPG3 : MonoBehaviour
                     SaveGameManager.RPG3 = true;
                     SaveGameManager.RPG3Fin = true;
                     SceneManager.LoadScene("Room3");
+                    Debug.Log("win");
+                }
+
+                if (hit.collider.gameObject.Equals(exit) && !RPGManagerR3.getVictor())
+                {
+                    Camera.main.transform.position = new Vector3(0, 0, -10);
+                    Debug.Log("lose");
+
                 }
             }
         }
